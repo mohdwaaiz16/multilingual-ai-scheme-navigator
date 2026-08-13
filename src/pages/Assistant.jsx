@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { 
   Bot, 
   Sparkles, 
@@ -17,12 +18,13 @@ const INITIAL_MESSAGES = [
   {
     id: 'msg-welcome',
     sender: 'assistant',
-    text: "Namaste! I am your AI Scheme Navigator prototype. 🇮🇳\n\nI can help you explore government schemes, understand eligibility criteria, and find required documents for Indian welfare initiatives.\n\nHow can I help you today? You can choose one of the suggestions below or ask a question in your own words.",
+    text: "Namaste! I am SchemeSathi AI. 🇮🇳\n\nI can help you explore government schemes, understand eligibility criteria, and find required documents for Indian welfare initiatives.\n\nHow can I help you today? You can choose one of the suggestions below or ask a question in your own words.",
     recommendedSchemes: []
   }
 ];
 
 export default function Assistant() {
+  const [searchParams] = useSearchParams();
   const [messages, setMessages] = useState(INITIAL_MESSAGES);
   const [isTyping, setIsTyping] = useState(false);
   const chatBottomRef = useRef(null);
@@ -31,6 +33,14 @@ export default function Assistant() {
   useEffect(() => {
     chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
+
+  // Handle incoming query param if user came with a question
+  useEffect(() => {
+    const initialQuery = searchParams.get('q');
+    if (initialQuery && messages.length === 1) {
+      handleSendMessage(initialQuery);
+    }
+  }, [searchParams]);
 
   const handleSendMessage = (userText) => {
     const userMsg = {
@@ -42,27 +52,32 @@ export default function Assistant() {
     setMessages(prev => [...prev, userMsg]);
     setIsTyping(true);
 
-    // Simulate AI prototype processing with semantic match across the 20 verified schemes
+    // Deterministic mock response engine matching across the 20 verified schemes
     setTimeout(() => {
+      const lower = userText.toLowerCase();
       const matches = findMatchingSchemesForAssistant(userText);
       let responseText = "";
 
-      if (matches.length > 0) {
-        responseText = `Based on your request, I found ${matches.length} relevant scheme${matches.length > 1 ? 's' : ''} from our verified dataset. Here are the key details:`;
+      if (lower.includes("document") || lower.includes("documents")) {
+        responseText = "For most central welfare schemes, general required documents include:\n• Aadhaar Card\n• Income / Category Certificate (where applicable)\n• Bank Account Passbook / Details\n• Residence / Electricity Bill Proof\n\nHere are schemes that might match your documentation query:";
+      } else if (lower.includes("explain")) {
+        responseText = "Here is a breakdown of the relevant welfare scheme from our verified dataset. You can explore its benefits, age & income criteria, and official source below:";
+      } else if (matches.length > 0) {
+        responseText = `Based on the information provided, these ${matches.length} scheme${matches.length > 1 ? 's' : ''} appear to be potential matches. I can help guide you through their eligibility and benefits:`;
       } else {
-        responseText = `I couldn't find an exact scheme match for your query in our 20-scheme Phase 1 database. You can try exploring categories like Healthcare, Scholarships, Housing, Solar Energy, or Small Business Credit in the Scheme Finder!`;
+        responseText = "I couldn't find an exact scheme match for that specific term in our 20-scheme Phase 1 database. Try asking about scholarships, housing, solar subsidies, health coverage, or small business credit!";
       }
 
       const botMsg = {
         id: `bot-${Date.now()}`,
         sender: 'assistant',
         text: responseText,
-        recommendedSchemes: matches.slice(0, 3) // Top 3 matching schemes
+        recommendedSchemes: matches.slice(0, 3)
       };
 
       setMessages(prev => [...prev, botMsg]);
       setIsTyping(false);
-    }, 600);
+    }, 500);
   };
 
   const handleResetChat = () => {
@@ -75,19 +90,20 @@ export default function Assistant() {
       {/* Page Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-civic-900 text-white flex items-center justify-center shadow-sm">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-civic-900 text-white flex items-center justify-center shadow-sm">
               <Bot className="w-5 h-5 text-warmamber-400" />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900">
-              AI Scheme Assistant
+            <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+              <span>SchemeSathi AI</span>
+              <span className="text-xl">🤖</span>
             </h1>
-            <span className="px-2 py-0.5 text-xs font-semibold bg-govblue-100 text-govblue-800 rounded-full">
-              Phase 1 Prototype
+            <span className="px-2 py-0.5 text-xs font-bold bg-govblue-100 text-govblue-800 rounded-full">
+              Prototype
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-600">
-            Ask conversational questions to discover matching government schemes and eligibility guidance.
+            Your guide to understanding government schemes.
           </p>
         </div>
 
@@ -109,7 +125,7 @@ export default function Assistant() {
       <div className="p-4 bg-govblue-50/80 border border-govblue-200 rounded-2xl flex items-start gap-3 text-xs text-govblue-900">
         <Info className="w-4 h-4 text-govblue-600 flex-shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong>Frontend Prototype Mode:</strong> This AI assistant demonstrates interactive scheme discovery against the 20 verified schemes. Real AI models (OpenAI/Gemini/Claude) and live translation will be connected in Phase 2.
+          <strong>SchemeSathi AI Guide:</strong> This conversational assistant demonstrates deterministic matching against the 20 verified schemes. Always verify final eligibility on the official government website.
         </p>
       </div>
 
@@ -124,7 +140,7 @@ export default function Assistant() {
             <div className="w-8 h-8 rounded-xl bg-civic-900 text-white flex items-center justify-center shadow-sm">
               <Bot className="w-4 h-4 text-warmamber-400 animate-pulse" />
             </div>
-            <div className="p-3 bg-white border border-slate-200 rounded-2xl rounded-tl-sm flex items-center gap-1.5 shadow-sm">
+            <div className="p-3.5 bg-white border border-slate-200 rounded-2xl rounded-tl-sm flex items-center gap-1.5 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-civic-400 animate-bounce"></span>
               <span className="w-2 h-2 rounded-full bg-civic-600 animate-bounce [animation-delay:0.2s]"></span>
               <span className="w-2 h-2 rounded-full bg-civic-900 animate-bounce [animation-delay:0.4s]"></span>

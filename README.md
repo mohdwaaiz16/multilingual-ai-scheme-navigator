@@ -1,122 +1,81 @@
-# Multilingual AI Government Scheme Navigator
+# SchemeSathi — Multilingual AI Government Scheme Navigator
 
 ## Overview
-The **Multilingual AI Government Scheme Navigator** is a modern, citizen-focused digital platform created to assist ordinary citizens across India in discovering, understanding, and navigating government welfare schemes. The platform provides plain-language explanations of eligibility criteria, scheme benefits, interactive document readiness checklists, and direct links to official government application portals.
+**SchemeSathi** is a citizen-focused platform designed to help ordinary people across India answer:
+> *"What government schemes might I be eligible for?"*
 
-The platform is designed strictly as an **informational navigator** (not a government authority), consistently directing citizens to verify final guidelines on designated official government portals.
+SchemeSathi acts as a **scheme companion and navigator** (not a government authority), presenting personalized potential scheme matches, plain-language benefit breakdowns, interactive document readiness checklists, and direct links to official government application portals.
 
 ---
 
-## Current Phase
-**Frontend Phase 1** (Initial Prototype Release)
+## 5-Screen User Experience
+
+```text
+Screen 1: Home (/)
+  ↓
+Screen 2: User Details (/find)
+  ↓
+Screen 3: AI Results (/results)
+  ↓
+Screen 4: Scheme Details (/schemes/:id)
+  ↓
+Screen 5: SchemeSathi AI (/assistant)
+```
+
+1. **Screen 1 — Home (`/`)**: High-impact landing page, keyword search across 20 schemes, 8 popular quick categories, featured initiatives, 4-step "How It Works" flow, and trust message.
+2. **Screen 2 — User Details (`/find`)**: Clean multi-section form capturing Age, State, Occupation, Annual Income, and selectable Profile Role cards with dynamic follow-up questions.
+3. **Screen 3 — AI Results (`/results`)**: Scored matches with clear indicators (🟢 High Match, 🟡 Possible Match, ⚪ Explore), specific "Why it may match" explanations, user profile summary, and "Edit Details" control.
+4. **Screen 4 — Scheme Details (`/schemes/:id`)**: Category classification, "Potential Match" tag, About this scheme, Key benefits cards, Eligibility criteria matrix, interactive Document Checklist with progress tracking & print support, Numbered application steps, and verified Official Source button.
+5. **Screen 5 — SchemeSathi AI (`/assistant`)**: Conversational AI companion prototype with suggested prompt chips and embedded scheme recommendations.
 
 ---
 
 ## Tech Stack
 - **Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS (Civic & Accessible Color Palette)
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS 3 (Civic & Accessible Color Palette)
 - **Icons**: Lucide React
 - **Routing**: React Router DOM (v6)
 - **Language**: JavaScript (ES Modules)
 
 ---
 
-## Features Implemented in Phase 1
-
-1. **20 Verified Government Schemes Dataset**:
-   - Structured JSON/JS data models extracted directly from the verified source dataset (`Schemes.txt`).
-   - Includes schemes across Healthcare (PM-JAY), Maternity (PMMVY), Urban/Rural Housing (PMAY-U, PMAY-G), Solar Energy (PM Surya Ghar), Clean Energy (PMUY 2.0), Skill Training (PMKVY 4.0), Education (PM-SHRI, CSIS, Post-Matric Scholarships), Defence (Agnipath), Water (Jal Jeevan Mission), and Enterprise Credit (MUDRA, SVANidhi, PM Vishwakarma, Stand-Up India, PMEGP, SISFS, CGTMSE, SRMS).
-
-2. **Landing Page (`/`)**:
-   - High-impact hero section with direct search and quick query chips.
-   - Interactive **Quick Scheme Finder** widget (Need, Beneficiary, State).
-   - **Popular Categories Grid** with direct category exploration.
-   - **Featured Schemes** showcase.
-   - **How It Works** 5-step citizen roadmap.
-   - **AI Assistant Prototype Banner** and **Official Trust & Disclaimer Notices**.
-
-3. **Scheme Finder & Browse Directory (`/schemes`)**:
-   - Instant search across scheme names, descriptions, categories, and keywords.
-   - Comprehensive multi-parameter filtering:
-     - By Category (All 20 verified categories)
-     - By Scheme Type (Central Sector vs. Centrally Sponsored)
-     - By Target Beneficiary (Students, Women, Entrepreneurs, Youth, Rural Households)
-   - Dynamic sorting (Default, A-Z, Z-A, Category).
-   - Live matched results counter and Active Filter chips with one-click clear.
-   - Dedicated Category view tab.
-   - Responsive mobile filter drawer.
-
-4. **Detailed Scheme Deep Dive (`/schemes/:id`)**:
-   - Overview and classification badges.
-   - Age limit, income eligibility, and administration type summary.
-   - Key benefits highlight card.
-   - Detailed eligibility criteria breakdown.
-   - **Interactive Document Checklist** with readiness progress tracking and print support.
-   - Step-by-step application guidance.
-   - Prominent **"Visit Official Source"** button pointing to verified government domains with mandatory verification notice.
-   - Contextual related schemes recommendations.
-
-5. **AI Scheme Assistant Prototype (`/assistant`)**:
-   - Citizen-friendly conversational chat UI with message bubbles.
-   - Suggested query prompt chips for instant exploration.
-   - Local semantic matching engine providing relevant advice and embedding interactive scheme cards directly into the conversation.
-   - Clear UI indicators stating prototype status.
-
-6. **Language Selector (UI Prototype)**:
-   - Support indicator for English, हिन्दी (Hindi), and తెలుగు (Telugu).
-
-7. **Responsive & Accessible Design**:
-   - Mobile-first layouts with smooth hamburger navigation and touch-friendly controls.
-   - High-contrast typography and clear focus rings for accessibility.
-   - Custom 404 page for nonexistent routes.
+## The 20 Verified Schemes Integrated
+1. **Ayushman Bharat – PM-JAY** (Healthcare)
+2. **PM Matru Vandana Yojana (PMMVY)** (Maternity Welfare)
+3. **PM Awas Yojana – Urban (PMAY-U)** (Urban Housing)
+4. **PM Awas Yojana – Gramin (PMAY-G)** (Rural Housing)
+5. **PM Surya Ghar: Muft Bijli Yojana** (Solar Energy)
+6. **PM Ujjwala Yojana (PMUY 2.0)** (Clean Cooking Energy)
+7. **PM Kaushal Vikas Yojana (PMKVY 4.0)** (Skill Training)
+8. **PM-SHRI Schools Scheme** (School Education)
+9. **Central Sector Interest Subsidy Scheme (CSIS)** (Higher Education)
+10. **Post Matric Scholarship for SC/ST/OBC** (Student Scholarship)
+11. **Agnipath Scheme** (Defence Service)
+12. **Jal Jeevan Mission (JJM)** (Rural Water Supply)
+13. **PM MUDRA Yojana (PMMY)** (Business Credit)
+14. **PM SVANidhi** (Street Vendor Credit)
+15. **PM Vishwakarma Scheme** (Artisans & Craftspeople)
+16. **Stand-Up India Scheme** (Entrepreneurship)
+17. **PM Employment Generation Programme (PMEGP)** (Employment Generation)
+18. **Startup India Seed Fund Scheme (SISFS)** (Startup Funding)
+19. **Credit Guarantee Scheme – CGTMSE** (MSME Loan Guarantee)
+20. **Self Employment Scheme for Rehabilitation of Manual Scavengers (SRMS)** (Rehabilitation / Business)
 
 ---
 
-## Current Limitations (Phase 1)
-- **Static Frontend Only**: Operates entirely on client-side local data with zero backend server dependencies.
-- **No Real AI Model API**: The AI Assistant operates as a frontend prototype with local matching and does not yet invoke external LLM APIs (OpenAI / Gemini / Claude).
-- **No External Database**: Data is bundled locally in `src/data/schemes.js`.
-- **UI-Only Multilingual Engine**: Language switcher demonstrates UI selection; full multilingual translation engine is planned for Phase 2.
-- **No User Accounts / Authentication**: No login or personalized citizen profile storage in this phase.
+## Local Development
 
----
-
-## Future Roadmap (Phase 2 & Beyond)
-- **Backend Architecture**: Fast, lightweight API backend (FastAPI / Node.js).
-- **Verified Production Database**: Scalable database (PostgreSQL / Supabase) expanding from 20 to 50+ central and state schemes.
-- **Real Multilingual AI Engine**: LLM integration (Gemini / OpenAI / Claude) with multilingual NLP supporting 12+ Indian regional languages and voice input.
-- **Personalized Eligibility Calculator**: Deep qualification rules engine matching citizen income certificates, caste categories, land holdings, and state domicile.
-- **Official API Integrations**: Live portal status checks and DigiLocker document synchronization.
-- **Admin Dashboard**: Content management system for verifying, updating, and publishing government scheme changes.
-
----
-
-## Getting Started Locally
-
-### Prerequisites
-- Node.js (v18 or newer recommended)
-- npm or yarn
-
-### Installation
 ```bash
-# Clone the repository
-git clone <repo-url>
-
-# Navigate into project directory
+# Navigate to project
 cd scheme-navigator
 
 # Install dependencies
 npm install
 
-# Start local development server
+# Start local server
 npm run dev
 
 # Build for production
 npm run build
 ```
-
----
-
-## License & Source Integrity
-All scheme parameters in this repository are based on official Indian government scheme guidelines and documentation.

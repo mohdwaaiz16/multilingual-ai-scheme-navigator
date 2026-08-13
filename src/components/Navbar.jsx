@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Compass, Menu, X, Bot, Search, Layers, Home } from 'lucide-react';
+import { Sparkles, Menu, X, Bot, Search, Layers, Home, UserCheck, ArrowRight } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
 export default function Navbar() {
@@ -8,8 +8,7 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/', label: 'Home', icon: Home },
-    { to: '/schemes', label: 'Find Schemes', icon: Search },
-    { to: '/schemes?tab=categories', label: 'Categories', icon: Layers },
+    { to: '/find', label: 'Find Schemes', icon: Search },
     { to: '/assistant', label: 'AI Assistant', icon: Bot, isNew: true },
   ];
 
@@ -20,12 +19,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span className="font-medium text-slate-100">National Welfare Guidance Portal</span>
+            <span className="font-medium text-slate-100">SchemeSathi — Citizen Welfare Companion</span>
             <span className="hidden md:inline text-slate-400">|</span>
-            <span className="hidden md:inline text-slate-300">Phase 1 Prototype &bull; 20 Verified Schemes</span>
+            <span className="hidden md:inline text-slate-300">20 Verified Government Schemes</span>
           </div>
           <div className="text-[11px] text-slate-300 hidden sm:block">
-            Official Information Guide
+            Guidance & Navigator Portal
           </div>
         </div>
       </div>
@@ -33,26 +32,26 @@ export default function Navbar() {
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo & Brand */}
+          {/* Logo & Brand: SchemeSathi */}
           <Link 
             to="/" 
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-civic-500 rounded-lg p-1"
+            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-civic-500 rounded-lg p-1"
           >
             <div className="w-10 h-10 rounded-xl bg-civic-900 flex items-center justify-center text-white shadow-md group-hover:bg-civic-800 transition-colors">
-              <Compass className="w-6 h-6 text-warmamber-400" />
+              <Sparkles className="w-5 h-5 text-warmamber-400" />
             </div>
             <div>
-              <div className="font-bold text-slate-900 text-lg tracking-tight flex items-center gap-1.5">
-                Scheme<span className="text-govblue-600">Navigator</span>
+              <div className="font-extrabold text-slate-900 text-xl tracking-tight flex items-center gap-0.5">
+                Scheme<span className="text-govblue-600">Sathi</span>
               </div>
-              <p className="text-xs text-slate-500 font-normal">
-                Citizen Welfare & Scheme Guide
+              <p className="text-[11px] text-slate-500 font-medium">
+                Your Government Scheme Companion
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1" aria-label="Main Navigation">
+          <nav className="hidden md:flex items-center gap-2" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (
@@ -60,9 +59,9 @@ export default function Navbar() {
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) =>
-                    `px-3.5 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2 ${
+                    `px-4 py-2 rounded-xl text-sm font-semibold transition-colors inline-flex items-center gap-2 ${
                       isActive
-                        ? 'text-civic-900 bg-civic-50 font-semibold'
+                        ? 'text-civic-900 bg-civic-50'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                     }`
                   }
@@ -70,7 +69,7 @@ export default function Navbar() {
                   <Icon className="w-4 h-4 text-slate-500" />
                   <span>{link.label}</span>
                   {link.isNew && (
-                    <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-govblue-100 text-govblue-700 rounded-full">
+                    <span className="px-1.5 py-0.5 text-[10px] font-bold bg-govblue-100 text-govblue-700 rounded-full">
                       AI
                     </span>
                   )}
@@ -83,10 +82,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <LanguageSelector />
             <Link
-              to="/schemes"
-              className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-civic-900 hover:bg-civic-800 rounded-lg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-civic-500 focus:ring-offset-2"
+              to="/find"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-sm font-bold text-white bg-civic-900 hover:bg-civic-800 active:bg-civic-950 rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-civic-500 focus:ring-offset-2"
             >
-              Find a Scheme
+              <span>Find My Schemes</span>
+              <ArrowRight className="w-4 h-4 text-warmamber-400" />
             </Link>
           </div>
 
@@ -122,9 +122,9 @@ export default function Navbar() {
                   to={link.to}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-medium ${
+                    `flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-medium ${
                       isActive
-                        ? 'text-civic-900 bg-civic-50 font-semibold'
+                        ? 'text-civic-900 bg-civic-50 font-bold'
                         : 'text-slate-700 hover:bg-slate-50'
                     }`
                   }
@@ -135,7 +135,7 @@ export default function Navbar() {
                   </div>
                   {link.isNew && (
                     <span className="px-2 py-0.5 text-xs font-semibold bg-govblue-100 text-govblue-700 rounded-full">
-                      AI Prototype
+                      AI Companion
                     </span>
                   )}
                 </NavLink>
@@ -145,11 +145,12 @@ export default function Navbar() {
           
           <div className="pt-2 border-t border-slate-100">
             <Link
-              to="/schemes"
+              to="/find"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center px-4 py-2.5 text-base font-medium text-white bg-civic-900 hover:bg-civic-800 rounded-lg shadow-sm transition-all"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 text-base font-bold text-white bg-civic-900 hover:bg-civic-800 rounded-xl shadow-sm transition-all"
             >
-              Find a Scheme
+              <span>Find My Schemes</span>
+              <ArrowRight className="w-4 h-4 text-warmamber-400" />
             </Link>
           </div>
         </div>

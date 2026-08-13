@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Bot, ArrowRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
-import SearchBar from './SearchBar';
 
 export default function HeroSection() {
   const [query, setQuery] = useState('');
@@ -12,7 +11,7 @@ export default function HeroSection() {
     if (query.trim()) {
       navigate(`/schemes?q=${encodeURIComponent(query.trim())}`);
     } else {
-      navigate('/schemes');
+      navigate('/find');
     }
   };
 
@@ -27,7 +26,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-civic-950 to-slate-900 text-white py-16 sm:py-24">
-      {/* Decorative civic radial highlights */}
+      {/* Subtle background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] rounded-full bg-govblue-500 blur-[120px]"></div>
         <div className="absolute bottom-[-10%] right-[10%] w-[400px] h-[400px] rounded-full bg-warmamber-500 blur-[140px]"></div>
@@ -35,26 +34,26 @@ export default function HeroSection() {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         
-        {/* Subtle Trust Badge */}
+        {/* Trust pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-slate-200 backdrop-blur-sm">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>Independent Citizen Guide &bull; 20 Verified Schemes</span>
+          <span>SchemeSathi &bull; Citizen Scheme Companion &bull; 20 Verified Schemes</span>
         </div>
 
-        {/* Main Heading */}
+        {/* Screen 1 Heading */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
           Find Government Schemes <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-warmamber-300 via-white to-govblue-300">
-            That Fit Your Needs
+            You May Be Eligible For
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-          Discover government schemes, understand eligibility, prepare your documents, and find the official application source — all in one place.
+          Tell us a little about yourself and discover government schemes that may match your needs, benefits and circumstances.
         </p>
 
-        {/* Direct Search Bar Form */}
+        {/* Search Bar */}
         <form onSubmit={handleSearchSubmit} className="max-w-2xl mx-auto pt-2">
           <div className="flex flex-col sm:flex-row items-center gap-2 bg-white/10 p-2 rounded-2xl border border-white/20 backdrop-blur-md shadow-2xl">
             <div className="w-full">
@@ -62,21 +61,21 @@ export default function HeroSection() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search schemes (e.g. scholarship, solar, PM Awas, mudra loan)..."
-                className="w-full bg-white text-slate-900 placeholder:text-slate-500 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-warmamber-400 text-sm font-medium"
-                aria-label="Search schemes directly"
+                placeholder="Search for scholarships, housing, healthcare, jobs, business..."
+                className="w-full bg-white text-slate-900 placeholder:text-slate-500 px-4 py-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-warmamber-400 text-sm font-medium"
+                aria-label="Search government schemes"
               />
             </div>
             <button
               type="submit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-warmamber-500 hover:bg-warmamber-400 text-slate-950 font-bold text-sm rounded-xl transition-all shadow-md flex-shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-warmamber-500 hover:bg-warmamber-400 text-slate-950 font-bold text-sm rounded-xl transition-all shadow-md flex-shrink-0"
             >
               <Search className="w-4 h-4" />
               <span>Search</span>
             </button>
           </div>
 
-          {/* Quick Filter Pills */}
+          {/* Quick Query Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-3 text-xs text-slate-400">
             <span>Popular:</span>
             {quickPills.map((pill) => (
@@ -92,30 +91,30 @@ export default function HeroSection() {
           </div>
         </form>
 
-        {/* CTAs */}
+        {/* Primary and Secondary CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <button
             type="button"
-            onClick={() => navigate('/schemes')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white text-civic-950 hover:bg-slate-100 font-bold text-sm shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-white"
+            onClick={() => navigate('/find')}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-civic-950 hover:bg-slate-100 font-extrabold text-base shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-white"
           >
-            <span>Browse All Schemes</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Find My Schemes</span>
+            <ArrowRight className="w-5 h-5 text-govblue-600" />
           </button>
 
           <button
             type="button"
             onClick={() => navigate('/assistant')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-slate-100 border border-slate-700 font-semibold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-civic-500"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-slate-100 border border-slate-700 font-bold text-base transition-all focus:outline-none focus:ring-2 focus:ring-civic-500"
           >
-            <Bot className="w-4 h-4 text-warmamber-400" />
-            <span>Ask the AI Assistant</span>
+            <Bot className="w-5 h-5 text-warmamber-400" />
+            <span>Ask SchemeSathi AI</span>
           </button>
         </div>
 
-        {/* Reassurance Disclaimer */}
+        {/* Reassurance text */}
         <p className="text-xs text-slate-400 pt-4 max-w-xl mx-auto">
-          Information is presented as an independent guide. Always verify final eligibility with the official government source.
+          SchemeSathi is a navigator, not a government authority. Final eligibility is verified on the official government website.
         </p>
 
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { 
   Search, 
@@ -7,75 +7,61 @@ import {
   ShieldCheck, 
   Sparkles, 
   CheckCircle2, 
-  Compass, 
   FileText, 
-  Globe2, 
   ExternalLink,
-  Users,
-  Building,
   GraduationCap,
   HeartPulse,
-  Coins,
   Home as HomeIcon,
-  SunMedium,
-  Briefcase
+  Briefcase,
+  Coins,
+  Wrench,
+  Rocket,
+  Baby
 } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
-import CategoryCard from '../components/CategoryCard';
 import SchemeCard from '../components/SchemeCard';
 import { SCHEMES } from '../data/schemes';
-import { CATEGORIES, STATES_AND_UTS } from '../data/categories';
 
 export default function Home() {
   const navigate = useNavigate();
 
-  // Quick Scheme Finder state
-  const [quickCategory, setQuickCategory] = useState('all');
-  const [quickState, setQuickState] = useState('All India (Central)');
-  const [quickAudience, setQuickAudience] = useState('all');
-  const [quickIncome, setQuickIncome] = useState('all');
+  // 8 Quick Categories specified in Master Prompt
+  const quickCategories = [
+    { name: "Education", emoji: "🎓", label: "Education & Scholarships", query: "Student Scholarship" },
+    { name: "Healthcare", emoji: "🏥", label: "Healthcare & Wellness", query: "Healthcare" },
+    { name: "Housing", emoji: "🏠", label: "Housing & Shelter", query: "Urban Housing" },
+    { name: "Employment", emoji: "💼", label: "Employment & Jobs", query: "Employment Generation" },
+    { name: "Financial Assistance", emoji: "💰", label: "Financial Assistance & Loans", query: "Business Credit" },
+    { name: "Skill Development", emoji: "🛠", label: "Skill Training & Certifications", query: "Skill Training" },
+    { name: "Entrepreneurship", emoji: "🚀", label: "Startups & Entrepreneurship", query: "Entrepreneurship" },
+    { name: "Women & Child Welfare", emoji: "👩", label: "Women & Child Welfare", query: "Maternity Welfare" },
+  ];
 
-  const handleQuickFinderSubmit = (e) => {
-    e.preventDefault();
-    const params = new URLSearchParams();
-    if (quickCategory !== 'all') params.append('category', quickCategory);
-    if (quickAudience !== 'all') params.append('audience', quickAudience);
-    navigate(`/schemes?${params.toString()}`);
-  };
-
-  // 4 Featured Schemes from verified dataset
+  // 4 Featured Schemes from verified 20 dataset
   const featuredSchemes = SCHEMES.filter(s => 
     ['pm-jay', 'pmay-u', 'pm-surya-ghar', 'pmmy'].includes(s.id)
   );
 
-  // Key categories to showcase
-  const popularCategories = CATEGORIES.slice(0, 8);
-
   const howItWorksSteps = [
     {
       num: "01",
-      title: "Tell Us What You Need",
-      desc: "Search by your need, whether it is education loans, housing subsidies, business credit, or healthcare."
+      title: "Tell us about yourself",
+      desc: "Provide basic details such as your age, state, role, and approximate income range."
     },
     {
       num: "02",
-      title: "Discover Matching Schemes",
-      desc: "Our navigator filters 20 central welfare schemes based on your circumstances and background."
+      title: "Find relevant schemes",
+      desc: "SchemeSathi identifies schemes that may match your circumstances and explains why."
     },
     {
       num: "03",
-      title: "Understand Eligibility & Benefits",
-      desc: "Read plain-language criteria, age limits, income requirements, and exact funding benefits."
+      title: "Understand the scheme",
+      desc: "See clear benefits, eligibility criteria, and required documents in plain language."
     },
     {
       num: "04",
-      title: "Prepare Required Documents",
-      desc: "Use our interactive document checklist to prepare your Aadhaar, income certificates, and KYC."
-    },
-    {
-      num: "05",
-      title: "Apply on Official Portal",
-      desc: "Follow the application steps and proceed directly to the verified official government portal."
+      title: "Apply through official source",
+      desc: "Follow the application steps and verify final information through the official government website."
     }
   ];
 
@@ -86,93 +72,7 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
-        {/* 2. Quick Scheme Finder Form */}
-        <section aria-labelledby="quick-finder-heading">
-          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-civic relative -mt-12 sm:-mt-20 z-10">
-            <div className="max-w-3xl mb-6">
-              <span className="text-xs font-bold text-govblue-600 uppercase tracking-wider">
-                Instant Discovery
-              </span>
-              <h2 id="quick-finder-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                Quick Scheme Finder
-              </h2>
-              <p className="text-sm text-slate-600 mt-1">
-                Select your basic background to instantly see schemes matched to your eligibility.
-              </p>
-            </div>
-
-            <form onSubmit={handleQuickFinderSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {/* Category / Need */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  What do you need?
-                </label>
-                <select
-                  value={quickCategory}
-                  onChange={(e) => setQuickCategory(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-sm text-slate-800 focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all font-medium"
-                >
-                  <option value="all">All Needs / Categories</option>
-                  {CATEGORIES.map((cat) => (
-                    <option key={cat.id} value={cat.name}>
-                      {cat.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Beneficiary Profile */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Who is applying?
-                </label>
-                <select
-                  value={quickAudience}
-                  onChange={(e) => setQuickAudience(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-sm text-slate-800 focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all font-medium"
-                >
-                  <option value="all">Any Citizen</option>
-                  <option value="students">Student / Scholar</option>
-                  <option value="women">Woman / Mother</option>
-                  <option value="business">Entrepreneur / Small Business</option>
-                  <option value="youth">Youth / Job Seeker</option>
-                  <option value="rural">Rural Household</option>
-                </select>
-              </div>
-
-              {/* State */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Your State / UT
-                </label>
-                <select
-                  value={quickState}
-                  onChange={(e) => setQuickState(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-sm text-slate-800 focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all font-medium"
-                >
-                  {STATES_AND_UTS.map((st) => (
-                    <option key={st} value={st}>
-                      {st}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex items-end">
-                <button
-                  type="submit"
-                  className="w-full bg-civic-900 hover:bg-civic-800 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-civic-500 focus:ring-offset-2"
-                >
-                  <Search className="w-4 h-4" />
-                  <span>Find Relevant Schemes</span>
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        {/* 3. Popular Categories */}
+        {/* 2. Quick Categories */}
         <section aria-labelledby="categories-heading" className="space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -183,27 +83,46 @@ export default function Home() {
                 Popular Welfare Categories
               </h2>
               <p className="text-sm text-slate-600 mt-1">
-                Browse government assistance grouped by citizen needs and sectors.
+                Browse government welfare initiatives grouped by your specific needs.
               </p>
             </div>
 
             <Link
-              to="/schemes"
+              to="/find"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-civic-800 hover:text-civic-950 transition-colors"
             >
-              <span>View all 20 categories</span>
+              <span>Match my eligibility</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {popularCategories.map((cat) => (
-              <CategoryCard key={cat.id} category={cat} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {quickCategories.map((cat) => (
+              <button
+                key={cat.name}
+                type="button"
+                onClick={() => navigate(`/schemes?category=${encodeURIComponent(cat.query)}`)}
+                className="group p-5 bg-white border border-slate-200 rounded-2xl shadow-subtle hover:shadow-civic-hover hover:border-civic-300 transition-all text-left flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-3xl mb-3">{cat.emoji}</div>
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-civic-900 transition-colors">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    {cat.label}
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-civic-700 group-hover:text-civic-900">
+                  <span>Explore Schemes</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </button>
             ))}
           </div>
         </section>
 
-        {/* 4. Featured Schemes */}
+        {/* 3. Featured Schemes */}
         <section aria-labelledby="featured-heading" className="space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -214,15 +133,15 @@ export default function Home() {
                 Featured Government Schemes
               </h2>
               <p className="text-sm text-slate-600 mt-1">
-                High-impact central schemes providing health coverage, housing, solar energy, and business credit.
+                High-impact welfare schemes providing health coverage, housing, solar energy, and business credit.
               </p>
             </div>
 
             <Link
-              to="/schemes"
+              to="/find"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-civic-800 hover:text-civic-950 transition-colors"
             >
-              <span>Browse all 20 schemes</span>
+              <span>Find my matching schemes</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -234,22 +153,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. How It Works */}
+        {/* 4. How It Works (4 Steps) */}
         <section aria-labelledby="how-it-works-heading" className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 overflow-hidden relative">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold text-warmamber-400 uppercase tracking-wider">
               Step-By-Step Process
             </span>
             <h2 id="how-it-works-heading" className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
-              How SchemeNavigator Helps You
+              How SchemeSathi Works
             </h2>
             <p className="text-sm text-slate-300 mt-2">
-              From finding the right welfare scheme to submitting your application on the verified official portal.
+              Four simple steps to find, understand, and apply for government welfare schemes.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">
-            {howItWorksSteps.map((step, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {howItWorksSteps.map((step) => (
               <div key={step.num} className="bg-slate-800/70 border border-slate-700/80 rounded-2xl p-6 space-y-3 relative group hover:border-slate-500 transition-colors">
                 <div className="text-2xl font-black text-warmamber-400 font-mono">
                   {step.num}
@@ -265,34 +184,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. AI Assistant Teaser / Callout */}
-        <section aria-labelledby="ai-assistant-heading">
-          <div className="bg-gradient-to-r from-civic-900 via-govblue-900 to-civic-950 text-white rounded-3xl p-8 sm:p-12 border border-slate-700 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-govblue-500/20 text-govblue-300 text-xs font-semibold border border-govblue-500/30">
-                <Sparkles className="w-3.5 h-3.5 text-warmamber-400" />
-                <span>Multilingual AI Prototype</span>
-              </div>
-              <h2 id="ai-assistant-heading" className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-                Not sure which scheme you need?
-              </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Ask in your own words and get simple guidance. Our conversational assistant helps match your situation to eligible welfare programs.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-1 text-xs text-slate-300">
-                <span className="bg-white/10 px-2.5 py-1 rounded-lg">"Scholarships for college"</span>
-                <span className="bg-white/10 px-2.5 py-1 rounded-lg">"Need business startup loan"</span>
-                <span className="bg-white/10 px-2.5 py-1 rounded-lg">"Free solar electricity"</span>
-              </div>
+        {/* 5. Trust Message */}
+        <section aria-labelledby="trust-heading">
+          <div className="bg-gradient-to-r from-govblue-50 to-civic-50 border border-govblue-200 rounded-3xl p-8 sm:p-10 text-center space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-govblue-600 text-white flex items-center justify-center mx-auto shadow-sm">
+              <ShieldCheck className="w-6 h-6" />
             </div>
-
-            <div className="flex-shrink-0 w-full md:w-auto">
+            <h2 id="trust-heading" className="text-xl sm:text-2xl font-bold text-slate-900">
+              A Trusted Citizen Scheme Companion
+            </h2>
+            <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+              SchemeSathi helps you navigate government schemes. Final eligibility and application requirements should always be verified through the official government source.
+            </p>
+            <div className="pt-2">
               <Link
-                to="/assistant"
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-warmamber-500 hover:bg-warmamber-400 text-slate-950 font-bold text-base rounded-2xl shadow-lg transition-all"
+                to="/find"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-civic-900 hover:bg-civic-800 text-white font-bold text-sm rounded-xl shadow-md transition-all"
               >
-                <Bot className="w-5 h-5" />
-                <span>Ask the AI Assistant</span>
+                <span>Find My Schemes Now</span>
+                <ArrowRight className="w-4 h-4 text-warmamber-400" />
               </Link>
             </div>
           </div>
