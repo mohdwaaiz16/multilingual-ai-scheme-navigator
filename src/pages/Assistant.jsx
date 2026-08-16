@@ -7,7 +7,8 @@ import {
   ShieldCheck, 
   Info, 
   HelpCircle,
-  ChevronRight
+  ChevronRight,
+  Layers
 } from 'lucide-react';
 import ChatMessage from '../components/ChatMessage';
 import ChatInput from '../components/ChatInput';
@@ -18,7 +19,7 @@ const INITIAL_MESSAGES = [
   {
     id: 'msg-welcome',
     sender: 'assistant',
-    text: "Namaste! I am SchemeSathi AI. 🇮🇳\n\nI can help you explore government schemes, understand eligibility criteria, and find required documents for Indian welfare initiatives.\n\nHow can I help you today? You can choose one of the suggestions below or ask a question in your own words.",
+    text: "Namaste! I am SchemeSathi AI — your conversational companion for discovering Indian government welfare schemes. 🇮🇳\n\nI can help you explore 70 verified schemes across 10 official categories, understand eligibility criteria, and find required documents.\n\nHow can I help you today? You can choose one of the prompt chips below or type your question.",
     recommendedSchemes: []
   }
 ];
@@ -29,12 +30,10 @@ export default function Assistant() {
   const [isTyping, setIsTyping] = useState(false);
   const chatBottomRef = useRef(null);
 
-  // Auto scroll chat to bottom
   useEffect(() => {
     chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
 
-  // Handle incoming query param if user came with a question
   useEffect(() => {
     const initialQuery = searchParams.get('q');
     if (initialQuery && messages.length === 1) {
@@ -52,20 +51,23 @@ export default function Assistant() {
     setMessages(prev => [...prev, userMsg]);
     setIsTyping(true);
 
-    // Deterministic mock response engine matching across the 20 verified schemes
     setTimeout(() => {
       const lower = userText.toLowerCase();
       const matches = findMatchingSchemesForAssistant(userText);
       let responseText = "";
 
       if (lower.includes("document") || lower.includes("documents")) {
-        responseText = "For most central welfare schemes, general required documents include:\n• Aadhaar Card\n• Income / Category Certificate (where applicable)\n• Bank Account Passbook / Details\n• Residence / Electricity Bill Proof\n\nHere are schemes that might match your documentation query:";
+        responseText = "For most central welfare schemes, commonly required documents include:\n• Aadhaar Card (linked with active mobile number)\n• Proof of Residence / Domicile Certificate\n• Bank Account Passbook with IFSC code\n• Income Certificate / Category Certificate (SC/ST/OBC/EWS) where applicable\n• Educational marksheets or trade certificates (for scholarships/skill schemes)\n\nHere are schemes that appear relevant to your documentation query:";
+      } else if (lower.includes("how do i apply") || lower.includes("apply")) {
+        responseText = "Most central government schemes accept online applications via national portals (such as JanSamarth, National Scholarship Portal, Skill India Digital, or PM-Kisan) or through local Common Service Centres (CSCs).\n\nHere are relevant schemes with direct application pathways:";
+      } else if (lower.includes("low income") || lower.includes("poverty") || lower.includes("bpl")) {
+        responseText = "For low-income families and vulnerable households, key central initiatives provide free food security (PMGKAY), comprehensive health coverage up to ₹5 Lakh (AB-PMJAY), social pensions (IGNOAPS/PM-SYM), and collateral-free microfinance:\n\nHere are primary welfare matches:";
       } else if (lower.includes("explain")) {
-        responseText = "Here is a breakdown of the relevant welfare scheme from our verified dataset. You can explore its benefits, age & income criteria, and official source below:";
+        responseText = "Here is a breakdown of the relevant welfare scheme from our verified 70-scheme registry. You can explore its benefits, eligibility criteria, and official government portal below:";
       } else if (matches.length > 0) {
-        responseText = `Based on the information provided, these ${matches.length} scheme${matches.length > 1 ? 's' : ''} appear to be potential matches. I can help guide you through their eligibility and benefits:`;
+        responseText = `Based on your request, I found ${matches.length} scheme${matches.length > 1 ? 's' : ''} in our 70-scheme verified registry that may match your requirements:`;
       } else {
-        responseText = "I couldn't find an exact scheme match for that specific term in our 20-scheme Phase 1 database. Try asking about scholarships, housing, solar subsidies, health coverage, or small business credit!";
+        responseText = "I couldn't find an exact scheme match for that specific phrase in our 70-scheme registry. Try asking about scholarships (e.g. PM-Vidyalaxmi, NMMSS), business loans (MUDRA, PMEGP), pensions (UPS, APY), farmer credit (KCC, PMFBY), or health coverage (PM-JAY)!";
       }
 
       const botMsg = {
@@ -77,7 +79,7 @@ export default function Assistant() {
 
       setMessages(prev => [...prev, botMsg]);
       setIsTyping(false);
-    }, 500);
+    }, 450);
   };
 
   const handleResetChat = () => {
@@ -98,12 +100,12 @@ export default function Assistant() {
               <span>SchemeSathi AI</span>
               <span className="text-xl">🤖</span>
             </h1>
-            <span className="px-2 py-0.5 text-xs font-bold bg-govblue-100 text-govblue-800 rounded-full">
-              Prototype
+            <span className="px-2.5 py-0.5 text-xs font-bold bg-govblue-100 text-govblue-800 rounded-full">
+              70 Schemes Companion
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-600">
-            Your guide to understanding government schemes.
+            Your conversational guide to understanding government schemes.
           </p>
         </div>
 
@@ -121,11 +123,11 @@ export default function Assistant() {
         </div>
       </div>
 
-      {/* Prototype Civic Notice */}
+      {/* Prototype Notice */}
       <div className="p-4 bg-govblue-50/80 border border-govblue-200 rounded-2xl flex items-start gap-3 text-xs text-govblue-900">
         <Info className="w-4 h-4 text-govblue-600 flex-shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong>SchemeSathi AI Guide:</strong> This conversational assistant demonstrates deterministic matching against the 20 verified schemes. Always verify final eligibility on the official government website.
+          <strong>SchemeSathi AI Guide:</strong> This conversational assistant demonstrates deterministic matching against all 70 verified schemes in 10 categories. Final eligibility should always be verified on the official government portal.
         </p>
       </div>
 

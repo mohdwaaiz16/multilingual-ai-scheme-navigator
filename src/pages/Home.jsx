@@ -9,49 +9,31 @@ import {
   CheckCircle2, 
   FileText, 
   ExternalLink,
-  GraduationCap,
-  HeartPulse,
-  Home as HomeIcon,
-  Briefcase,
-  Coins,
-  Wrench,
-  Rocket,
-  Baby
+  Layers
 } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import SchemeCard from '../components/SchemeCard';
+import { CATEGORIES } from '../data/categories';
 import { SCHEMES } from '../data/schemes';
 
 export default function Home() {
   const navigate = useNavigate();
 
-  // 8 Quick Categories specified in Master Prompt
-  const quickCategories = [
-    { name: "Education", emoji: "🎓", label: "Education & Scholarships", query: "Student Scholarship" },
-    { name: "Healthcare", emoji: "🏥", label: "Healthcare & Wellness", query: "Healthcare" },
-    { name: "Housing", emoji: "🏠", label: "Housing & Shelter", query: "Urban Housing" },
-    { name: "Employment", emoji: "💼", label: "Employment & Jobs", query: "Employment Generation" },
-    { name: "Financial Assistance", emoji: "💰", label: "Financial Assistance & Loans", query: "Business Credit" },
-    { name: "Skill Development", emoji: "🛠", label: "Skill Training & Certifications", query: "Skill Training" },
-    { name: "Entrepreneurship", emoji: "🚀", label: "Startups & Entrepreneurship", query: "Entrepreneurship" },
-    { name: "Women & Child Welfare", emoji: "👩", label: "Women & Child Welfare", query: "Maternity Welfare" },
-  ];
-
-  // 4 Featured Schemes from verified 20 dataset
+  // 4 Featured Schemes from key domains
   const featuredSchemes = SCHEMES.filter(s => 
-    ['pm-jay', 'pmay-u', 'pm-surya-ghar', 'pmmy'].includes(s.id)
+    ['pm-vidyalaxmi', 'pmmy', 'pm-jay', 'kisan-credit-card'].includes(s.id)
   );
 
   const howItWorksSteps = [
     {
       num: "01",
       title: "Tell us about yourself",
-      desc: "Provide basic details such as your age, state, role, and approximate income range."
+      desc: "Provide basic information such as your age, state, role, and approximate income range."
     },
     {
       num: "02",
       title: "Find relevant schemes",
-      desc: "SchemeSathi identifies schemes that may match your circumstances and explains why."
+      desc: "SchemeSathi identifies potentially relevant schemes and explains why they may match."
     },
     {
       num: "03",
@@ -72,18 +54,75 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
-        {/* 2. Quick Categories */}
+        {/* 2. Complete 10 Category Directory */}
         <section aria-labelledby="categories-heading" className="space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="text-xs font-bold text-govblue-600 uppercase tracking-wider">
-                Explore by Sector
+                Official Directory
               </span>
               <h2 id="categories-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                Popular Welfare Categories
+                Explore Government Schemes by Category
               </h2>
               <p className="text-sm text-slate-600 mt-1">
-                Browse government welfare initiatives grouped by your specific needs.
+                All 10 official categories &bull; Exactly 7 verified schemes per category (70 total).
+              </p>
+            </div>
+
+            <Link
+              to="/schemes"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-civic-800 hover:text-civic-950 transition-colors"
+            >
+              <span>View all 70 schemes</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {CATEGORIES.map((cat) => (
+              <div
+                key={cat.slug}
+                className="group bg-white border border-slate-200 rounded-3xl p-5 shadow-subtle hover:shadow-civic-hover hover:border-civic-300 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-3xl mb-3">{cat.emoji}</div>
+                  <h3 className="text-base font-extrabold text-slate-900 group-hover:text-civic-900 transition-colors leading-snug">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
+                    {cat.description}
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md font-mono">
+                    7 schemes
+                  </span>
+                  <Link
+                    to={`/category/${cat.slug}`}
+                    className="inline-flex items-center gap-1 text-xs font-bold text-civic-700 group-hover:text-civic-950 transition-colors"
+                  >
+                    <span>Explore</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 3. Featured High-Impact Schemes */}
+        <section aria-labelledby="featured-heading" className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span className="text-xs font-bold text-govblue-600 uppercase tracking-wider">
+                Flagship Initiatives
+              </span>
+              <h2 id="featured-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                Featured Government Schemes
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Major welfare initiatives offering education credit, business financing, healthcare coverage, and crop support.
               </p>
             </div>
 
@@ -92,56 +131,6 @@ export default function Home() {
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-civic-800 hover:text-civic-950 transition-colors"
             >
               <span>Match my eligibility</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {quickCategories.map((cat) => (
-              <button
-                key={cat.name}
-                type="button"
-                onClick={() => navigate(`/schemes?category=${encodeURIComponent(cat.query)}`)}
-                className="group p-5 bg-white border border-slate-200 rounded-2xl shadow-subtle hover:shadow-civic-hover hover:border-civic-300 transition-all text-left flex flex-col justify-between"
-              >
-                <div>
-                  <div className="text-3xl mb-3">{cat.emoji}</div>
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-civic-900 transition-colors">
-                    {cat.name}
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1">
-                    {cat.label}
-                  </p>
-                </div>
-                <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-civic-700 group-hover:text-civic-900">
-                  <span>Explore Schemes</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </div>
-              </button>
-            ))}
-          </div>
-        </section>
-
-        {/* 3. Featured Schemes */}
-        <section aria-labelledby="featured-heading" className="space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <span className="text-xs font-bold text-govblue-600 uppercase tracking-wider">
-                Key Initiatives
-              </span>
-              <h2 id="featured-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                Featured Government Schemes
-              </h2>
-              <p className="text-sm text-slate-600 mt-1">
-                High-impact welfare schemes providing health coverage, housing, solar energy, and business credit.
-              </p>
-            </div>
-
-            <Link
-              to="/find"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-civic-800 hover:text-civic-950 transition-colors"
-            >
-              <span>Find my matching schemes</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -157,13 +146,13 @@ export default function Home() {
         <section aria-labelledby="how-it-works-heading" className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 overflow-hidden relative">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold text-warmamber-400 uppercase tracking-wider">
-              Step-By-Step Process
+              Step-By-Step Guidance
             </span>
             <h2 id="how-it-works-heading" className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
               How SchemeSathi Works
             </h2>
             <p className="text-sm text-slate-300 mt-2">
-              Four simple steps to find, understand, and apply for government welfare schemes.
+              Four clear steps to find, understand, and apply for government welfare schemes.
             </p>
           </div>
 
@@ -184,7 +173,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. Trust Message */}
+        {/* 5. Citizen Trust Section */}
         <section aria-labelledby="trust-heading">
           <div className="bg-gradient-to-r from-govblue-50 to-civic-50 border border-govblue-200 rounded-3xl p-8 sm:p-10 text-center space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-govblue-600 text-white flex items-center justify-center mx-auto shadow-sm">
@@ -194,7 +183,7 @@ export default function Home() {
               A Trusted Citizen Scheme Companion
             </h2>
             <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-              SchemeSathi helps you navigate government schemes. Final eligibility and application requirements should always be verified through the official government source.
+              SchemeSathi is an information and navigation platform. It is not a government authority. Eligibility, benefits, documents and application procedures may change. Always verify the latest information through the official government source.
             </p>
             <div className="pt-2">
               <Link

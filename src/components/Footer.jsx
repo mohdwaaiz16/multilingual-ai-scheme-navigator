@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Sparkles, ShieldCheck, AlertCircle, Layers } from 'lucide-react';
+import { CATEGORIES } from '../data/categories';
 
 export default function Footer() {
   return (
@@ -15,10 +16,10 @@ export default function Footer() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-white mb-1">
-                SchemeSathi Navigator Notice
+                Important Citizen Information & Disclaimer
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                SchemeSathi helps you navigate government schemes. Final eligibility and application requirements should always be verified through the official government source.
+                SchemeSathi is an information and navigation platform. It is not a government authority. Eligibility, benefits, documents and application procedures may change. Always verify the latest information through the official government source.
               </p>
             </div>
           </div>
@@ -40,7 +41,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-400 pt-1">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Frontend Prototype &bull; 20 Verified Schemes</span>
+              <span className="font-semibold text-slate-200">10 Categories &bull; 70 Verified Schemes</span>
             </div>
           </div>
 
@@ -56,8 +57,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/schemes" className="text-slate-400 hover:text-white transition-colors">
+                  All 70 Schemes
+                </Link>
+              </li>
+              <li>
                 <Link to="/find" className="text-slate-400 hover:text-white transition-colors">
-                  Find Schemes
+                  Find My Schemes
                 </Link>
               </li>
               <li>
@@ -68,30 +74,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Key Categories */}
+          {/* Col 3: Categories Links */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">
-              Popular Categories
+              Official Categories
             </h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-xs text-slate-400">
+              {CATEGORIES.slice(0, 5).map((cat) => (
+                <li key={cat.slug}>
+                  <Link to={`/category/${cat.slug}`} className="hover:text-white transition-colors truncate block">
+                    {cat.emoji} {cat.name}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link to="/find?category=Healthcare" className="hover:text-white transition-colors">
-                  Healthcare & Medical
-                </Link>
-              </li>
-              <li>
-                <Link to="/find?category=Urban+Housing" className="hover:text-white transition-colors">
-                  Housing & Shelter
-                </Link>
-              </li>
-              <li>
-                <Link to="/find?category=Business+Credit" className="hover:text-white transition-colors">
-                  Business Credit & Loans
-                </Link>
-              </li>
-              <li>
-                <Link to="/find?category=Student+Scholarship" className="hover:text-white transition-colors">
-                  Education & Scholarships
+                <Link to="/schemes" className="text-govblue-400 hover:underline">
+                  + View all 10 categories
                 </Link>
               </li>
             </ul>
@@ -104,7 +102,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} SchemeSathi. Navigation & Information Companion.
           </div>
           <div>
-            Citizen Welfare & Scheme Navigator
+            10 Categories &bull; 70 Schemes &bull; Verified National Registry
           </div>
         </div>
 

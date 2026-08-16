@@ -3,11 +3,13 @@ import { Send, Sparkles } from 'lucide-react';
 
 const SUGGESTIONS = [
   "Find student schemes",
-  "What documents do I need?",
-  "Explain this scheme",
-  "Find healthcare schemes",
+  "Find farmer schemes",
   "Find business schemes",
-  "Find housing schemes"
+  "Find pension schemes",
+  "Find scholarships",
+  "What documents do I need?",
+  "How do I apply?",
+  "Show schemes for low-income families"
 ];
 
 export default function ChatInput({ onSendMessage, isTyping = false }) {
@@ -54,9 +56,9 @@ export default function ChatInput({ onSendMessage, isTyping = false }) {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Ask SchemeSathi AI anything (e.g. scholarships, loans, eligibility)..."
+          placeholder="Ask SchemeSathi AI anything across 70 government schemes..."
           disabled={isTyping}
-          className="w-full bg-white border border-slate-300 rounded-2xl pl-4 pr-12 py-3.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-civic-500 focus:border-civic-500 shadow-sm disabled:bg-slate-50 placeholder:text-slate-400"
+          className="w-full bg-white border border-slate-300 rounded-2xl pl-4 pr-12 py-3.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-civic-500 focus:border-civic-500 shadow-sm disabled:bg-slate-50 placeholder:text-slate-400 font-medium"
         />
 
         <button

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Bot, ArrowRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Search, Bot, ArrowRight, ShieldCheck, Sparkles, Layers } from 'lucide-react';
 
 export default function HeroSection() {
   const [query, setQuery] = useState('');
@@ -17,16 +17,16 @@ export default function HeroSection() {
 
   const quickPills = [
     { label: "Scholarships", query: "Scholarship" },
-    { label: "Healthcare", query: "Healthcare" },
-    { label: "Housing", query: "Housing" },
-    { label: "MUDRA Loan", query: "MUDRA" },
-    { label: "Rooftop Solar", query: "Solar" },
-    { label: "Skill Training", query: "Skill" }
+    { label: "MUDRA Loans", query: "MUDRA" },
+    { label: "PM-JAY Health", query: "Jan Arogya" },
+    { label: "Farmer KCC", query: "Kisan" },
+    { label: "Unified Pension", query: "Pension" },
+    { label: "PM Internships", query: "Internship" }
   ];
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-civic-950 to-slate-900 text-white py-16 sm:py-24">
-      {/* Subtle background glow */}
+      {/* Background accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] rounded-full bg-govblue-500 blur-[120px]"></div>
         <div className="absolute bottom-[-10%] right-[10%] w-[400px] h-[400px] rounded-full bg-warmamber-500 blur-[140px]"></div>
@@ -34,13 +34,13 @@ export default function HeroSection() {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         
-        {/* Trust pill */}
+        {/* Trust badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-slate-200 backdrop-blur-sm">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>SchemeSathi &bull; Citizen Scheme Companion &bull; 20 Verified Schemes</span>
+          <span>SchemeSathi &bull; 10 Categories &bull; 70 Verified Schemes</span>
         </div>
 
-        {/* Screen 1 Heading */}
+        {/* Heading */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
           Find Government Schemes <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-warmamber-300 via-white to-govblue-300">
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-          Tell us a little about yourself and discover government schemes that may match your needs, benefits and circumstances.
+          Tell us about yourself and discover government schemes that may be relevant to your needs.
         </p>
 
         {/* Search Bar */}
@@ -61,9 +61,9 @@ export default function HeroSection() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search for scholarships, housing, healthcare, jobs, business..."
+                placeholder="Search 70 government schemes (e.g. scholarships, loans, pension, farmer)..."
                 className="w-full bg-white text-slate-900 placeholder:text-slate-500 px-4 py-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-warmamber-400 text-sm font-medium"
-                aria-label="Search government schemes"
+                aria-label="Search 70 government schemes"
               />
             </div>
             <button
@@ -77,7 +77,7 @@ export default function HeroSection() {
 
           {/* Quick Query Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-3 text-xs text-slate-400">
-            <span>Popular:</span>
+            <span>Trending Searches:</span>
             {quickPills.map((pill) => (
               <button
                 key={pill.label}
@@ -96,7 +96,7 @@ export default function HeroSection() {
           <button
             type="button"
             onClick={() => navigate('/find')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-civic-950 hover:bg-slate-100 font-extrabold text-base shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-white"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white text-civic-950 hover:bg-slate-100 font-extrabold text-base shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-white"
           >
             <span>Find My Schemes</span>
             <ArrowRight className="w-5 h-5 text-govblue-600" />
@@ -104,17 +104,17 @@ export default function HeroSection() {
 
           <button
             type="button"
-            onClick={() => navigate('/assistant')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-slate-100 border border-slate-700 font-bold text-base transition-all focus:outline-none focus:ring-2 focus:ring-civic-500"
+            onClick={() => navigate('/schemes')}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 text-slate-100 border border-slate-700 font-bold text-base transition-all focus:outline-none focus:ring-2 focus:ring-civic-500"
           >
-            <Bot className="w-5 h-5 text-warmamber-400" />
-            <span>Ask SchemeSathi AI</span>
+            <Layers className="w-5 h-5 text-warmamber-400" />
+            <span>Explore All 70 Schemes</span>
           </button>
         </div>
 
         {/* Reassurance text */}
-        <p className="text-xs text-slate-400 pt-4 max-w-xl mx-auto">
-          SchemeSathi is a navigator, not a government authority. Final eligibility is verified on the official government website.
+        <p className="text-xs text-slate-400 pt-3 max-w-xl mx-auto">
+          SchemeSathi is an information & navigation platform. Final eligibility is verified on the official government website.
         </p>
 
       </div>

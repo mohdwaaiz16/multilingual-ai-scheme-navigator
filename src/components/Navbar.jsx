@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Sparkles, Menu, X, Bot, Search, Layers, Home, UserCheck, ArrowRight } from 'lucide-react';
+import { Sparkles, Menu, X, Bot, Search, Layers, Home, ArrowRight } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
 export default function Navbar() {
@@ -8,6 +8,7 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/', label: 'Home', icon: Home },
+    { to: '/schemes', label: 'All Schemes', icon: Layers },
     { to: '/find', label: 'Find Schemes', icon: Search },
     { to: '/assistant', label: 'AI Assistant', icon: Bot, isNew: true },
   ];
@@ -21,10 +22,10 @@ export default function Navbar() {
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
             <span className="font-medium text-slate-100">SchemeSathi — Citizen Welfare Companion</span>
             <span className="hidden md:inline text-slate-400">|</span>
-            <span className="hidden md:inline text-slate-300">20 Verified Government Schemes</span>
+            <span className="hidden md:inline text-slate-300">10 Categories &bull; 70 Verified Schemes</span>
           </div>
           <div className="text-[11px] text-slate-300 hidden sm:block">
-            Guidance & Navigator Portal
+            Verified National Registry &bull; August 2026
           </div>
         </div>
       </div>
@@ -45,7 +46,7 @@ export default function Navbar() {
                 Scheme<span className="text-govblue-600">Sathi</span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium">
-                Your Government Scheme Companion
+                Government Scheme Navigator
               </p>
             </div>
           </Link>
@@ -59,9 +60,9 @@ export default function Navbar() {
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) =>
-                    `px-4 py-2 rounded-xl text-sm font-semibold transition-colors inline-flex items-center gap-2 ${
+                    `px-3.5 py-2 rounded-xl text-sm font-semibold transition-colors inline-flex items-center gap-2 ${
                       isActive
-                        ? 'text-civic-900 bg-civic-50'
+                        ? 'text-civic-900 bg-civic-50 font-bold'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                     }`
                   }

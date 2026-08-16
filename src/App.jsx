@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import UserDetails from './pages/UserDetails';
 import AiResults from './pages/AiResults';
 import SchemeDetails from './pages/SchemeDetails';
+import CategoryPage from './pages/CategoryPage';
 import Assistant from './pages/Assistant';
 import SchemeFinder from './pages/SchemeFinder';
 import NotFound from './pages/NotFound';
@@ -28,15 +29,16 @@ export default function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            {/* 5 Screen Experience */}
+            {/* Core 5 Screen + Category Directory Experience */}
             <Route path="/" element={<Home />} />
+            <Route path="/schemes" element={<SchemeFinder />} />
+            <Route path="/category/:categorySlug" element={<CategoryPage />} />
+            <Route path="/schemes/:id" element={<SchemeDetails />} />
             <Route path="/find" element={<UserDetails />} />
             <Route path="/results" element={<AiResults />} />
-            <Route path="/schemes/:id" element={<SchemeDetails />} />
             <Route path="/assistant" element={<Assistant />} />
             
-            {/* Scheme Directory & Fallback */}
-            <Route path="/schemes" element={<SchemeFinder />} />
+            {/* Fallback 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

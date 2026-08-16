@@ -1,168 +1,94 @@
-/**
- * Category Metadata and Groupings
- * Representing categories directly present across the 20 verified schemes.
- */
-
+// 10 Official Categories for SchemeSathi
 export const CATEGORIES = [
   {
-    id: "healthcare",
-    name: "Healthcare",
-    description: "Health coverage, hospitalisation assistance, and wellness support.",
-    icon: "HeartPulse",
-    accentColor: "rose",
-    schemesCount: 1
+    "id": "food-security-nutrition",
+    "name": "Food Security & Nutrition",
+    "slug": "food-security-nutrition",
+    "icon": "Utensils",
+    "emoji": "🍲",
+    "description": "Subsidized and free food grains, child nutrition, maternal nourishment, and fortified diet distribution.",
+    "schemeCount": 7
   },
   {
-    id: "maternity-welfare",
-    name: "Maternity Welfare",
-    description: "Financial assistance and nutrition support for mothers and infants.",
-    icon: "Baby",
-    accentColor: "pink",
-    schemesCount: 1
+    "id": "sports-youth-culture",
+    "name": "Sports, Youth & Culture",
+    "slug": "sports-youth-culture",
+    "icon": "Trophy",
+    "emoji": "🏆",
+    "description": "Athletic development, Olympic podium support, youth volunteering, cultural grants, and heritage preservation.",
+    "schemeCount": 7
   },
   {
-    id: "urban-housing",
-    name: "Urban Housing",
-    description: "Affordable housing subsidies and construction support in urban regions.",
-    icon: "Building2",
-    accentColor: "blue",
-    schemesCount: 1
+    "id": "financial-inclusion-banking",
+    "name": "Financial Inclusion & Banking",
+    "slug": "financial-inclusion-banking",
+    "icon": "Landmark",
+    "emoji": "🏦",
+    "description": "Zero-balance Jan Dhan banking, universal insurance, micro-pensions, street vendor loans, and credit access.",
+    "schemeCount": 7
   },
   {
-    id: "rural-housing",
-    name: "Rural Housing",
-    description: "Financial assistance for pucca house construction in rural villages.",
-    icon: "Home",
-    accentColor: "emerald",
-    schemesCount: 1
+    "id": "employment-skill-development",
+    "name": "Employment & Skill Development",
+    "slug": "employment-skill-development",
+    "icon": "Briefcase",
+    "emoji": "💼",
+    "description": "Skill certification, rural employment guarantees (MGNREGS), apprenticeships, internships, and artisan support.",
+    "schemeCount": 7
   },
   {
-    id: "solar-energy",
-    name: "Solar Energy",
-    description: "Subsidies for rooftop solar power systems and free electricity.",
-    icon: "SunMedium",
-    accentColor: "amber",
-    schemesCount: 1
+    "id": "insurance-social-security",
+    "name": "Insurance & Social Security",
+    "slug": "insurance-social-security",
+    "icon": "Shield",
+    "emoji": "🛡️",
+    "description": "Life & accident insurance, Ayushman Bharat health cover, old age pensions, crop insurance, and unorganized worker security.",
+    "schemeCount": 7
   },
   {
-    id: "clean-cooking-energy",
-    name: "Clean Cooking Energy",
-    description: "Deposit-free LPG connections for smoke-free kitchens.",
-    icon: "Flame",
-    accentColor: "orange",
-    schemesCount: 1
+    "id": "business-entrepreneurship",
+    "name": "Business & Entrepreneurship",
+    "slug": "business-entrepreneurship",
+    "icon": "Rocket",
+    "emoji": "🚀",
+    "description": "MUDRA loans, startup seed funding, Stand-Up India, PMEGP subsidies, credit guarantees, and agri-business venture capital.",
+    "schemeCount": 7
   },
   {
-    id: "skill-training",
-    name: "Skill Training",
-    description: "Free industry-aligned vocational certifications and training for youth.",
-    icon: "GraduationCap",
-    accentColor: "indigo",
-    schemesCount: 1
+    "id": "government-employees-pension",
+    "name": "Government Employees & Pension",
+    "slug": "government-employees-pension",
+    "icon": "Building2",
+    "emoji": "🏛️",
+    "description": "Unified Pension Scheme (UPS), NPS, CGHS healthcare, defence SPARSH pension, family pensions, and GPF.",
+    "schemeCount": 7
   },
   {
-    id: "school-education",
-    name: "School Education",
-    description: "Modern infrastructure, smart classrooms, and laboratories for schools.",
-    icon: "School",
-    accentColor: "sky",
-    schemesCount: 1
+    "id": "social-justice-empowerment",
+    "name": "Social Justice & Empowerment",
+    "slug": "social-justice-empowerment",
+    "icon": "Scale",
+    "emoji": "⚖️",
+    "description": "Skill training for marginalized youth (PM-DAKSH), transgender welfare (SMILE), sanitation dignity (NAMASTE), and senior citizen aids (RVY).",
+    "schemeCount": 7
   },
   {
-    id: "higher-education",
-    name: "Higher Education",
-    description: "Interest subsidy on educational loans for technical and professional degrees.",
-    icon: "BookOpenCheck",
-    accentColor: "violet",
-    schemesCount: 1
+    "id": "loans-credit-subsidies",
+    "name": "Loans, Credit & Subsidies",
+    "slug": "loans-credit-subsidies",
+    "icon": "Coins",
+    "emoji": "💰",
+    "description": "Collateral-free enterprise credit, Kisan Credit Cards (KCC), street vendor micro-loans, artisan loans, and MSME credit guarantees.",
+    "schemeCount": 7
   },
   {
-    id: "student-scholarship",
-    name: "Student Scholarship",
-    description: "Tuition support and monthly maintenance for SC/ST/OBC students.",
-    icon: "Award",
-    accentColor: "purple",
-    schemesCount: 1
-  },
-  {
-    id: "defence-service",
-    name: "Defence Service",
-    description: "Four-year armed forces service tenure with training and Seva Nidhi package.",
-    icon: "ShieldAlert",
-    accentColor: "red",
-    schemesCount: 1
-  },
-  {
-    id: "rural-water-supply",
-    name: "Rural Water Supply",
-    description: "Safe, treated household tap water for rural homes.",
-    icon: "Droplets",
-    accentColor: "cyan",
-    schemesCount: 1
-  },
-  {
-    id: "business-credit",
-    name: "Business Credit",
-    description: "Collateral-free micro loans up to ₹10 Lakh for small enterprises.",
-    icon: "Coins",
-    accentColor: "teal",
-    schemesCount: 1
-  },
-  {
-    id: "street-vendor-credit",
-    name: "Street Vendor Credit",
-    description: "Working-capital loans and digital incentives for urban street vendors.",
-    icon: "Store",
-    accentColor: "lime",
-    schemesCount: 1
-  },
-  {
-    id: "artisans-craftspeople",
-    name: "Artisans & Craftspeople",
-    description: "Skill training, toolkits grant, and low-interest loans for traditional trades.",
-    icon: "Hammer",
-    accentColor: "amber",
-    schemesCount: 1
-  },
-  {
-    id: "entrepreneurship",
-    name: "Entrepreneurship",
-    description: "Bank loans from ₹10 Lakh to ₹1 Crore for SC/ST and Women founders.",
-    icon: "Rocket",
-    accentColor: "fuchsia",
-    schemesCount: 1
-  },
-  {
-    id: "employment-generation",
-    name: "Employment Generation",
-    description: "Credit-linked subsidies up to 35% for establishing new micro-enterprises.",
-    icon: "Briefcase",
-    accentColor: "blue",
-    schemesCount: 1
-  },
-  {
-    id: "startup-funding",
-    name: "Startup Funding",
-    description: "Seed grants and debt funding for DPIIT-recognized innovative startups.",
-    icon: "Sparkles",
-    accentColor: "amber",
-    schemesCount: 1
-  },
-  {
-    id: "msme-loan-guarantee",
-    name: "MSME Loan Guarantee",
-    description: "Credit guarantees facilitating collateral-free business loans for MSEs.",
-    icon: "ShieldCheck",
-    accentColor: "emerald",
-    schemesCount: 1
-  },
-  {
-    id: "rehabilitation-business",
-    name: "Rehabilitation / Business",
-    description: "Concessional loans, subsidies, and livelihood rehabilitation.",
-    icon: "Users",
-    accentColor: "stone",
-    schemesCount: 1
+    "id": "education-scholarships",
+    "name": "Education & Scholarships",
+    "slug": "education-scholarships",
+    "icon": "GraduationCap",
+    "emoji": "🎓",
+    "description": "PM-Vidyalaxmi education loans, Central Sector college scholarships, merit scholarships (NMMSS), SC scholarships, and girl student aid.",
+    "schemeCount": 7
   }
 ];
 
@@ -173,7 +99,6 @@ export const STATES_AND_UTS = [
   "Assam",
   "Bihar",
   "Chhattisgarh",
-  "Delhi",
   "Goa",
   "Gujarat",
   "Haryana",
@@ -196,5 +121,13 @@ export const STATES_AND_UTS = [
   "Tripura",
   "Uttar Pradesh",
   "Uttarakhand",
-  "West Bengal"
+  "West Bengal",
+  "Andaman and Nicobar Islands",
+  "Chandigarh",
+  "Dadra and Nagar Haveli and Daman and Diu",
+  "Delhi (NCT)",
+  "Jammu and Kashmir",
+  "Ladakh",
+  "Lakshadweep",
+  "Puducherry"
 ];
