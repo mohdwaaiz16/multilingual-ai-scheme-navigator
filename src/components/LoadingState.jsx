@@ -6,20 +6,20 @@ export default function LoadingState({ count = 6 }) {
       {Array.from({ length: count }).map((_, idx) => (
         <div 
           key={idx} 
-          className="bg-white border border-slate-200 rounded-2xl p-6 space-y-4 animate-pulse"
+          className="bg-white border border-charcoal-100 rounded-2xl p-6 space-y-4 animate-pulse"
         >
           <div className="flex items-center justify-between">
-            <div className="h-5 w-24 bg-slate-200 rounded"></div>
-            <div className="h-5 w-16 bg-slate-200 rounded"></div>
+            <div className="h-5 w-24 bg-charcoal-200 rounded"></div>
+            <div className="h-5 w-16 bg-charcoal-200 rounded"></div>
           </div>
-          <div className="h-6 w-3/4 bg-slate-200 rounded"></div>
+          <div className="h-6 w-3/4 bg-charcoal-200 rounded"></div>
           <div className="space-y-2">
-            <div className="h-4 w-full bg-slate-100 rounded"></div>
-            <div className="h-4 w-5/6 bg-slate-100 rounded"></div>
+            <div className="h-4 w-full bg-charcoal-100 rounded"></div>
+            <div className="h-4 w-5/6 bg-charcoal-100 rounded"></div>
           </div>
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-            <div className="h-4 w-28 bg-slate-200 rounded"></div>
-            <div className="h-8 w-24 bg-slate-200 rounded-lg"></div>
+          <div className="pt-4 border-t border-charcoal-100 flex items-center justify-between">
+            <div className="h-4 w-28 bg-charcoal-200 rounded"></div>
+            <div className="h-8 w-24 bg-charcoal-200 rounded-lg"></div>
           </div>
         </div>
       ))}

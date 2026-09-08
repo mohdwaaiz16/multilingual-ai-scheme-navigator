@@ -55,45 +55,45 @@ export default function SchemeFinder() {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen py-8 sm:py-12 pb-20">
+    <div className="bg-cream-50 min-h-screen py-8 sm:py-12 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-charcoal-200 pb-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-govblue-50 text-govblue-800 border border-govblue-200">
-              <Layers className="w-3.5 h-3.5 text-govblue-600" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-lemon-100 text-lemon-800 border border-lemon-200">
+              <Layers className="w-3.5 h-3.5 text-lemon-600" />
               <span>Complete National Directory</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-black tracking-tight">
               All Government Schemes
             </h1>
-            <p className="text-sm sm:text-base text-slate-600">
+            <p className="text-sm sm:text-base text-charcoal-700">
               Explore 70 verified welfare schemes across 10 official government categories.
             </p>
           </div>
 
           <Link
             to="/find"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-civic-900 hover:bg-civic-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-sm self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-lemon-400 hover:bg-lemon-500 text-black font-bold text-xs sm:text-sm rounded-xl transition-all shadow-sm self-start md:self-auto"
           >
-            <Sparkles className="w-4 h-4 text-warmamber-400" />
+            <Sparkles className="w-4 h-4 text-peach-500" />
             <span>Find My Matching Schemes</span>
           </Link>
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-5">
+        <div className="bg-white border border-charcoal-200 rounded-3xl p-5 sm:p-6 shadow-soft space-y-5">
           
           {/* Main Search Input */}
           <div className="relative">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-charcoal-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by scheme name, keywords (e.g. scholarship, pension, mudra, farmer, health, loan)..."
-              className="w-full bg-slate-50 border border-slate-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all font-medium"
+              className="w-full bg-cream-50 border border-charcoal-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm text-black placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-lemon-500 focus:bg-white transition-all font-medium"
             />
           </div>
 
@@ -101,13 +101,13 @@ export default function SchemeFinder() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 text-xs">
             {/* 1. Category Filter */}
             <div>
-              <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block font-bold text-charcoal-700 uppercase tracking-wider mb-1">
                 Category
               </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-800 font-medium focus:ring-2 focus:ring-civic-500"
+                className="w-full bg-cream-50 border border-charcoal-200 rounded-xl p-2.5 text-black font-medium focus:ring-2 focus:ring-lemon-500"
               >
                 <option value="all">All 10 Categories</option>
                 {CATEGORIES.map((cat) => (
@@ -120,13 +120,13 @@ export default function SchemeFinder() {
 
             {/* 2. Target Beneficiary */}
             <div>
-              <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block font-bold text-charcoal-700 uppercase tracking-wider mb-1">
                 Target Group
               </label>
               <select
                 value={targetAudience}
                 onChange={(e) => setTargetAudience(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-800 font-medium focus:ring-2 focus:ring-civic-500"
+                className="w-full bg-cream-50 border border-charcoal-200 rounded-xl p-2.5 text-black font-medium focus:ring-2 focus:ring-lemon-500"
               >
                 <option value="all">All Target Beneficiaries</option>
                 <option value="student">🎓 Students & Youth</option>
@@ -140,13 +140,13 @@ export default function SchemeFinder() {
 
             {/* 3. Government Level */}
             <div>
-              <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block font-bold text-charcoal-700 uppercase tracking-wider mb-1">
                 Level
               </label>
               <select
                 value={governmentLevel}
                 onChange={(e) => setGovernmentLevel(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-800 font-medium focus:ring-2 focus:ring-civic-500"
+                className="w-full bg-cream-50 border border-charcoal-200 rounded-xl p-2.5 text-black font-medium focus:ring-2 focus:ring-lemon-500"
               >
                 <option value="all">All Government Levels</option>
                 <option value="Central Government">Central Government</option>
@@ -156,13 +156,13 @@ export default function SchemeFinder() {
 
             {/* 4. Sorting */}
             <div>
-              <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block font-bold text-charcoal-700 uppercase tracking-wider mb-1">
                 Sort By
               </label>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-800 font-medium focus:ring-2 focus:ring-civic-500"
+                className="w-full bg-cream-50 border border-charcoal-200 rounded-xl p-2.5 text-black font-medium focus:ring-2 focus:ring-lemon-500"
               >
                 <option value="relevance">Relevance</option>
                 <option value="name-asc">Scheme Name (A &rarr; Z)</option>
@@ -174,9 +174,9 @@ export default function SchemeFinder() {
 
           {/* Active Filter Badges & Reset */}
           {(query || category !== 'all' || governmentLevel !== 'all' || targetAudience !== 'all') && (
-            <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-100 text-xs">
-              <span className="text-slate-500">
-                Showing <strong className="text-slate-900">{schemes.length}</strong> matching schemes
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-charcoal-100 text-xs">
+              <span className="text-charcoal-500">
+                Showing <strong className="text-black">{schemes.length}</strong> matching schemes
               </span>
               <button
                 type="button"
@@ -193,7 +193,7 @@ export default function SchemeFinder() {
 
         {/* 10 Category Quick Navigation Pills */}
         <div className="space-y-3">
-          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+          <span className="text-xs font-bold text-charcoal-500 uppercase tracking-wider block">
             Browse by Official Category
           </span>
           <div className="flex flex-wrap gap-2">
@@ -202,8 +202,8 @@ export default function SchemeFinder() {
               onClick={() => setCategory('all')}
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-colors ${
                 category === 'all'
-                  ? 'bg-civic-900 text-white shadow-sm'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                  ? 'bg-lemon-400 text-black shadow-sm'
+                  : 'bg-white border border-charcoal-200 text-charcoal-700 hover:bg-cream-100'
               }`}
             >
               All 70 Schemes
@@ -215,8 +215,8 @@ export default function SchemeFinder() {
                 onClick={() => setCategory(cat.slug)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1.5 ${
                   category === cat.slug
-                    ? 'bg-civic-900 text-white shadow-sm'
-                    : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                    ? 'bg-lemon-400 text-black shadow-sm'
+                    : 'bg-white border border-charcoal-200 text-charcoal-700 hover:bg-cream-100'
                 }`}
               >
                 <span>{cat.emoji}</span>

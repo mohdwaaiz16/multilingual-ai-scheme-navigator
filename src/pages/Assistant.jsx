@@ -90,21 +90,21 @@ export default function Assistant() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-6">
       
       {/* Page Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-charcoal-200">
         <div className="space-y-1">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-civic-900 text-white flex items-center justify-center shadow-sm">
-              <Bot className="w-5 h-5 text-warmamber-400" />
+            <div className="w-9 h-9 rounded-xl bg-lemon-400 text-black flex items-center justify-center shadow-sm">
+              <Bot className="w-5 h-5 text-peach-600" />
             </div>
-            <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <h1 className="text-2xl font-extrabold text-black tracking-tight flex items-center gap-2">
               <span>SchemeSathi AI</span>
               <span className="text-xl">🤖</span>
             </h1>
-            <span className="px-2.5 py-0.5 text-xs font-bold bg-govblue-100 text-govblue-800 rounded-full">
+            <span className="px-2.5 py-0.5 text-xs font-bold bg-lemon-100 text-lemon-800 rounded-full">
               70 Schemes Companion
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-slate-600">
+          <p className="text-xs sm:text-sm text-charcoal-600">
             Your conversational guide to understanding government schemes.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Assistant() {
           <button
             type="button"
             onClick={handleResetChat}
-            className="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
+            className="p-2 text-charcoal-500 hover:text-black hover:bg-cream-100 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
             title="Reset Chat Session"
           >
             <RotateCcw className="w-4 h-4" />
@@ -124,28 +124,28 @@ export default function Assistant() {
       </div>
 
       {/* Prototype Notice */}
-      <div className="p-4 bg-govblue-50/80 border border-govblue-200 rounded-2xl flex items-start gap-3 text-xs text-govblue-900">
-        <Info className="w-4 h-4 text-govblue-600 flex-shrink-0 mt-0.5" />
+      <div className="p-4 bg-lemon-100 border border-lemon-200 rounded-2xl flex items-start gap-3 text-xs text-charcoal-800">
+        <Info className="w-4 h-4 text-lemon-600 flex-shrink-0 mt-0.5" />
         <p className="leading-relaxed">
           <strong>SchemeSathi AI Guide:</strong> This conversational assistant demonstrates deterministic matching against all 70 verified schemes in 10 categories. Final eligibility should always be verified on the official government portal.
         </p>
       </div>
 
       {/* Chat Messages Container */}
-      <div className="bg-slate-100/70 border border-slate-200 rounded-3xl p-4 sm:p-6 min-h-[420px] max-h-[560px] overflow-y-auto space-y-6 shadow-inner">
+      <div className="bg-cream-50 border border-charcoal-200 rounded-3xl p-4 sm:p-6 min-h-[420px] max-h-[560px] overflow-y-auto space-y-6 shadow-inner">
         {messages.map((msg) => (
           <ChatMessage key={msg.id} message={msg} />
         ))}
 
         {isTyping && (
-          <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
-            <div className="w-8 h-8 rounded-xl bg-civic-900 text-white flex items-center justify-center shadow-sm">
-              <Bot className="w-4 h-4 text-warmamber-400 animate-pulse" />
+          <div className="flex items-center gap-3 text-xs text-charcoal-500 font-medium">
+            <div className="w-8 h-8 rounded-xl bg-lemon-400 text-black flex items-center justify-center shadow-sm">
+              <Bot className="w-4 h-4 text-peach-500 animate-pulse" />
             </div>
-            <div className="p-3.5 bg-white border border-slate-200 rounded-2xl rounded-tl-sm flex items-center gap-1.5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-civic-400 animate-bounce"></span>
-              <span className="w-2 h-2 rounded-full bg-civic-600 animate-bounce [animation-delay:0.2s]"></span>
-              <span className="w-2 h-2 rounded-full bg-civic-900 animate-bounce [animation-delay:0.4s]"></span>
+            <div className="p-3.5 bg-white border border-charcoal-200 rounded-2xl rounded-tl-sm flex items-center gap-1.5 shadow-soft">
+              <span className="w-2 h-2 rounded-full bg-charcoal-400 animate-bounce"></span>
+              <span className="w-2 h-2 rounded-full bg-charcoal-600 animate-bounce [animation-delay:0.2s]"></span>
+              <span className="w-2 h-2 rounded-full bg-black animate-bounce [animation-delay:0.4s]"></span>
             </div>
           </div>
         )}

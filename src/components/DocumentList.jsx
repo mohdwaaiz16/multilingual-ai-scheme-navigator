@@ -16,14 +16,14 @@ export default function DocumentList({ documents = [] }) {
   const progressPercent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+    <div className="bg-white border border-charcoal-100 rounded-2xl p-6 shadow-soft space-y-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-charcoal-100">
         <div>
-          <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2">
-            <FileText className="w-5 h-5 text-civic-700" />
+          <h3 className="text-base font-semibold text-black flex items-center gap-2">
+            <FileText className="w-5 h-5 text-charcoal-800" />
             <span>Required Documents Checklist</span>
           </h3>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-charcoal-600 mt-0.5">
             Check off the documents you have prepared to check your application readiness.
           </p>
         </div>
@@ -31,14 +31,14 @@ export default function DocumentList({ documents = [] }) {
         {totalCount > 0 && (
           <div className="flex items-center gap-3">
             <div className="text-right">
-              <span className="text-xs font-semibold text-slate-700">
+              <span className="text-xs font-semibold text-charcoal-700">
                 {completedCount} of {totalCount} ready
               </span>
             </div>
             <button
               type="button"
               onClick={() => window.print()}
-              className="no-print p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
+              className="no-print p-2 text-charcoal-600 hover:text-charcoal-800 hover:bg-cream-200 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
               title="Print document checklist"
             >
               <Printer className="w-4 h-4" />
@@ -50,7 +50,7 @@ export default function DocumentList({ documents = [] }) {
 
       {/* Readiness Progress Bar */}
       {totalCount > 0 && (
-        <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+        <div className="w-full bg-charcoal-100 rounded-full h-2 overflow-hidden">
           <div 
             className="bg-emerald-500 h-2 rounded-full transition-all duration-300"
             style={{ width: `${progressPercent}%` }}
@@ -69,20 +69,20 @@ export default function DocumentList({ documents = [] }) {
                 onClick={() => toggleDoc(idx)}
                 className={`w-full text-left flex items-start gap-3.5 p-3.5 rounded-xl border transition-all ${
                   isChecked
-                    ? 'bg-emerald-50/60 border-emerald-200 text-slate-900'
-                    : 'bg-slate-50/50 hover:bg-slate-50 border-slate-200 text-slate-800'
+                    ? 'bg-lemon-100 border-lemon-300 text-black'
+                    : 'bg-cream-50 hover:bg-cream-100 border-charcoal-200 text-charcoal-800'
                 }`}
                 aria-pressed={isChecked}
               >
                 <span className="mt-0.5 flex-shrink-0">
                   {isChecked ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 fill-emerald-100" />
+                    <CheckCircle2 className="w-5 h-5 text-black fill-lemon-200" />
                   ) : (
-                    <Circle className="w-5 h-5 text-slate-400" />
+                    <Circle className="w-5 h-5 text-charcoal-400" />
                   )}
                 </span>
                 <div className="flex-1 text-sm font-medium leading-relaxed">
-                  <span className={isChecked ? 'line-through text-slate-500' : 'text-slate-800'}>
+                  <span className={isChecked ? 'line-through text-charcoal-500' : 'text-black'}>
                     {doc}
                   </span>
                 </div>

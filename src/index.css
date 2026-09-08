@@ -8,9 +8,14 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
 
+  body {
+    background-color: #FFFDF7; /* cream-100 */
+    color: #333333; /* charcoal-800 */
+  }
+
   /* Accessible focus indicators */
   :focus-visible {
-    outline: 2px solid #1d4ed8;
+    outline: 2px solid #F4E85C; /* lemon-500 */
     outline-offset: 2px;
   }
 }
@@ -22,16 +27,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #FFF9ED; /* cream-200 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #FFD1B8; /* peach-200 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #FF9A66; /* peach-400 */
 }
 
 /* Print Styles for Scheme Documents Checklist */

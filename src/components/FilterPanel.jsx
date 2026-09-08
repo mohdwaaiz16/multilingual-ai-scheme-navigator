@@ -36,10 +36,10 @@ export default function FilterPanel({
   const content = (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+      <div className="flex items-center justify-between pb-3 border-b border-charcoal-200">
         <div className="flex items-center gap-2">
-          <SlidersHorizontal className="w-4 h-4 text-civic-800" />
-          <h3 className="font-semibold text-slate-900 text-sm uppercase tracking-wider">
+          <SlidersHorizontal className="w-4 h-4 text-charcoal-800" />
+          <h3 className="font-semibold text-black text-sm uppercase tracking-wider">
             Filter Schemes
           </h3>
         </div>
@@ -47,7 +47,7 @@ export default function FilterPanel({
           <button
             type="button"
             onClick={onResetFilters}
-            className="text-xs font-medium text-govblue-600 hover:text-govblue-800 flex items-center gap-1 transition-colors"
+            className="text-xs font-medium text-charcoal-600 hover:text-charcoal-900 flex items-center gap-1 transition-colors"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Reset</span>
@@ -57,13 +57,13 @@ export default function FilterPanel({
 
       {/* 1. Target Beneficiary */}
       <div className="space-y-2">
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+        <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider">
           Target Beneficiary
         </label>
         <select
           value={selectedAudience}
           onChange={(e) => onAudienceChange(e.target.value)}
-          className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all"
+          className="w-full bg-cream-200 border border-charcoal-200 rounded-lg px-3 py-2 text-sm text-black focus:ring-2 focus:ring-lemon-500 focus:bg-white transition-all"
         >
           {AUDIENCE_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -75,13 +75,13 @@ export default function FilterPanel({
 
       {/* 2. Category Filter */}
       <div className="space-y-2">
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+        <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider">
           Category
         </label>
         <select
           value={selectedCategory}
           onChange={(e) => onCategoryChange(e.target.value)}
-          className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all"
+          className="w-full bg-cream-200 border border-charcoal-200 rounded-lg px-3 py-2 text-sm text-black focus:ring-2 focus:ring-lemon-500 focus:bg-white transition-all"
         >
           <option value="all">All 20 Categories</option>
           {CATEGORIES.map((cat) => (
@@ -94,7 +94,7 @@ export default function FilterPanel({
 
       {/* 3. Scheme Type Filter */}
       <div className="space-y-2">
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+        <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider">
           Scheme Type
         </label>
         <div className="space-y-1.5">
@@ -103,8 +103,8 @@ export default function FilterPanel({
               key={opt.value}
               className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium cursor-pointer transition-colors ${
                 selectedType === opt.value
-                  ? 'bg-civic-50 text-civic-900 font-semibold border border-civic-200'
-                  : 'text-slate-600 hover:bg-slate-50'
+                  ? 'bg-lemon-200 text-black font-semibold border border-lemon-300'
+                  : 'text-charcoal-600 hover:bg-cream-200'
               }`}
             >
               <input
@@ -113,7 +113,7 @@ export default function FilterPanel({
                 value={opt.value}
                 checked={selectedType === opt.value}
                 onChange={(e) => onTypeChange(e.target.value)}
-                className="text-civic-900 focus:ring-civic-500"
+                className="text-lemon-500 focus:ring-lemon-500"
               />
               <span>{opt.label}</span>
             </label>
@@ -122,14 +122,14 @@ export default function FilterPanel({
       </div>
 
       {/* 4. Sort Order */}
-      <div className="space-y-2 pt-2 border-t border-slate-200">
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+      <div className="space-y-2 pt-2 border-t border-charcoal-200">
+        <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider">
           Sort By
         </label>
         <select
           value={sortBy}
           onChange={(e) => onSortChange(e.target.value)}
-          className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-civic-500 focus:bg-white transition-all"
+          className="w-full bg-cream-200 border border-charcoal-200 rounded-lg px-3 py-2 text-sm text-black focus:ring-2 focus:ring-lemon-500 focus:bg-white transition-all"
         >
           <option value="relevance">Default Order</option>
           <option value="name-asc">Scheme Name (A - Z)</option>
@@ -139,9 +139,9 @@ export default function FilterPanel({
       </div>
 
       {/* Filter Stats */}
-      <div className="p-3 bg-slate-100 rounded-xl text-xs text-slate-600 flex items-center justify-between">
+      <div className="p-3 bg-cream-200 rounded-xl text-xs text-charcoal-700 flex items-center justify-between border border-charcoal-100">
         <span>Active Matches:</span>
-        <strong className="text-slate-900 font-semibold">{totalResults} schemes</strong>
+        <strong className="text-black font-semibold">{totalResults} schemes</strong>
       </div>
     </div>
   );
@@ -154,14 +154,14 @@ export default function FilterPanel({
           onClick={onCloseMobileDrawer}
           aria-hidden="true" 
         />
-        <div className="relative ml-auto w-full max-w-xs bg-white h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
+        <div className="relative ml-auto w-full max-w-xs bg-cream-50 h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
-              <h2 className="text-base font-bold text-slate-900">Filters</h2>
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-charcoal-200">
+              <h2 className="text-base font-bold text-black">Filters</h2>
               <button 
                 type="button" 
                 onClick={onCloseMobileDrawer}
-                className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg"
+                className="p-1.5 text-charcoal-500 hover:text-charcoal-700 rounded-lg"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -172,7 +172,7 @@ export default function FilterPanel({
             <button
               type="button"
               onClick={onCloseMobileDrawer}
-              className="w-full py-2.5 bg-civic-900 text-white font-medium rounded-xl text-sm shadow-sm hover:bg-civic-800"
+              className="w-full py-2.5 bg-lemon-400 text-black font-bold rounded-xl text-sm shadow-sm hover:bg-lemon-500 transition-colors"
             >
               Show {totalResults} Schemes
             </button>
@@ -183,7 +183,7 @@ export default function FilterPanel({
   }
 
   return (
-    <aside className="bg-white border border-slate-200 rounded-2xl p-5 shadow-subtle sticky top-24">
+    <aside className="bg-white border border-charcoal-100 rounded-2xl p-5 shadow-soft sticky top-24">
       {content}
     </aside>
   );

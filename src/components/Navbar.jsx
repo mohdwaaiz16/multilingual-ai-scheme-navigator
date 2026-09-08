@@ -14,17 +14,17 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+    <header className="sticky top-0 z-40 bg-cream-50/95 backdrop-blur border-b border-charcoal-100">
       {/* Top Civic Notice Bar */}
-      <div className="bg-civic-900 text-slate-200 text-xs py-1.5 px-4 sm:px-6">
+      <div className="bg-charcoal-900 text-cream-200 text-xs py-1.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span className="font-medium text-slate-100">SchemeSathi — Citizen Welfare Companion</span>
-            <span className="hidden md:inline text-slate-400">|</span>
-            <span className="hidden md:inline text-slate-300">10 Categories &bull; 70 Verified Schemes</span>
+            <span className="inline-block w-2 h-2 rounded-full bg-lemon-400"></span>
+            <span className="font-medium text-cream-50">SchemeSathi — Citizen Welfare Companion</span>
+            <span className="hidden md:inline text-charcoal-500">|</span>
+            <span className="hidden md:inline text-charcoal-300">10 Categories &bull; 70 Verified Schemes</span>
           </div>
-          <div className="text-[11px] text-slate-300 hidden sm:block">
+          <div className="text-[11px] text-charcoal-300 hidden sm:block">
             Verified National Registry &bull; August 2026
           </div>
         </div>
@@ -36,16 +36,16 @@ export default function Navbar() {
           {/* Logo & Brand: SchemeSathi */}
           <Link 
             to="/" 
-            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-civic-500 rounded-lg p-1"
+            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-lemon-500 rounded-lg p-1"
           >
-            <div className="w-10 h-10 rounded-xl bg-civic-900 flex items-center justify-center text-white shadow-md group-hover:bg-civic-800 transition-colors">
-              <Sparkles className="w-5 h-5 text-warmamber-400" />
+            <div className="w-10 h-10 rounded-xl bg-lemon-400 flex items-center justify-center text-charcoal-900 shadow-sm group-hover:bg-lemon-500 transition-colors">
+              <Sparkles className="w-5 h-5 text-charcoal-900" />
             </div>
             <div>
-              <div className="font-extrabold text-slate-900 text-xl tracking-tight flex items-center gap-0.5">
-                Scheme<span className="text-govblue-600">Sathi</span>
+              <div className="font-extrabold text-black text-xl tracking-tight flex items-center gap-0.5">
+                Scheme<span className="text-charcoal-800">Sathi</span>
               </div>
-              <p className="text-[11px] text-slate-500 font-medium">
+              <p className="text-[11px] text-charcoal-500 font-medium">
                 Government Scheme Navigator
               </p>
             </div>
@@ -62,15 +62,15 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `px-3.5 py-2 rounded-xl text-sm font-semibold transition-colors inline-flex items-center gap-2 ${
                       isActive
-                        ? 'text-civic-900 bg-civic-50 font-bold'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                        ? 'text-black bg-lemon-200 font-bold'
+                        : 'text-charcoal-600 hover:text-black hover:bg-cream-200'
                     }`
                   }
                 >
-                  <Icon className="w-4 h-4 text-slate-500" />
+                  <Icon className="w-4 h-4 text-charcoal-500" />
                   <span>{link.label}</span>
                   {link.isNew && (
-                    <span className="px-1.5 py-0.5 text-[10px] font-bold bg-govblue-100 text-govblue-700 rounded-full">
+                    <span className="px-1.5 py-0.5 text-[10px] font-bold bg-lemon-300 text-black rounded-full">
                       AI
                     </span>
                   )}
@@ -84,10 +84,10 @@ export default function Navbar() {
             <LanguageSelector />
             <Link
               to="/find"
-              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-sm font-bold text-white bg-civic-900 hover:bg-civic-800 active:bg-civic-950 rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-civic-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-sm font-bold text-black bg-lemon-400 hover:bg-lemon-500 active:bg-lemon-600 rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-lemon-500 focus:ring-offset-2"
             >
               <span>Find My Schemes</span>
-              <ArrowRight className="w-4 h-4 text-warmamber-400" />
+              <ArrowRight className="w-4 h-4 text-black" />
             </Link>
           </div>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-civic-500"
+              className="p-2 rounded-lg text-charcoal-700 hover:bg-cream-200 focus:outline-none focus:ring-2 focus:ring-lemon-500"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle navigation menu"
             >
@@ -113,7 +113,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+        <div className="md:hidden border-t border-charcoal-100 bg-cream-50 px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <nav className="space-y-1">
             {navLinks.map((link) => {
               const Icon = link.icon;
@@ -125,17 +125,17 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-medium ${
                       isActive
-                        ? 'text-civic-900 bg-civic-50 font-bold'
-                        : 'text-slate-700 hover:bg-slate-50'
+                        ? 'text-black bg-lemon-200 font-bold'
+                        : 'text-charcoal-700 hover:bg-cream-200'
                     }`
                   }
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className="w-5 h-5 text-slate-500" />
+                    <Icon className="w-5 h-5 text-charcoal-500" />
                     <span>{link.label}</span>
                   </div>
                   {link.isNew && (
-                    <span className="px-2 py-0.5 text-xs font-semibold bg-govblue-100 text-govblue-700 rounded-full">
+                    <span className="px-2 py-0.5 text-xs font-semibold bg-lemon-300 text-black rounded-full">
                       AI Companion
                     </span>
                   )}
@@ -144,14 +144,14 @@ export default function Navbar() {
             })}
           </nav>
           
-          <div className="pt-2 border-t border-slate-100">
+          <div className="pt-2 border-t border-charcoal-100">
             <Link
               to="/find"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 text-base font-bold text-white bg-civic-900 hover:bg-civic-800 rounded-xl shadow-sm transition-all"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 text-base font-bold text-black bg-lemon-400 hover:bg-lemon-500 rounded-xl shadow-sm transition-all"
             >
               <span>Find My Schemes</span>
-              <ArrowRight className="w-4 h-4 text-warmamber-400" />
+              <ArrowRight className="w-4 h-4 text-black" />
             </Link>
           </div>
         </div>
