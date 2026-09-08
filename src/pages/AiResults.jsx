@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { 
   Sparkles, 
@@ -15,6 +16,7 @@ import { calculateSchemeMatches } from '../utils/filterUtils';
 import EligibilityBadge from '../components/EligibilityBadge';
 
 export default function AiResults() {
+  const { t, l } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Building2, Layers } from 'lucide-react';
 import EligibilityBadge from './EligibilityBadge';
 
 export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
+  const { t, l } = useLanguage();
   const isHigh = matchLevel === 'high';
   const isPossible = matchLevel === 'possible';
 
@@ -41,7 +43,7 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
             state={{ fromResults: !!matchLabel, matchLabel }}
             className="hover:underline focus:outline-none focus-visible:underline"
           >
-            {scheme.schemeName}
+            {l(scheme.schemeName)}
           </Link>
         </h3>
 
@@ -53,7 +55,7 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
 
         {/* Description */}
         <p className="text-xs sm:text-sm text-charcoal-700 line-clamp-2 leading-relaxed">
-          {scheme.description}
+          {l(scheme.description)}
         </p>
 
         {/* Key Benefit Highlight */}
@@ -79,7 +81,7 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
           state={{ fromResults: !!matchLabel, matchLabel }}
           className="inline-flex items-center gap-1 px-3.5 py-1.5 text-xs font-bold text-black bg-lemon-400 hover:bg-lemon-500 active:bg-lemon-600 rounded-xl transition-all shadow-sm"
         >
-          <span>View Details</span>
+          <span>{t("common.viewDetails")}</span>
           <ArrowRight className="w-3.5 h-3.5 text-black group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>

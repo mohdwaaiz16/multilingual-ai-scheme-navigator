@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { useSearchParams } from 'react-router-dom';
 import { 
   Bot, 
@@ -25,6 +26,7 @@ const INITIAL_MESSAGES = [
 ];
 
 export default function Assistant() {
+  const { t, l } = useLanguage();
   const [searchParams] = useSearchParams();
   const [messages, setMessages] = useState(INITIAL_MESSAGES);
   const [isTyping, setIsTyping] = useState(false);

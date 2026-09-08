@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Bot, ArrowRight, ShieldCheck, Sparkles, Layers } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function HeroSection() {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -42,15 +44,12 @@ export default function HeroSection() {
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-tight">
-          Find Government Schemes <br className="hidden sm:inline" />
-          <span className="inline-block mt-2 px-4 py-1 bg-lemon-200 rounded-2xl text-black">
-            You May Be Eligible For
-          </span>
+          {t('hero.title')}
         </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-          Tell us about yourself and discover government schemes that may be relevant to your needs.
+          {t('hero.subtitle')}
         </p>
 
         {/* Search Bar */}
@@ -61,9 +60,9 @@ export default function HeroSection() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search 70 government schemes (e.g. scholarships, loans, pension)..."
+                placeholder={t('filters.searchPlaceholder')}
                 className="w-full bg-white text-black placeholder:text-charcoal-400 px-4 py-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-lemon-500 text-sm font-medium"
-                aria-label="Search 70 government schemes"
+                aria-label={t('filters.searchPlaceholder')}
               />
             </div>
             <button
@@ -71,7 +70,7 @@ export default function HeroSection() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-lemon-400 hover:bg-lemon-500 text-black font-bold text-sm rounded-xl transition-all shadow-sm flex-shrink-0"
             >
               <Search className="w-4 h-4" />
-              <span>Search</span>
+              <span>{t('common.search')}</span>
             </button>
           </div>
 
@@ -98,7 +97,7 @@ export default function HeroSection() {
             onClick={() => navigate('/find')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-lemon-400 text-black hover:bg-lemon-500 font-extrabold text-base shadow-soft transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-lemon-600"
           >
-            <span>Find My Schemes</span>
+            <span>{t('navbar.findSchemes')}</span>
             <ArrowRight className="w-5 h-5 text-black" />
           </button>
 
@@ -108,7 +107,7 @@ export default function HeroSection() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-peach-100 hover:bg-peach-200 text-black border border-peach-200 font-bold text-base transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-peach-400"
           >
             <Layers className="w-5 h-5 text-charcoal-800" />
-            <span>Explore All 70 Schemes</span>
+            <span>{t('navbar.schemes')}</span>
           </button>
         </div>
 

@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Sparkles, Menu, X, Bot, Search, Layers, Home, ArrowRight } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navLinks = [
-    { to: '/', label: 'Home', icon: Home },
-    { to: '/schemes', label: 'All Schemes', icon: Layers },
-    { to: '/find', label: 'Find Schemes', icon: Search },
-    { to: '/assistant', label: 'AI Assistant', icon: Bot, isNew: true },
+    { to: '/', label: t('navbar.home'), icon: Home },
+    { to: '/schemes', label: t('navbar.schemes'), icon: Layers },
+    { to: '/find', label: t('navbar.findSchemes'), icon: Search },
+    { to: '/assistant', label: t('navbar.aiAssistant'), icon: Bot, isNew: true },
   ];
 
   return (
@@ -86,7 +88,7 @@ export default function Navbar() {
               to="/find"
               className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-sm font-bold text-black bg-lemon-400 hover:bg-lemon-500 active:bg-lemon-600 rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-lemon-500 focus:ring-offset-2"
             >
-              <span>Find My Schemes</span>
+              <span>{t('navbar.findSchemes')}</span>
               <ArrowRight className="w-4 h-4 text-black" />
             </Link>
           </div>
@@ -150,7 +152,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 px-4 py-3 text-base font-bold text-black bg-lemon-400 hover:bg-lemon-500 rounded-xl shadow-sm transition-all"
             >
-              <span>Find My Schemes</span>
+              <span>{t('navbar.findSchemes')}</span>
               <ArrowRight className="w-4 h-4 text-black" />
             </Link>
           </div>

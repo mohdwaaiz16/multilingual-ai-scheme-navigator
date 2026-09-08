@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -50,6 +51,7 @@ const ICON_MAP = {
 };
 
 export default function CategoryCard({ category }) {
+  const { t, l } = useLanguage();
   const IconComponent = ICON_MAP[category.icon] || Layers;
 
   return (
@@ -62,10 +64,10 @@ export default function CategoryCard({ category }) {
           <IconComponent className="w-6 h-6" />
         </div>
         <h3 className="text-base font-semibold text-black mb-1 transition-colors">
-          {category.name}
+          {l(category.name)}
         </h3>
         <p className="text-xs text-charcoal-600 line-clamp-2 leading-relaxed mb-4">
-          {category.description}
+          {l(category.description)}
         </p>
       </div>
 

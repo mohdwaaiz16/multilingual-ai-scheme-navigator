@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { useSearchParams, Link } from 'react-router-dom';
 import { 
   Search, 
@@ -17,6 +18,7 @@ import SchemeCard from '../components/SchemeCard';
 import EmptyState from '../components/EmptyState';
 
 export default function SchemeFinder() {
+  const { t, l } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialQuery = searchParams.get('q') || '';

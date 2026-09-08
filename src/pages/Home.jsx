@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { 
   Search, 
@@ -17,6 +18,7 @@ import { CATEGORIES } from '../data/categories';
 import { SCHEMES } from '../data/schemes';
 
 export default function Home() {
+  const { t, l } = useLanguage();
   const navigate = useNavigate();
 
   // 4 Featured Schemes from key domains

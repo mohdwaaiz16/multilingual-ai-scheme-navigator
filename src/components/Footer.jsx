@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, ShieldCheck, AlertCircle, Layers } from 'lucide-react';
 import { CATEGORIES } from '../data/categories';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-charcoal-900 text-charcoal-300 pt-12 pb-8 border-t border-charcoal-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,22 +55,22 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/" className="text-charcoal-400 hover:text-cream-50 transition-colors">
-                  Home
+                  {t('navbar.home')}
                 </Link>
               </li>
               <li>
                 <Link to="/schemes" className="text-charcoal-400 hover:text-cream-50 transition-colors">
-                  All 70 Schemes
+                  {t('navbar.schemes')}
                 </Link>
               </li>
               <li>
                 <Link to="/find" className="text-charcoal-400 hover:text-cream-50 transition-colors">
-                  Find My Schemes
+                  {t('navbar.findSchemes')}
                 </Link>
               </li>
               <li>
                 <Link to="/assistant" className="text-charcoal-400 hover:text-cream-50 transition-colors">
-                  SchemeSathi AI
+                  {t('navbar.aiAssistant')}
                 </Link>
               </li>
             </ul>

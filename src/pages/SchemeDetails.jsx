@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   ChevronRight, 
@@ -28,6 +29,7 @@ import SchemeCard from '../components/SchemeCard';
 import { SCHEMES } from '../data/schemes';
 
 export default function SchemeDetails() {
+  const { t, l } = useLanguage();
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -89,7 +91,7 @@ export default function SchemeDetails() {
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-charcoal-400" />
             <span className="text-black font-semibold truncate max-w-[180px] sm:max-w-xs">
-              {scheme.schemeName}
+              {l(scheme.schemeName)}
             </span>
           </nav>
 
@@ -135,10 +137,10 @@ export default function SchemeDetails() {
 
           <div className="space-y-3">
             <h1 className="text-2xl sm:text-4xl font-extrabold text-black tracking-tight leading-tight">
-              {scheme.schemeName}
+              {l(scheme.schemeName)}
             </h1>
             <p className="text-base sm:text-lg text-charcoal-700 leading-relaxed max-w-4xl">
-              {scheme.description}
+              {l(scheme.description)}
             </p>
           </div>
 
@@ -243,7 +245,7 @@ export default function SchemeDetails() {
               <div key={idx} className="flex items-start gap-3 p-3.5 bg-lemon-50 border border-lemon-100 rounded-2xl">
                 <CheckCircle2 className="w-4 h-4 text-lemon-600 flex-shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm text-black leading-relaxed font-medium">
-                  {benefit}
+                  {l(benefit)}
                 </span>
               </div>
             ))}
@@ -411,7 +413,7 @@ export default function SchemeDetails() {
             </p>
           </div>
           <Link
-            to={`/assistant?q=${encodeURIComponent(`Explain eligibility and documents for ${scheme.schemeName}`)}`}
+            to={`/assistant?q=${encodeURIComponent(`Explain eligibility and documents for ${l(scheme.schemeName)}`)}`}
             className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-900 hover:bg-charcoal-800 text-cream-50 font-bold text-sm rounded-xl shadow-md transition-all flex-shrink-0"
           >
             <Bot className="w-4 h-4" />

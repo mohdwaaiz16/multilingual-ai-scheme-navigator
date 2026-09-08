@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { useParams, Link } from 'react-router-dom';
 import { 
   ChevronRight, 
@@ -16,6 +17,7 @@ import { getSchemesForCategory } from '../utils/filterUtils';
 import EligibilityBadge from '../components/EligibilityBadge';
 
 export default function CategoryPage() {
+  const { t, l } = useLanguage();
   const { categorySlug } = useParams();
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export default function CategoryPage() {
             <ChevronRight className="w-3.5 h-3.5 text-charcoal-400" />
             <Link to="/schemes" className="hover:text-black transition-colors">All Schemes</Link>
             <ChevronRight className="w-3.5 h-3.5 text-charcoal-400" />
-            <span className="text-black font-semibold">{category.name}</span>
+            <span className="text-black font-semibold">{l(category.name)}</span>
           </nav>
 
           <Link
@@ -87,11 +89,11 @@ export default function CategoryPage() {
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold text-black tracking-tight">
-              {category.name}
+              {l(category.name)}
             </h1>
 
             <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed">
-              {category.description}
+              {l(category.description)}
             </p>
           </div>
 
