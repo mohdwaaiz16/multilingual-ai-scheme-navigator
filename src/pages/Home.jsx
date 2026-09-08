@@ -89,10 +89,10 @@ export default function Home() {
                 <div>
                   <div className="text-3xl mb-3">{cat.emoji}</div>
                   <h3 className="text-base font-extrabold text-black group-hover:text-lemon-600 transition-colors leading-snug">
-                    {cat.name}
+                    {l(cat.name)}
                   </h3>
                   <p className="text-xs text-charcoal-600 mt-1.5 line-clamp-2 leading-relaxed">
-                    {cat.description}
+                    {l(cat.description)}
                   </p>
                 </div>
 

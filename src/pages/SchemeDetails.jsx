@@ -288,7 +288,7 @@ export default function SchemeDetails() {
                 Primary Eligibility Criteria
               </span>
               <p className="text-sm sm:text-base font-semibold text-black leading-relaxed">
-                {scheme.eligibilityCriteria}
+                {l(scheme.eligibilityCriteria)}
               </p>
             </div>
 

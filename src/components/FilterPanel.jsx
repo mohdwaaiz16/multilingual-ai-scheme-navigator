@@ -85,8 +85,8 @@ export default function FilterPanel({
         >
           <option value="all">All 20 Categories</option>
           {CATEGORIES.map((cat) => (
-            <option key={cat.id} value={cat.name}>
-              {cat.name}
+            <option key={cat.id} value={l(cat.name)}>
+              {l(cat.name)}
             </option>
           ))}
         </select>

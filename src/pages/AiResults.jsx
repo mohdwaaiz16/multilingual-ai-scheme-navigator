@@ -198,7 +198,7 @@ export default function AiResults() {
                         <span>Key Benefit</span>
                       </span>
                       <p className="text-xs sm:text-sm text-charcoal-700 font-medium leading-relaxed">
-                        {scheme.keyBenefits}
+                        {l(scheme.keyBenefits)}
                       </p>
                     </div>
 

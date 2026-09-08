@@ -114,7 +114,7 @@ export default function SchemeFinder() {
                 <option value="all">All 10 Categories</option>
                 {CATEGORIES.map((cat) => (
                   <option key={cat.slug} value={cat.slug}>
-                    {cat.emoji} {cat.name}
+                    {cat.emoji} {l(cat.name)}
                   </option>
                 ))}
               </select>
@@ -222,7 +222,7 @@ export default function SchemeFinder() {
                 }`}
               >
                 <span>{cat.emoji}</span>
-                <span>{cat.name}</span>
+                <span>{l(cat.name)}</span>
                 <span className="text-[10px] opacity-75 font-mono">({cat.schemeCount})</span>
               </button>
             ))}

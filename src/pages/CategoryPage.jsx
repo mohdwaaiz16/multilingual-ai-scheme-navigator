@@ -162,7 +162,7 @@ export default function CategoryPage() {
 
                   {/* Description */}
                   <p className="text-xs sm:text-sm text-charcoal-700 line-clamp-3 leading-relaxed">
-                    {scheme.description}
+                    {l(scheme.description)}
                   </p>
 
                   {/* Key Benefit Snippet */}
@@ -172,7 +172,7 @@ export default function CategoryPage() {
                       <span>Key Benefit</span>
                     </span>
                     <p className="text-xs text-charcoal-800 font-medium line-clamp-2">
-                      {scheme.keyBenefits}
+                      {l(scheme.keyBenefits)}
                     </p>
                   </div>
 
