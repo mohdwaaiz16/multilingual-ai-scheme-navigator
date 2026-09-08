@@ -44,7 +44,7 @@ export function filterSchemes({
   if (category && category !== 'all') {
     const catLower = category.toLowerCase();
     results = results.filter(scheme => {
-      const primaryMatch = (getString(scheme.category) || '').toLowerCase() === catLower || (getString(scheme.category)Slug || '').toLowerCase() === catLower;
+      const primaryMatch = (getString(scheme.category) || '').toLowerCase() === catLower || (scheme.categorySlug || '').toLowerCase() === catLower;
       const arrayMatch = (scheme.categories || []).some(c => c.toLowerCase() === catLower);
       return primaryMatch || arrayMatch;
     });
