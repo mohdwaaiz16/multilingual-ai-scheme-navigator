@@ -65,7 +65,7 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
             <span>Key Benefit</span>
           </span>
           <p className="text-xs text-black font-medium line-clamp-2">
-            {scheme.keyBenefits}
+            {l(scheme.keyBenefits)}
           </p>
         </div>
       </div>
