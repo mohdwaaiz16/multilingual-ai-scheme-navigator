@@ -150,7 +150,7 @@ export default function CategoryPage() {
                       to={`/schemes/${scheme.id}`}
                       className="hover:text-lemon-600 focus:outline-none focus-visible:underline"
                     >
-                      {scheme.schemeName}
+                      {l(scheme.schemeName)}
                     </Link>
                   </h3>
 

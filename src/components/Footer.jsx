@@ -5,7 +5,7 @@ import { CATEGORIES } from '../data/categories';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, l } = useLanguage();
   return (
     <footer className="bg-charcoal-900 text-charcoal-300 pt-12 pb-8 border-t border-charcoal-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +85,7 @@ export default function Footer() {
               {CATEGORIES.slice(0, 5).map((cat) => (
                 <li key={cat.slug}>
                   <Link to={`/category/${cat.slug}`} className="hover:text-cream-50 transition-colors truncate block">
-                    {cat.emoji} {cat.name}
+                    {cat.emoji} {l(cat.name)}
                   </Link>
                 </li>
               ))}

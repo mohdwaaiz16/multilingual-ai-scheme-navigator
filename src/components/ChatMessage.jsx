@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Bot, User, ArrowRight, Sparkles, Building2, CheckCircle2 } from 'lucide-react';
 import EligibilityBadge from './EligibilityBadge';
 
 export default function ChatMessage({ message }) {
+  const { l } = useLanguage();
   const isAssistant = message.sender === 'assistant';
 
   return (
@@ -63,7 +65,7 @@ export default function ChatMessage({ message }) {
                       to={`/schemes/${scheme.id}`}
                       className="hover:text-lemon-600 hover:underline"
                     >
-                      {scheme.schemeName}
+                      {l(scheme.schemeName)}
                     </Link>
                   </h4>
 

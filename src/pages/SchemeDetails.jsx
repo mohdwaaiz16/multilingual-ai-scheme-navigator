@@ -73,7 +73,7 @@ export default function SchemeDetails() {
   const isNoDirectApp = scheme.officialApplicationUrl === "Not Applicable" || 
                         !scheme.officialApplicationUrl || 
                         scheme.officialApplicationUrl.includes("Not Applicable") ||
-                        scheme.schemeName.toLowerCase().includes("target olympic podium");
+                        l(scheme.schemeName).toLowerCase().includes("target olympic podium");
 
   return (
     <div className="bg-cream-50 min-h-screen pb-20">

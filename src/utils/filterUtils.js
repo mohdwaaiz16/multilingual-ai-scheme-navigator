@@ -1,6 +1,12 @@
 import { SCHEMES, ALL_CATEGORY_SCHEMES } from '../data/schemes.js';
 import { CATEGORIES } from '../data/categories.js';
 
+const getString = (field) => {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  return field.en || Object.values(field)[0] || '';
+};
+
 /**
  * Filter and search schemes across all 70 schemes with multi-criteria support
  */
@@ -19,16 +25,16 @@ export function filterSchemes({
   if (query && query.trim()) {
     const q = query.toLowerCase().trim();
     results = results.filter(scheme => {
-      const inName = (scheme.schemeName || '').toLowerCase().includes(q);
-      const inCategory = (scheme.category || '').toLowerCase().includes(q);
-      const inSubcat = (scheme.subcategory || '').toLowerCase().includes(q);
-      const inDesc = (scheme.description || '').toLowerCase().includes(q);
-      const inWhy = (scheme.whyStarted || '').toLowerCase().includes(q);
-      const inWho = (scheme.whoCanBenefit || '').toLowerCase().includes(q);
-      const inHow = (scheme.howItWorks || '').toLowerCase().includes(q);
-      const inEligibility = (scheme.eligibilityCriteria || '').toLowerCase().includes(q);
-      const inBenefits = (scheme.keyBenefits || '').toLowerCase().includes(q);
-      const inMinistry = (scheme.implementingMinistry || '').toLowerCase().includes(q);
+      const inName = (getString(scheme.schemeName) || '').toLowerCase().includes(q);
+      const inCategory = (getString(scheme.category) || '').toLowerCase().includes(q);
+      const inSubcat = (getString(scheme.subcategory) || '').toLowerCase().includes(q);
+      const inDesc = (getString(scheme.description) || '').toLowerCase().includes(q);
+      const inWhy = (getString(scheme.whyStarted) || '').toLowerCase().includes(q);
+      const inWho = (getString(scheme.whoCanBenefit) || '').toLowerCase().includes(q);
+      const inHow = (getString(scheme.howItWorks) || '').toLowerCase().includes(q);
+      const inEligibility = (getString(scheme.eligibilityCriteria) || '').toLowerCase().includes(q);
+      const inBenefits = (getString(scheme.keyBenefits) || '').toLowerCase().includes(q);
+      const inMinistry = (getString(scheme.implementingMinistry) || '').toLowerCase().includes(q);
       const inKeywords = (scheme.keywords || []).some(k => k.toLowerCase().includes(q));
       return inName || inCategory || inSubcat || inDesc || inWhy || inWho || inHow || inEligibility || inBenefits || inMinistry || inKeywords;
     });
@@ -38,7 +44,7 @@ export function filterSchemes({
   if (category && category !== 'all') {
     const catLower = category.toLowerCase();
     results = results.filter(scheme => {
-      const primaryMatch = (scheme.category || '').toLowerCase() === catLower || (scheme.categorySlug || '').toLowerCase() === catLower;
+      const primaryMatch = (getString(scheme.category) || '').toLowerCase() === catLower || (getString(scheme.category)Slug || '').toLowerCase() === catLower;
       const arrayMatch = (scheme.categories || []).some(c => c.toLowerCase() === catLower);
       return primaryMatch || arrayMatch;
     });
@@ -47,7 +53,7 @@ export function filterSchemes({
   // 3. Subcategory Filter
   if (subcategory && subcategory !== 'all') {
     results = results.filter(scheme => 
-      (scheme.subcategory || '').toLowerCase() === subcategory.toLowerCase()
+      (getString(scheme.subcategory) || '').toLowerCase() === subcategory.toLowerCase()
     );
   }
 
@@ -69,7 +75,7 @@ export function filterSchemes({
   if (targetAudience && targetAudience !== 'all') {
     const aud = targetAudience.toLowerCase();
     results = results.filter(scheme => {
-      const content = `${scheme.schemeName} ${scheme.category} ${scheme.subcategory} ${scheme.whoCanBenefit} ${scheme.eligibilityCriteria} ${(scheme.keywords || []).join(' ')}`.toLowerCase();
+      const content = `${getString(scheme.schemeName)} ${getString(scheme.category)} ${getString(scheme.subcategory)} ${getString(scheme.whoCanBenefit)} ${getString(scheme.eligibilityCriteria)} ${(scheme.keywords || []).join(' ')}`.toLowerCase();
       if (aud === 'students' || aud === 'student') return content.includes('student') || content.includes('scholarship') || content.includes('education') || content.includes('school') || content.includes('college');
       if (aud === 'women' || aud === 'mother') return content.includes('women') || content.includes('mother') || content.includes('maternity') || content.includes('girl');
       if (aud === 'business' || aud === 'entrepreneur' || aud === 'msme') return content.includes('business') || content.includes('enterprise') || content.includes('msme') || content.includes('loan') || content.includes('startup') || content.includes('vendor') || content.includes('artisan');
@@ -117,11 +123,11 @@ export function calculateSchemeMatches(userProfile) {
     let score = 35; // Baseline explore score
     let reasons = [];
 
-    const name = (scheme.schemeName || '').toLowerCase();
-    const cat = (scheme.category || '').toLowerCase();
-    const subcat = (scheme.subcategory || '').toLowerCase();
-    const elig = (scheme.eligibilityCriteria || '').toLowerCase();
-    const who = (scheme.whoCanBenefit || '').toLowerCase();
+    const name = (getString(scheme.schemeName) || '').toLowerCase();
+    const cat = (getString(scheme.category) || '').toLowerCase();
+    const subcat = (getString(scheme.subcategory) || '').toLowerCase();
+    const elig = (getString(scheme.eligibilityCriteria) || '').toLowerCase();
+    const who = (getString(scheme.whoCanBenefit) || '').toLowerCase();
     const id = scheme.id;
 
     // --- 1. Student / Education / Scholarship Matching ---
@@ -151,7 +157,7 @@ export function calculateSchemeMatches(userProfile) {
           reasons.push("Provides financial scholarship assistance for meritorious minority girl students in classes 9 to 12.");
         } else {
           score = 85;
-          reasons.push(`This scheme under ${scheme.category} provides structured education assistance and student support.`);
+          reasons.push(`This scheme under ${getString(scheme.category)} provides structured education assistance and student support.`);
         }
       }
     }
@@ -285,7 +291,7 @@ export function calculateSchemeMatches(userProfile) {
 
     // Fallback reason
     if (reasons.length === 0) {
-      reasons.push(`This welfare scheme under ${scheme.category} may be explored based on your profile criteria.`);
+      reasons.push(`This welfare scheme under ${getString(scheme.category)} may be explored based on your profile criteria.`);
     }
 
     // Determine match classification
@@ -325,13 +331,13 @@ export function findMatchingSchemesForAssistant(userInput) {
   const scored = SCHEMES.map(scheme => {
     let score = 0;
     const keywords = scheme.keywords || [];
-    const name = (scheme.schemeName || '').toLowerCase();
-    const cat = (scheme.category || '').toLowerCase();
-    const subcat = (scheme.subcategory || '').toLowerCase();
-    const desc = (scheme.description || '').toLowerCase();
-    const elig = (scheme.eligibilityCriteria || '').toLowerCase();
-    const ben = (scheme.keyBenefits || '').toLowerCase();
-    const who = (scheme.whoCanBenefit || '').toLowerCase();
+    const name = (getString(scheme.schemeName) || '').toLowerCase();
+    const cat = (getString(scheme.category) || '').toLowerCase();
+    const subcat = (getString(scheme.subcategory) || '').toLowerCase();
+    const desc = (getString(scheme.description) || '').toLowerCase();
+    const elig = (getString(scheme.eligibilityCriteria) || '').toLowerCase();
+    const ben = (getString(scheme.keyBenefits) || '').toLowerCase();
+    const who = (getString(scheme.whoCanBenefit) || '').toLowerCase();
 
     const words = q.split(/[\s\-\,\.\?\!]+/).filter(w => w.length > 2);
     words.forEach(word => {

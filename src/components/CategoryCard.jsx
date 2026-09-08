@@ -56,7 +56,7 @@ export default function CategoryCard({ category }) {
 
   return (
     <Link
-      to={`/schemes?category=${encodeURIComponent(category.name)}`}
+      to={`/schemes?category=${encodeURIComponent(category.slug)}`}
       className="group relative flex flex-col justify-between p-5 sm:p-6 bg-white border border-charcoal-100 rounded-2xl shadow-soft hover:shadow-soft-hover hover:border-lemon-400 transition-all hover:-translate-y-1 text-left focus:outline-none focus:ring-2 focus:ring-lemon-500"
     >
       <div>

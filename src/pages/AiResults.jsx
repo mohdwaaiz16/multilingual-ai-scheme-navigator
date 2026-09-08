@@ -187,7 +187,7 @@ export default function AiResults() {
                         state={{ fromResults: true, matchLabel: scheme.matchLabel }}
                         className="hover:text-lemon-600 focus:outline-none focus-visible:underline"
                       >
-                        {scheme.schemeName}
+                        {l(scheme.schemeName)}
                       </Link>
                     </h2>
 
@@ -218,7 +218,7 @@ export default function AiResults() {
                   {/* Card Action Footer */}
                   <div className="pt-4 border-t border-charcoal-100 flex items-center justify-between gap-3">
                     <Link
-                      to={`/assistant?q=${encodeURIComponent(`Tell me about ${scheme.schemeName} and its eligibility`)}`}
+                      to={`/assistant?q=${encodeURIComponent(`Tell me about ${l(scheme.schemeName)} and its eligibility`)}`}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-charcoal-500 hover:text-black transition-colors"
                     >
                       <Bot className="w-3.5 h-3.5 text-peach-500" />
