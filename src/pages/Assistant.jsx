@@ -16,19 +16,20 @@ import ChatInput from '../components/ChatInput';
 import LanguageSelector from '../components/LanguageSelector';
 import { findMatchingSchemesForAssistant } from '../utils/filterUtils';
 
-const INITIAL_MESSAGES = [
-  {
-    id: 'msg-welcome',
-    sender: 'assistant',
-    text: "Namaste! I am SchemeSathi AI — your conversational companion for discovering Indian government welfare schemes. 🇮🇳\n\nI can help you explore 70 verified schemes across 10 official categories, understand eligibility criteria, and find required documents.\n\nHow can I help you today? You can choose one of the prompt chips below or type your question.",
-    recommendedSchemes: []
-  }
-];
-
 export default function Assistant() {
   const { t, l } = useLanguage();
   const [searchParams] = useSearchParams();
-  const [messages, setMessages] = useState(INITIAL_MESSAGES);
+
+  const getInitialMessages = () => [
+    {
+      id: 'msg-welcome',
+      sender: 'assistant',
+      text: t('assistant.welcomeText', "Namaste! I am SchemeSathi AI — your conversational companion for discovering Indian government welfare schemes. 🇮🇳\n\nI can help you explore 70 verified schemes across 10 official categories, understand eligibility criteria, and find required documents.\n\nHow can I help you today? You can choose one of the prompt chips below or type your question."),
+      recommendedSchemes: []
+    }
+  ];
+
+  const [messages, setMessages] = useState(getInitialMessages());
   const [isTyping, setIsTyping] = useState(false);
   const chatBottomRef = useRef(null);
 
@@ -58,18 +59,19 @@ export default function Assistant() {
       const matches = findMatchingSchemesForAssistant(userText);
       let responseText = "";
 
-      if (lower.includes("document") || lower.includes("documents")) {
-        responseText = "For most central welfare schemes, commonly required documents include:\n• Aadhaar Card (linked with active mobile number)\n• Proof of Residence / Domicile Certificate\n• Bank Account Passbook with IFSC code\n• Income Certificate / Category Certificate (SC/ST/OBC/EWS) where applicable\n• Educational marksheets or trade certificates (for scholarships/skill schemes)\n\nHere are schemes that appear relevant to your documentation query:";
-      } else if (lower.includes("how do i apply") || lower.includes("apply")) {
-        responseText = "Most central government schemes accept online applications via national portals (such as JanSamarth, National Scholarship Portal, Skill India Digital, or PM-Kisan) or through local Common Service Centres (CSCs).\n\nHere are relevant schemes with direct application pathways:";
-      } else if (lower.includes("low income") || lower.includes("poverty") || lower.includes("bpl")) {
-        responseText = "For low-income families and vulnerable households, key central initiatives provide free food security (PMGKAY), comprehensive health coverage up to ₹5 Lakh (AB-PMJAY), social pensions (IGNOAPS/PM-SYM), and collateral-free microfinance:\n\nHere are primary welfare matches:";
-      } else if (lower.includes("explain")) {
-        responseText = "Here is a breakdown of the relevant welfare scheme from our verified 70-scheme registry. You can explore its benefits, eligibility criteria, and official government portal below:";
+      if (lower.includes("document") || lower.includes("documents") || lower.includes("दस्तावेज़") || lower.includes("दस्तावेज")) {
+        responseText = t('assistant.docsResponse', "For most central welfare schemes, commonly required documents include:\n• Aadhaar Card (linked with active mobile number)\n• Proof of Residence / Domicile Certificate\n• Bank Account Passbook with IFSC code\n• Income Certificate / Category Certificate (SC/ST/OBC/EWS) where applicable\n• Educational marksheets or trade certificates (for scholarships/skill schemes)\n\nHere are schemes that appear relevant to your documentation query:");
+      } else if (lower.includes("how do i apply") || lower.includes("apply") || lower.includes("आवेदन")) {
+        responseText = t('assistant.applyResponse', "Most central government schemes accept online applications via national portals (such as JanSamarth, National Scholarship Portal, Skill India Digital, or PM-Kisan) or through local Common Service Centres (CSCs).\n\nHere are relevant schemes with direct application pathways:");
+      } else if (lower.includes("low income") || lower.includes("poverty") || lower.includes("bpl") || lower.includes("गरीब")) {
+        responseText = t('assistant.lowIncomeResponse', "For low-income families and vulnerable households, key central initiatives provide free food security (PMGKAY), comprehensive health coverage up to ₹5 Lakh (AB-PMJAY), social pensions (IGNOAPS/PM-SYM), and collateral-free microfinance:\n\nHere are primary welfare matches:");
+      } else if (lower.includes("explain") || lower.includes("बताएं")) {
+        responseText = t('assistant.explainResponse', "Here is a breakdown of the relevant welfare scheme from our verified 70-scheme registry. You can explore its benefits, eligibility criteria, and official government portal below:");
       } else if (matches.length > 0) {
-        responseText = `Based on your request, I found ${matches.length} scheme${matches.length > 1 ? 's' : ''} in our 70-scheme verified registry that may match your requirements:`;
+        // We can't perfectly translate dynamic text without breaking sentences, but let's try
+        responseText = t('assistant.matchResponse', "Based on your request, I found some schemes in our 70-scheme verified registry that may match your requirements:");
       } else {
-        responseText = "I couldn't find an exact scheme match for that specific phrase in our 70-scheme registry. Try asking about scholarships (e.g. PM-Vidyalaxmi, NMMSS), business loans (MUDRA, PMEGP), pensions (UPS, APY), farmer credit (KCC, PMFBY), or health coverage (PM-JAY)!";
+        responseText = t('assistant.noMatchResponse', "I couldn't find an exact scheme match for that specific phrase in our 70-scheme registry. Try asking about scholarships (e.g. PM-Vidyalaxmi, NMMSS), business loans (MUDRA, PMEGP), pensions (UPS, APY), farmer credit (KCC, PMFBY), or health coverage (PM-JAY)!");
       }
 
       const botMsg = {
@@ -85,7 +87,7 @@ export default function Assistant() {
   };
 
   const handleResetChat = () => {
-    setMessages(INITIAL_MESSAGES);
+    setMessages(getInitialMessages());
   };
 
   return (
@@ -99,15 +101,15 @@ export default function Assistant() {
               <Bot className="w-5 h-5 text-peach-600" />
             </div>
             <h1 className="text-2xl font-extrabold text-black tracking-tight flex items-center gap-2">
-              <span>SchemeSathi AI</span>
+              <span>{t('assistant.title', 'SchemeSathi AI')}</span>
               <span className="text-xl">🤖</span>
             </h1>
             <span className="px-2.5 py-0.5 text-xs font-bold bg-lemon-100 text-lemon-800 rounded-full">
-              70 Schemes Companion
+              {t('assistant.companionBadge', '70 Schemes Companion')}
             </span>
           </div>
           <p className="text-xs sm:text-sm text-charcoal-600">
-            Your conversational guide to understanding government schemes.
+            {t('assistant.subtitle', 'Your conversational guide to understanding government schemes.')}
           </p>
         </div>
 
@@ -117,10 +119,10 @@ export default function Assistant() {
             type="button"
             onClick={handleResetChat}
             className="p-2 text-charcoal-500 hover:text-black hover:bg-cream-100 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
-            title="Reset Chat Session"
+            title={t('common.reset', 'Reset Chat Session')}
           >
             <RotateCcw className="w-4 h-4" />
-            <span className="hidden sm:inline">Reset</span>
+            <span className="hidden sm:inline">{t('common.reset', 'Reset')}</span>
           </button>
         </div>
       </div>
@@ -129,7 +131,7 @@ export default function Assistant() {
       <div className="p-4 bg-lemon-100 border border-lemon-200 rounded-2xl flex items-start gap-3 text-xs text-charcoal-800">
         <Info className="w-4 h-4 text-lemon-600 flex-shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong>SchemeSathi AI Guide:</strong> This conversational assistant demonstrates deterministic matching against all 70 verified schemes in 10 categories. Final eligibility should always be verified on the official government portal.
+          <strong>{t('assistant.guideTitle', 'SchemeSathi AI Guide:')}</strong> {t('assistant.guideText', 'This conversational assistant demonstrates deterministic matching against all 70 verified schemes in 10 categories. Final eligibility should always be verified on the official government portal.')}
         </p>
       </div>
 

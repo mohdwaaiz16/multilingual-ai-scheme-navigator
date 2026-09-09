@@ -5,7 +5,7 @@ import { Bot, User, ArrowRight, Sparkles, Building2, CheckCircle2 } from 'lucide
 import EligibilityBadge from './EligibilityBadge';
 
 export default function ChatMessage({ message }) {
-  const { l } = useLanguage();
+  const { t, l } = useLanguage();
   const isAssistant = message.sender === 'assistant';
 
   return (
@@ -45,7 +45,7 @@ export default function ChatMessage({ message }) {
         {isAssistant && message.recommendedSchemes && message.recommendedSchemes.length > 0 && (
           <div className="space-y-3 pt-1">
             <span className="text-[11px] font-bold text-charcoal-600 uppercase tracking-wider block">
-              Suggested Potential Matches ({message.recommendedSchemes.length}):
+              {t('assistant.suggestedMatches', 'Suggested Potential Matches')} ({message.recommendedSchemes.length}):
             </span>
             <div className="grid grid-cols-1 gap-3">
               {message.recommendedSchemes.map((scheme) => (
@@ -56,7 +56,7 @@ export default function ChatMessage({ message }) {
                   <div className="flex flex-wrap items-center justify-between gap-1.5">
                     <EligibilityBadge type={scheme.category} variant="category" />
                     <span className="text-[10px] font-bold text-charcoal-600 bg-cream-200 px-2 py-0.5 rounded">
-                      {scheme.subcategory}
+                      {l(scheme.subcategory)}
                     </span>
                   </div>
 
@@ -65,23 +65,23 @@ export default function ChatMessage({ message }) {
                       to={`/schemes/${scheme.id}`}
                       className="hover:text-lemon-600 hover:underline"
                     >
-                      {l(scheme.schemeName)}
+                      {l(scheme.schemeName || scheme.name)}
                     </Link>
                   </h4>
 
                   <p className="text-xs text-charcoal-700 line-clamp-2">
-                    {scheme.keyBenefits || scheme.description}
+                    {l(scheme.keyBenefits || scheme.description)}
                   </p>
 
                   <div className="pt-2 border-t border-charcoal-100 flex items-center justify-between">
-                    <span className="text-[11px] text-charcoal-500">
-                      {scheme.implementingMinistry}
+                    <span className="text-[11px] text-charcoal-500 truncate max-w-[150px]">
+                      {l(scheme.implementingMinistry || scheme.department)}
                     </span>
                     <Link
                       to={`/schemes/${scheme.id}`}
                       className="inline-flex items-center gap-1 text-xs font-bold text-black hover:text-charcoal-800"
                     >
-                      <span>View Details</span>
+                      <span>{t('scheme.viewDetails', 'View Details')}</span>
                       <ArrowRight className="w-3.5 h-3.5 text-lemon-600" />
                     </Link>
                   </div>

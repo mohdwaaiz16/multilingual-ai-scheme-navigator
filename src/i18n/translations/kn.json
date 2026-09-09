@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "ಮುಖಪುಟ",
+    "schemes": "ಯೋಜನೆಗಳು",
+    "categories": "ವರ್ಗಗಳು",
+    "findSchemes": "ಯೋಜನೆಗಳನ್ನು ಹುಡುಕಿ",
+    "aiAssistant": "AI ಸಹಾಯಕ",
+    "about": "About (Kannada)",
+    "language": "ಭಾಷೆ",
+    "login": "Login (Kannada)",
+    "signup": "Sign Up (Kannada)",
+    "profile": "Profile (Kannada)",
+    "logout": "Logout (Kannada)"
+  },
+  "hero": {
+    "title": "ನಿಮ್ಮ ಪರಿಪೂರ್ಣ ಸರ್ಕಾರಿ ಯೋಜನೆಯನ್ನು ಹುಡುಕಿ",
+    "subtitle": "ನಮ್ಮ ಬಹುಭಾಷಾ AI ಸಹಾಯಕವನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮಗಾಗಿ ವಿಶೇಷವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಬ್ಸಿಡಿಗಳು, ವಿದ್ಯಾರ್ಥಿವೇತನಗಳು ಮತ್ತು ಪ್ರಯೋಜನಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.",
+    "searchSchemes": "ಯೋಜನೆಗಳನ್ನು ಹುಡುಕಿ",
+    "tryAiAssistant": "AI ಸಹಾಯಕವನ್ನು ಪ್ರಯತ್ನಿಸಿ",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Kannada)",
+    "stats": {
+      "schemes": "Active Schemes (Kannada)",
+      "categories": "Categories (Kannada)",
+      "languages": "Languages (Kannada)"
+    }
+  },
+  "common": {
+    "viewDetails": "ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+    "applyNow": "ಈಗ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+    "learnMore": "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
+    "search": "ಹುಡುಕು",
+    "filters": "ಫಿಲ್ಟರ್‌ಗಳು",
+    "reset": "ಮರುಹೊಂದಿಸಿ",
+    "clearAll": "ಎಲ್ಲವನ್ನೂ ತೆರವುಗೊಳಿಸಿ",
+    "clear": "Clear (Kannada)",
+    "apply": "Apply (Kannada)",
+    "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "error": "ದೋಷ ಸಂಭವಿಸಿದೆ",
+    "noResults": "ಯಾವುದೇ ಯೋಜನೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "officialWebsite": "ಅಧಿಕೃತ ಜಾಲತಾಣ",
+    "lastUpdated": "ಕೊನೆಯದಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "governmentScheme": "Government Scheme (Kannada)",
+    "back": "Back (Kannada)"
+  },
+  "categories": {
+    "title": "Popular Categories (Kannada)",
+    "description": "Browse schemes by category (Kannada)",
+    "browseAll": "Browse All Categories (Kannada)",
+    "emptyState": "No categories found. (Kannada)"
+  },
+  "scheme": {
+    "overview": "Overview (Kannada)",
+    "description": "ವಿವರಣೆ",
+    "benefits": "ಪ್ರಮುಖ ಪ್ರಯೋಜನಗಳು",
+    "eligibility": "ಅರ್ಹತಾ ಮಾನದಂಡಗಳು",
+    "requiredDocs": "ಅಗತ್ಯ ದಾಖಲೆಗಳು",
+    "applicationProcess": "ಅರ್ಜಿ ಪ್ರಕ್ರಿಯೆ",
+    "ageLimit": "ವಯಸ್ಸಿನ ಮಿತಿ",
+    "incomeLimit": "ಆದಾಯದ ಮಿತಿ",
+    "source": "Source (Kannada)",
+    "ministry": "Ministry (Kannada)",
+    "department": "Department (Kannada)",
+    "state": "State (Kannada)",
+    "targetBeneficiaries": "Target Beneficiaries (Kannada)",
+    "faqs": "FAQs (Kannada)",
+    "relatedSchemes": "Related Schemes (Kannada)"
+  },
+  "filters": {
+    "searchPlaceholder": "ಯೋಜನೆಗಳಿಗಾಗಿ ಹುಡುಕಿ (ಉದಾ. ಪಿಂಚಣಿ, ರೈತ...)",
+    "selectCategory": "ಎಲ್ಲಾ ವರ್ಗಗಳು",
+    "selectState": "ಎಲ್ಲಾ ರಾಜ್ಯಗಳು",
+    "category": "Category (Kannada)",
+    "state": "State (Kannada)",
+    "age": "Age (Kannada)",
+    "income": "Income (Kannada)",
+    "occupation": "Occupation (Kannada)",
+    "education": "Education (Kannada)",
+    "gender": "Gender (Kannada)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Kannada)",
+    "findMatching": "Find Matching Schemes (Kannada)",
+    "eligible": "Eligible (Kannada)",
+    "notEligible": "Not Eligible (Kannada)",
+    "potentiallyEligible": "Potentially Eligible (Kannada)",
+    "moreInfoNeeded": "More Information Needed (Kannada)",
+    "missingInfo": "Missing Information (Kannada)",
+    "fields": {
+      "age": "Age (Kannada)",
+      "gender": "Gender (Kannada)",
+      "state": "State (Kannada)",
+      "district": "District (Kannada)",
+      "income": "Income (Kannada)",
+      "occupation": "Occupation (Kannada)",
+      "education": "Education (Kannada)",
+      "employment": "Employment (Kannada)",
+      "student": "Student (Kannada)",
+      "farmer": "Farmer (Kannada)",
+      "businessOwner": "Business Owner (Kannada)",
+      "businessType": "Business Type (Kannada)",
+      "socialCategory": "Social Category (Kannada)",
+      "disability": "Disability (Kannada)",
+      "familySize": "Family Size (Kannada)",
+      "maritalStatus": "Marital Status (Kannada)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Kannada)",
+    "matchScore": "Match Score (Kannada)",
+    "whyMatches": "Why this matches you (Kannada)",
+    "whyMayQualify": "Why you may qualify (Kannada)",
+    "eligibility": "Eligibility (Kannada)",
+    "matchedCriteria": "Matched Criteria (Kannada)",
+    "failedCriteria": "Failed Criteria (Kannada)",
+    "missingInfo": "Missing Information (Kannada)",
+    "viewScheme": "View Scheme (Kannada)",
+    "applyOfficially": "Apply Officially (Kannada)"
+  },
+  "assistant": {
+    "title": "ಸ್ಕೀಮ್‌ಸಾಥಿ AI ಸಹಾಯಕ",
+    "subtitle": "ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ನನ್ನನ್ನು ಏನಾದರೂ ಕೇಳಿ!",
+    "welcome": "ನಮಸ್ಕಾರ! ನಾನು ಸ್ಕೀಮ್‌ಸಾಥಿ. ಇಂದು ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಹುಡುಕಲು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
+    "placeholder": "ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಇಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ...",
+    "thinking": "ಯೋಚಿಸುತ್ತಿದೆ...",
+    "error": "Sorry, I encountered an error. (Kannada)",
+    "clearChat": "Clear Chat (Kannada)",
+    "newConversation": "New Conversation (Kannada)",
+    "suggestions": [
+      "ರೈತರಿಗೆ ಯಾವ ಯೋಜನೆಗಳಿವೆ?",
+      "ಯಾವುದಾದರೂ ಶಿಕ್ಷಣ ಸಾಲಗಳಿವೆಯೇ?",
+      "ಪಿಎಂ-ಕಿಸಾನ್ ಎಂದರೇನು?",
+      "ಮಹಿಳಾ ಉದ್ಯಮಿಗಳಿಗೆ ಯೋಜನೆಗಳು"
+    ],
+    "send": "Send (Kannada)",
+    "voice": "Voice Input (Kannada)"
+  },
+  "forms": {
+    "submit": "Submit (Kannada)",
+    "cancel": "Cancel (Kannada)",
+    "required": "This field is required (Kannada)",
+    "success": "Success (Kannada)",
+    "failure": "Failure (Kannada)"
+  },
+  "footer": {
+    "navigation": "Navigation (Kannada)",
+    "about": "About SchemeSathi (Kannada)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Kannada)",
+    "officialSources": "Official Sources (Kannada)",
+    "contact": "Contact (Kannada)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Kannada)",
+    "links": "Important Links (Kannada)",
+    "support": "Support (Kannada)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Kannada)",
+    "somethingWentWrong": "Something went wrong (Kannada)",
+    "tryAgain": "Try again (Kannada)",
+    "noSchemesFound": "No schemes found (Kannada)",
+    "noCategoriesFound": "No categories found (Kannada)",
+    "unableToLoadData": "Unable to load data (Kannada)",
+    "networkError": "Network error (Kannada)",
+    "pleaseTryAgain": "Please try again (Kannada)"
+  }
+}

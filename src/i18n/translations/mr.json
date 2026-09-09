@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "मुख्यपृष्ठ",
+    "schemes": "योजना",
+    "categories": "श्रेण्या",
+    "findSchemes": "योजना शोधा",
+    "aiAssistant": "AI सहाय्यक",
+    "about": "About (Marathi)",
+    "language": "भाषा",
+    "login": "Login (Marathi)",
+    "signup": "Sign Up (Marathi)",
+    "profile": "Profile (Marathi)",
+    "logout": "Logout (Marathi)"
+  },
+  "hero": {
+    "title": "तुमची परिपूर्ण सरकारी योजना शोधा",
+    "subtitle": "आमच्या बहुभाषिक AI सहाय्यकाचा वापर करून विशेषत: तुमच्यासाठी तयार केलेल्या सबसिडी, शिष्यवृत्ती आणि फायदे शोधा.",
+    "searchSchemes": "योजना शोधा",
+    "tryAiAssistant": "AI सहाय्यक वापरून पहा",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Marathi)",
+    "stats": {
+      "schemes": "Active Schemes (Marathi)",
+      "categories": "Categories (Marathi)",
+      "languages": "Languages (Marathi)"
+    }
+  },
+  "common": {
+    "viewDetails": "तपशील पहा",
+    "applyNow": "आता अर्ज करा",
+    "learnMore": "अधिक जाणून घ्या",
+    "search": "शोधा",
+    "filters": "फिल्टर",
+    "reset": "रीसेट करा",
+    "clearAll": "सर्व पुसून टाका",
+    "clear": "Clear (Marathi)",
+    "apply": "Apply (Marathi)",
+    "loading": "लोड करत आहे...",
+    "error": "एक त्रुटी आली",
+    "noResults": "कोणत्याही योजना आढळल्या नाहीत",
+    "officialWebsite": "अधिकृत वेबसाइट",
+    "lastUpdated": "अंतिम पडताळणी",
+    "governmentScheme": "Government Scheme (Marathi)",
+    "back": "Back (Marathi)"
+  },
+  "categories": {
+    "title": "Popular Categories (Marathi)",
+    "description": "Browse schemes by category (Marathi)",
+    "browseAll": "Browse All Categories (Marathi)",
+    "emptyState": "No categories found. (Marathi)"
+  },
+  "scheme": {
+    "overview": "Overview (Marathi)",
+    "description": "वर्णन",
+    "benefits": "मुख्य फायदे",
+    "eligibility": "पात्रता निकष",
+    "requiredDocs": "आवश्यक कागदपत्रे",
+    "applicationProcess": "अर्ज प्रक्रिया",
+    "ageLimit": "वय मर्यादा",
+    "incomeLimit": "उत्पन्न मर्यादा",
+    "source": "Source (Marathi)",
+    "ministry": "Ministry (Marathi)",
+    "department": "Department (Marathi)",
+    "state": "State (Marathi)",
+    "targetBeneficiaries": "Target Beneficiaries (Marathi)",
+    "faqs": "FAQs (Marathi)",
+    "relatedSchemes": "Related Schemes (Marathi)"
+  },
+  "filters": {
+    "searchPlaceholder": "योजना शोधा (उदा. पेन्शन, शेतकरी...)",
+    "selectCategory": "सर्व श्रेण्या",
+    "selectState": "सर्व राज्ये",
+    "category": "Category (Marathi)",
+    "state": "State (Marathi)",
+    "age": "Age (Marathi)",
+    "income": "Income (Marathi)",
+    "occupation": "Occupation (Marathi)",
+    "education": "Education (Marathi)",
+    "gender": "Gender (Marathi)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Marathi)",
+    "findMatching": "Find Matching Schemes (Marathi)",
+    "eligible": "Eligible (Marathi)",
+    "notEligible": "Not Eligible (Marathi)",
+    "potentiallyEligible": "Potentially Eligible (Marathi)",
+    "moreInfoNeeded": "More Information Needed (Marathi)",
+    "missingInfo": "Missing Information (Marathi)",
+    "fields": {
+      "age": "Age (Marathi)",
+      "gender": "Gender (Marathi)",
+      "state": "State (Marathi)",
+      "district": "District (Marathi)",
+      "income": "Income (Marathi)",
+      "occupation": "Occupation (Marathi)",
+      "education": "Education (Marathi)",
+      "employment": "Employment (Marathi)",
+      "student": "Student (Marathi)",
+      "farmer": "Farmer (Marathi)",
+      "businessOwner": "Business Owner (Marathi)",
+      "businessType": "Business Type (Marathi)",
+      "socialCategory": "Social Category (Marathi)",
+      "disability": "Disability (Marathi)",
+      "familySize": "Family Size (Marathi)",
+      "maritalStatus": "Marital Status (Marathi)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Marathi)",
+    "matchScore": "Match Score (Marathi)",
+    "whyMatches": "Why this matches you (Marathi)",
+    "whyMayQualify": "Why you may qualify (Marathi)",
+    "eligibility": "Eligibility (Marathi)",
+    "matchedCriteria": "Matched Criteria (Marathi)",
+    "failedCriteria": "Failed Criteria (Marathi)",
+    "missingInfo": "Missing Information (Marathi)",
+    "viewScheme": "View Scheme (Marathi)",
+    "applyOfficially": "Apply Officially (Marathi)"
+  },
+  "assistant": {
+    "title": "स्कीमसाथी AI सहाय्यक",
+    "subtitle": "तुमच्या भाषेत मला काहीही विचारा!",
+    "welcome": "नमस्कार! मी स्कीमसाथी आहे. आज सरकारी योजना शोधण्यात मी तुम्हाला कशी मदत करू शकेन?",
+    "placeholder": "तुमचा प्रश्न येथे टाइप करा...",
+    "thinking": "विचार करत आहे...",
+    "error": "Sorry, I encountered an error. (Marathi)",
+    "clearChat": "Clear Chat (Marathi)",
+    "newConversation": "New Conversation (Marathi)",
+    "suggestions": [
+      "शेतकऱ्यांसाठी कोणत्या योजना आहेत?",
+      "शैक्षणिक कर्ज आहेत का?",
+      "पीएम-किसान म्हणजे काय?",
+      "महिला उद्योजकांसाठी योजना"
+    ],
+    "send": "Send (Marathi)",
+    "voice": "Voice Input (Marathi)"
+  },
+  "forms": {
+    "submit": "Submit (Marathi)",
+    "cancel": "Cancel (Marathi)",
+    "required": "This field is required (Marathi)",
+    "success": "Success (Marathi)",
+    "failure": "Failure (Marathi)"
+  },
+  "footer": {
+    "navigation": "Navigation (Marathi)",
+    "about": "About SchemeSathi (Marathi)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Marathi)",
+    "officialSources": "Official Sources (Marathi)",
+    "contact": "Contact (Marathi)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Marathi)",
+    "links": "Important Links (Marathi)",
+    "support": "Support (Marathi)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Marathi)",
+    "somethingWentWrong": "Something went wrong (Marathi)",
+    "tryAgain": "Try again (Marathi)",
+    "noSchemesFound": "No schemes found (Marathi)",
+    "noCategoriesFound": "No categories found (Marathi)",
+    "unableToLoadData": "Unable to load data (Marathi)",
+    "networkError": "Network error (Marathi)",
+    "pleaseTryAgain": "Please try again (Marathi)"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "முகப்பு",
+    "schemes": "திட்டங்கள்",
+    "categories": "பிரிவுகள்",
+    "findSchemes": "திட்டங்களை தேடு",
+    "aiAssistant": "AI உதவியாளர்",
+    "about": "About (Tamil)",
+    "language": "மொழி",
+    "login": "Login (Tamil)",
+    "signup": "Sign Up (Tamil)",
+    "profile": "Profile (Tamil)",
+    "logout": "Logout (Tamil)"
+  },
+  "hero": {
+    "title": "உங்களுக்கான சரியான அரசு திட்டத்தை கண்டறியவும்",
+    "subtitle": "எங்கள் பன்மொழி AI உதவியாளரைப் பயன்படுத்தி உங்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட மானியங்கள், உதவித்தொகைகள் மற்றும் சலுகைகளை கண்டறியவும்.",
+    "searchSchemes": "திட்டங்களை தேடு",
+    "tryAiAssistant": "AI உதவியாளரை முயற்சிக்கவும்",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Tamil)",
+    "stats": {
+      "schemes": "Active Schemes (Tamil)",
+      "categories": "Categories (Tamil)",
+      "languages": "Languages (Tamil)"
+    }
+  },
+  "common": {
+    "viewDetails": "விவரங்களை பார்க்க",
+    "applyNow": "இப்போது விண்ணப்பிக்க",
+    "learnMore": "மேலும் அறிய",
+    "search": "தேடு",
+    "filters": "வடிப்பான்கள்",
+    "reset": "மீட்டமை",
+    "clearAll": "அனைத்தையும் அழிக்க",
+    "clear": "Clear (Tamil)",
+    "apply": "Apply (Tamil)",
+    "loading": "ஏற்றப்படுகிறது...",
+    "error": "ஒரு பிழை ஏற்பட்டது",
+    "noResults": "எந்த திட்டங்களும் கிடைக்கவில்லை",
+    "officialWebsite": "அதிகாரப்பூர்வ வலைத்தளம்",
+    "lastUpdated": "கடைசியாக சரிபார்க்கப்பட்டது",
+    "governmentScheme": "Government Scheme (Tamil)",
+    "back": "Back (Tamil)"
+  },
+  "categories": {
+    "title": "Popular Categories (Tamil)",
+    "description": "Browse schemes by category (Tamil)",
+    "browseAll": "Browse All Categories (Tamil)",
+    "emptyState": "No categories found. (Tamil)"
+  },
+  "scheme": {
+    "overview": "Overview (Tamil)",
+    "description": "விளக்கம்",
+    "benefits": "முக்கிய நன்மைகள்",
+    "eligibility": "தகுதி வரம்புகள்",
+    "requiredDocs": "தேவையான ஆவணங்கள்",
+    "applicationProcess": "விண்ணப்ப செயல்முறை",
+    "ageLimit": "வயது வரம்பு",
+    "incomeLimit": "வருமான வரம்பு",
+    "source": "Source (Tamil)",
+    "ministry": "Ministry (Tamil)",
+    "department": "Department (Tamil)",
+    "state": "State (Tamil)",
+    "targetBeneficiaries": "Target Beneficiaries (Tamil)",
+    "faqs": "FAQs (Tamil)",
+    "relatedSchemes": "Related Schemes (Tamil)"
+  },
+  "filters": {
+    "searchPlaceholder": "திட்டங்களை தேடவும் (உ.ம். ஓய்வூதியம், விவசாயி...)",
+    "selectCategory": "அனைத்து பிரிவுகள்",
+    "selectState": "அனைத்து மாநிலங்கள்",
+    "category": "Category (Tamil)",
+    "state": "State (Tamil)",
+    "age": "Age (Tamil)",
+    "income": "Income (Tamil)",
+    "occupation": "Occupation (Tamil)",
+    "education": "Education (Tamil)",
+    "gender": "Gender (Tamil)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Tamil)",
+    "findMatching": "Find Matching Schemes (Tamil)",
+    "eligible": "Eligible (Tamil)",
+    "notEligible": "Not Eligible (Tamil)",
+    "potentiallyEligible": "Potentially Eligible (Tamil)",
+    "moreInfoNeeded": "More Information Needed (Tamil)",
+    "missingInfo": "Missing Information (Tamil)",
+    "fields": {
+      "age": "Age (Tamil)",
+      "gender": "Gender (Tamil)",
+      "state": "State (Tamil)",
+      "district": "District (Tamil)",
+      "income": "Income (Tamil)",
+      "occupation": "Occupation (Tamil)",
+      "education": "Education (Tamil)",
+      "employment": "Employment (Tamil)",
+      "student": "Student (Tamil)",
+      "farmer": "Farmer (Tamil)",
+      "businessOwner": "Business Owner (Tamil)",
+      "businessType": "Business Type (Tamil)",
+      "socialCategory": "Social Category (Tamil)",
+      "disability": "Disability (Tamil)",
+      "familySize": "Family Size (Tamil)",
+      "maritalStatus": "Marital Status (Tamil)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Tamil)",
+    "matchScore": "Match Score (Tamil)",
+    "whyMatches": "Why this matches you (Tamil)",
+    "whyMayQualify": "Why you may qualify (Tamil)",
+    "eligibility": "Eligibility (Tamil)",
+    "matchedCriteria": "Matched Criteria (Tamil)",
+    "failedCriteria": "Failed Criteria (Tamil)",
+    "missingInfo": "Missing Information (Tamil)",
+    "viewScheme": "View Scheme (Tamil)",
+    "applyOfficially": "Apply Officially (Tamil)"
+  },
+  "assistant": {
+    "title": "ஸ்கீம்சாதி AI உதவியாளர்",
+    "subtitle": "உங்கள் மொழியில் எதையும் கேளுங்கள்!",
+    "welcome": "வணக்கம்! நான் ஸ்கீம்சாதி. இன்று அரசு திட்டங்களை கண்டறிய நான் உங்களுக்கு எப்படி உதவ முடியும்?",
+    "placeholder": "உங்கள் கேள்வியை இங்கே தட்டச்சு செய்யவும்...",
+    "thinking": "யோசிக்கிறது...",
+    "error": "Sorry, I encountered an error. (Tamil)",
+    "clearChat": "Clear Chat (Tamil)",
+    "newConversation": "New Conversation (Tamil)",
+    "suggestions": [
+      "விவசாயிகளுக்கான திட்டங்கள் என்ன?",
+      "கல்வி கடன் ஏதேனும் உள்ளதா?",
+      "PM-கிசான் என்றால் என்ன?",
+      "பெண் தொழில்முனைவோருக்கான திட்டங்கள்"
+    ],
+    "send": "Send (Tamil)",
+    "voice": "Voice Input (Tamil)"
+  },
+  "forms": {
+    "submit": "Submit (Tamil)",
+    "cancel": "Cancel (Tamil)",
+    "required": "This field is required (Tamil)",
+    "success": "Success (Tamil)",
+    "failure": "Failure (Tamil)"
+  },
+  "footer": {
+    "navigation": "Navigation (Tamil)",
+    "about": "About SchemeSathi (Tamil)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Tamil)",
+    "officialSources": "Official Sources (Tamil)",
+    "contact": "Contact (Tamil)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Tamil)",
+    "links": "Important Links (Tamil)",
+    "support": "Support (Tamil)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Tamil)",
+    "somethingWentWrong": "Something went wrong (Tamil)",
+    "tryAgain": "Try again (Tamil)",
+    "noSchemesFound": "No schemes found (Tamil)",
+    "noCategoriesFound": "No categories found (Tamil)",
+    "unableToLoadData": "Unable to load data (Tamil)",
+    "networkError": "Network error (Tamil)",
+    "pleaseTryAgain": "Please try again (Tamil)"
+  }
+}

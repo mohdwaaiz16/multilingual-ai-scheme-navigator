@@ -1,0 +1,544 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ========================================================
+// AUTH / USERS
+// ========================================================
+
+model User {
+  id            String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email         String?      @unique
+  phone         String?      @unique
+  roleId        String
+  role          Role         @relation(fields: [roleId], references: [id])
+  status        String       @default("ACTIVE") // ACTIVE, INACTIVE, SUSPENDED
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  lastLoginAt   DateTime?
+  
+  profile       UserProfile?
+  savedSchemes  SavedScheme[]
+  queries       UserQuery[]
+  matchResults  MatchResult[]
+  auditLogs     AuditLog[]
+}
+
+model Role {
+  id          String           @id @default(uuid())
+  name        String           @unique // USER, ADMIN, SUPER_ADMIN
+  description String?
+  users       User[]
+  permissions RolePermission[]
+}
+
+model Permission {
+  id          String           @id @default(uuid())
+  name        String           @unique // scheme.read, scheme.create, etc.
+  description String?
+  roles       RolePermission[]
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model UserProfile {
+  id                   String   @id @default(uuid())
+  userId               String   @unique @db.Uuid
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName             String?
+  age                  Int?
+  gender               String?
+  state                String?
+  district             String?
+  city                 String?
+  pincode              String?
+  annualIncome         Float?
+  occupation           String?
+  education            String?
+  employmentStatus     String?
+  studentStatus        String?
+  farmerStatus         String?
+  businessOwner        Boolean?
+  businessType         String?
+  socialCategory       String?
+  disabilityStatus     String?
+  minorityStatus       String?
+  maritalStatus        String?
+  familySize           Int?
+  residenceType        String?
+  preferredLanguage    String?  @default("en")
+  additionalAttributes Json?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+// ========================================================
+// SCHEME STRUCTURE
+// ========================================================
+
+model Scheme {
+  id                    String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  slug                  String   @unique
+  schemeCode            String?  @unique
+  name                  String
+  shortDescription      String?
+  description           String?
+  objectives            String?
+  ministry              String?
+  department            String?
+  implementingAgency    String?
+  governmentLevel       String?  // CENTRAL, STATE, UT, CENTRAL_AND_STATE
+  schemeType            String?
+  status                String   @default("DRAFT") // DRAFT, PUBLISHED, INACTIVE, ARCHIVED
+  verificationStatus    String   @default("UNVERIFIED") // VERIFIED, NEEDS_REVIEW, UNVERIFIED
+  officialUrl           String?
+  applicationUrl        String?
+  sourceUrl             String?
+  startDate             DateTime?
+  endDate               DateTime?
+  lastVerifiedAt        DateTime?
+  sourceLastUpdatedAt   DateTime?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  categories            SchemeCategory[]
+  translations          SchemeTranslation[]
+  benefits              Benefit[]
+  documents             SchemeDocument[]
+  eligibilityRules      EligibilityRule[]
+  ruleGroups            RuleGroup[]
+  keywords              SchemeKeyword[]
+  applicationMethods    SchemeApplicationMethod[]
+  applicationSteps      ApplicationStep[]
+  faqs                  SchemeFaq[]
+  locations             SchemeLocation[]
+  sources               SchemeSource[]
+  versions              SchemeVersion[]
+  verifications         SchemeVerification[]
+  savedByUsers          SavedScheme[]
+  matchResults          MatchResult[]
+
+  @@index([slug])
+  @@index([status])
+  @@index([governmentLevel])
+  @@index([ministry])
+  @@index([department])
+  @@index([lastVerifiedAt])
+}
+
+model Category {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  icon        String?
+  status      String   @default("ACTIVE")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  schemes      SchemeCategory[]
+  translations CategoryTranslation[]
+}
+
+model SchemeCategory {
+  schemeId   String @db.Uuid
+  categoryId String
+  scheme     Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([schemeId, categoryId])
+  @@index([schemeId])
+  @@index([categoryId])
+}
+
+model CategoryTranslation {
+  id           String   @id @default(uuid())
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  languageCode String
+  name         String
+  description  String?
+
+  @@unique([categoryId, languageCode])
+}
+
+model SchemeTranslation {
+  id               String   @id @default(uuid())
+  schemeId         String   @db.Uuid
+  scheme           Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  languageCode     String
+  name             String
+  shortDescription String?
+  description      String?
+  objectives       String?
+  benefitsText     String?
+  eligibilityText  String?
+  applicationText  String?
+  documentsText    String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([schemeId, languageCode])
+  @@index([languageCode])
+}
+
+// ========================================================
+// BENEFITS
+// ========================================================
+
+model Benefit {
+  id           String   @id @default(uuid())
+  schemeId     String   @db.Uuid
+  scheme       Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  benefitType  String   // financial assistance, subsidy, loan, etc.
+  title        String
+  description  String?
+  amount       Float?
+  currency     String?  @default("INR")
+  frequency    String?
+  conditions   String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  translations BenefitTranslation[]
+}
+
+model BenefitTranslation {
+  id           String   @id @default(uuid())
+  benefitId    String
+  benefit      Benefit  @relation(fields: [benefitId], references: [id], onDelete: Cascade)
+  languageCode String
+  title        String
+  description  String?
+  conditions   String?
+
+  @@unique([benefitId, languageCode])
+}
+
+// ========================================================
+// DOCUMENTS
+// ========================================================
+
+model Document {
+  id           String   @id @default(uuid())
+  name         String
+  description  String?
+  documentType String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  translations DocumentTranslation[]
+  schemes      SchemeDocument[]
+}
+
+model DocumentTranslation {
+  id           String   @id @default(uuid())
+  documentId   String
+  document     Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  languageCode String
+  name         String
+  description  String?
+
+  @@unique([documentId, languageCode])
+}
+
+model SchemeDocument {
+  schemeId   String   @db.Uuid
+  documentId String
+  scheme     Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  required   Boolean  @default(true)
+  condition  String?
+  notes      String?
+
+  @@id([schemeId, documentId])
+}
+
+// ========================================================
+// ELIGIBILITY RULES
+// ========================================================
+
+model EligibilityRule {
+  id           String     @id @default(uuid())
+  schemeId     String     @db.Uuid
+  scheme       Scheme     @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  ruleGroupId  String?
+  ruleGroup    RuleGroup? @relation(fields: [ruleGroupId], references: [id], onDelete: SetNull)
+  field        String
+  operator     String     // EQ, NEQ, GT, GTE, LT, LTE, IN, NOT_IN, CONTAINS, NOT_CONTAINS, BETWEEN, IS_NULL, IS_NOT_NULL
+  value        Json
+  dataType     String     // STRING, NUMBER, BOOLEAN, ARRAY, DATE
+  required     Boolean    @default(true)
+  priority     Int        @default(0)
+  description  String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([schemeId])
+  @@index([field])
+}
+
+model RuleGroup {
+  id            String     @id @default(uuid())
+  schemeId      String     @db.Uuid
+  scheme        Scheme     @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  parentGroupId String?
+  parentGroup   RuleGroup? @relation("RuleGroupToRuleGroup", fields: [parentGroupId], references: [id], onDelete: SetNull)
+  logicOperator String     // AND, OR
+  name          String?
+  description   String?
+
+  childGroups RuleGroup[]       @relation("RuleGroupToRuleGroup")
+  rules       EligibilityRule[]
+}
+
+// ========================================================
+// SEARCH KEYWORDS
+// ========================================================
+
+model SchemeKeyword {
+  id           String @id @default(uuid())
+  schemeId     String @db.Uuid
+  scheme       Scheme @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  keyword      String
+  languageCode String @default("en")
+  source       String @default("MANUAL") // MANUAL, AI, SCRAPED
+
+  @@index([keyword])
+  @@index([languageCode])
+}
+
+// NOTE: SchemeEmbedding would use pgvector. Prisma supports it via raw queries or extensions.
+// For now, defined as Unsupported("vector") or JSON, depending on Prisma preview features.
+model SchemeEmbedding {
+  id          String   @id @default(uuid())
+  schemeId    String   @unique @db.Uuid // One-to-one or many-to-one depending on chunking
+  contentHash String
+  model       String
+  // embedding Unsupported("vector(1536)") // If pgvector extension is enabled
+  embedding   Json?    // Fallback if not using pgvector native type yet
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ========================================================
+// LOCATIONS
+// ========================================================
+
+model Location {
+  id           String @id @default(uuid())
+  country      String @default("India")
+  state        String?
+  district     String?
+  city         String?
+  pincode      String?
+  locationType String // NATIONAL, STATE, DISTRICT, CITY, PINCODE
+
+  schemes SchemeLocation[]
+}
+
+model SchemeLocation {
+  schemeId      String   @db.Uuid
+  locationId    String
+  scheme        Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  location      Location @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  locationScope String   // NATIONAL, STATE, DISTRICT, CITY, OTHER
+
+  @@id([schemeId, locationId])
+  @@index([schemeId])
+  @@index([locationId])
+}
+
+// ========================================================
+// APPLICATION INFORMATION
+// ========================================================
+
+model ApplicationMethod {
+  id   String @id @default(uuid())
+  name String @unique // ONLINE, OFFLINE, BOTH, CSC, BANK, POST, OFFICE, PORTAL, OTHER
+
+  schemes SchemeApplicationMethod[]
+}
+
+model SchemeApplicationMethod {
+  schemeId            String            @db.Uuid
+  applicationMethodId String
+  scheme              Scheme            @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  applicationMethod   ApplicationMethod @relation(fields: [applicationMethodId], references: [id], onDelete: Cascade)
+
+  @@id([schemeId, applicationMethodId])
+}
+
+model ApplicationStep {
+  id          String   @id @default(uuid())
+  schemeId    String   @db.Uuid
+  scheme      Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  stepNumber  Int
+  title       String
+  description String?
+
+  translations ApplicationStepTranslation[]
+}
+
+model ApplicationStepTranslation {
+  id                String          @id @default(uuid())
+  applicationStepId String
+  applicationStep   ApplicationStep @relation(fields: [applicationStepId], references: [id], onDelete: Cascade)
+  languageCode      String
+  title             String
+  description       String?
+
+  @@unique([applicationStepId, languageCode])
+}
+
+// ========================================================
+// FAQ
+// ========================================================
+
+model SchemeFaq {
+  id           String @id @default(uuid())
+  schemeId     String @db.Uuid
+  scheme       Scheme @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  question     String
+  answer       String
+  displayOrder Int    @default(0)
+
+  translations FaqTranslation[]
+}
+
+model FaqTranslation {
+  id           String    @id @default(uuid())
+  faqId        String
+  faq          SchemeFaq @relation(fields: [faqId], references: [id], onDelete: Cascade)
+  languageCode String
+  question     String
+  answer       String
+
+  @@unique([faqId, languageCode])
+}
+
+// ========================================================
+// SOURCE / VERIFICATION
+// ========================================================
+
+model SchemeSource {
+  id               String    @id @default(uuid())
+  schemeId         String    @db.Uuid
+  scheme           Scheme    @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  sourceName       String
+  sourceUrl        String?
+  sourceType       String    // MYSCHEME, MINISTRY, GOVERNMENT_PORTAL, APPLICATION_PORTAL, OTHER_OFFICIAL
+  sourceIdentifier String?
+  retrievedAt      DateTime  @default(now())
+  lastCheckedAt    DateTime?
+  contentHash      String?
+  isOfficial       Boolean   @default(true)
+  notes            String?
+
+  @@index([sourceName])
+  @@index([sourceUrl])
+}
+
+model SchemeVersion {
+  id            String   @id @default(uuid())
+  schemeId      String   @db.Uuid
+  scheme        Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  versionNumber Int
+  snapshot      Json
+  changeSummary String?
+  createdBy     String?  // Could be system or user UUID
+  createdAt     DateTime @default(now())
+}
+
+model SchemeVerification {
+  id                 String   @id @default(uuid())
+  schemeId           String   @db.Uuid
+  scheme             Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  verificationStatus String
+  verifiedBy         String?  // user UUID
+  verifiedAt         DateTime @default(now())
+  notes              String?
+  sourceChecked      Boolean  @default(false)
+  createdAt          DateTime @default(now())
+}
+
+// ========================================================
+// USER FEATURES
+// ========================================================
+
+model SavedScheme {
+  id        String   @id @default(uuid())
+  userId    String   @db.Uuid
+  schemeId  String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scheme    Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, schemeId])
+  @@index([userId])
+}
+
+model UserQuery {
+  id           String   @id @default(uuid())
+  userId       String?  @db.Uuid // null if anonymous
+  user         User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  query        String
+  languageCode String   @default("en")
+  intent       String?
+  createdAt    DateTime @default(now())
+
+  @@index([userId])
+}
+
+model MatchResult {
+  id                 String   @id @default(uuid())
+  userId             String?  @db.Uuid
+  schemeId           String   @db.Uuid
+  user               User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  scheme             Scheme   @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  matchScore         Float
+  eligibilityStatus  String   // ELIGIBLE, NOT_ELIGIBLE, POTENTIALLY_ELIGIBLE, INSUFFICIENT_INFORMATION
+  matchedCriteria    Json
+  failedCriteria     Json
+  missingInformation Json
+  createdAt          DateTime @default(now())
+}
+
+// ========================================================
+// ADMIN / SYSTEM
+// ========================================================
+
+model AuditLog {
+  id                       String   @id @default(uuid())
+  userId                   String?  @db.Uuid
+  user                     User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action                   String
+  entityType               String
+  entityId                 String
+  oldData                  Json?
+  newData                  Json?
+  ipHashOrSafeIdentifier   String?
+  createdAt                DateTime @default(now())
+
+  @@index([userId])
+}
+
+model SystemSetting {
+  key         String   @id
+  value       Json
+  description String?
+  updatedAt   DateTime @updatedAt
+}

@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "Home",
+    "schemes": "Schemes",
+    "categories": "Categories",
+    "findSchemes": "Find Schemes",
+    "aiAssistant": "AI Assistant",
+    "about": "About",
+    "language": "Language",
+    "login": "Login",
+    "signup": "Sign Up",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "Find Your Perfect Government Scheme",
+    "subtitle": "Discover subsidies, scholarships, and benefits tailored specifically for you using our multi-lingual AI Assistant.",
+    "searchSchemes": "Find Schemes",
+    "tryAiAssistant": "Try AI Assistant",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...)",
+    "stats": {
+      "schemes": "Active Schemes",
+      "categories": "Categories",
+      "languages": "Languages"
+    }
+  },
+  "common": {
+    "viewDetails": "View Details",
+    "applyNow": "Apply Now",
+    "learnMore": "Learn More",
+    "search": "Search",
+    "filters": "Filters",
+    "reset": "Reset",
+    "clearAll": "Clear All",
+    "clear": "Clear",
+    "apply": "Apply",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No schemes found",
+    "officialWebsite": "Official Website",
+    "lastUpdated": "Last Verified",
+    "governmentScheme": "Government Scheme",
+    "back": "Back"
+  },
+  "categories": {
+    "title": "Popular Categories",
+    "description": "Browse schemes by category",
+    "browseAll": "Browse All Categories",
+    "emptyState": "No categories found."
+  },
+  "scheme": {
+    "overview": "Overview",
+    "description": "Description",
+    "benefits": "Key Benefits",
+    "eligibility": "Eligibility Criteria",
+    "requiredDocs": "Required Documents",
+    "applicationProcess": "How to Apply",
+    "ageLimit": "Age Limit",
+    "incomeLimit": "Income Limit",
+    "source": "Source",
+    "ministry": "Ministry",
+    "department": "Department",
+    "state": "State",
+    "targetBeneficiaries": "Target Beneficiaries",
+    "faqs": "FAQs",
+    "relatedSchemes": "Related Schemes"
+  },
+  "filters": {
+    "searchPlaceholder": "Search schemes...",
+    "selectCategory": "All Categories",
+    "selectState": "All States",
+    "category": "Category",
+    "state": "State",
+    "age": "Age",
+    "income": "Income",
+    "occupation": "Occupation",
+    "education": "Education",
+    "gender": "Gender"
+  },
+  "eligibility": {
+    "title": "Check Eligibility",
+    "findMatching": "Find Matching Schemes",
+    "eligible": "Eligible",
+    "notEligible": "Not Eligible",
+    "potentiallyEligible": "Potentially Eligible",
+    "moreInfoNeeded": "More Information Needed",
+    "missingInfo": "Missing Information",
+    "fields": {
+      "age": "Age",
+      "gender": "Gender",
+      "state": "State",
+      "district": "District",
+      "income": "Income",
+      "occupation": "Occupation",
+      "education": "Education",
+      "employment": "Employment",
+      "student": "Student",
+      "farmer": "Farmer",
+      "businessOwner": "Business Owner",
+      "businessType": "Business Type",
+      "socialCategory": "Social Category",
+      "disability": "Disability",
+      "familySize": "Family Size",
+      "maritalStatus": "Marital Status"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches",
+    "matchScore": "Match Score",
+    "whyMatches": "Why this matches you",
+    "whyMayQualify": "Why you may qualify",
+    "eligibility": "Eligibility",
+    "matchedCriteria": "Matched Criteria",
+    "failedCriteria": "Failed Criteria",
+    "missingInfo": "Missing Information",
+    "viewScheme": "View Scheme",
+    "applyOfficially": "Apply Officially"
+  },
+  "assistant": {
+    "title": "SchemeSathi AI Assistant",
+    "subtitle": "Ask me anything in your language!",
+    "welcome": "Hello! I am SchemeSathi. How can I help you find government schemes today?",
+    "placeholder": "Type your question here...",
+    "thinking": "Thinking...",
+    "error": "Sorry, I encountered an error.",
+    "clearChat": "Clear Chat",
+    "newConversation": "New Conversation",
+    "suggestions": [
+      "What schemes are available for farmers?",
+      "Is there an education loan scheme?",
+      "What is PM-Kisan?",
+      "Schemes for women entrepreneurs"
+    ],
+    "send": "Send",
+    "voice": "Voice Input"
+  },
+  "forms": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "required": "This field is required",
+    "success": "Success",
+    "failure": "Failure"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "about": "About SchemeSathi",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only.",
+    "officialSources": "Official Sources",
+    "contact": "Contact",
+    "copyright": "© 2024 SchemeSathi. All rights reserved.",
+    "links": "Important Links",
+    "support": "Support"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes...",
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try again",
+    "noSchemesFound": "No schemes found",
+    "noCategoriesFound": "No categories found",
+    "unableToLoadData": "Unable to load data",
+    "networkError": "Network error",
+    "pleaseTryAgain": "Please try again"
+  }
+}

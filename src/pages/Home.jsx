@@ -10,21 +10,41 @@ import {
   CheckCircle2, 
   FileText, 
   ExternalLink,
-  Layers
+  Layers,
+  Loader2
 } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import SchemeCard from '../components/SchemeCard';
-import { CATEGORIES } from '../data/categories';
-import { SCHEMES } from '../data/schemes';
+import { fetchCategories, fetchSchemes } from '../utils/api';
 
 export default function Home() {
-  const { t, l } = useLanguage();
-  const navigate = useNavigate();
+  const { l, currentLanguage } = useLanguage();
+  const [categories, setCategories] = React.useState([]);
+  const [featuredSchemes, setFeaturedSchemes] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
-  // 4 Featured Schemes from key domains
-  const featuredSchemes = SCHEMES.filter(s => 
-    ['pm-vidyalaxmi', 'pmmy', 'pm-jay', 'kisan-credit-card'].includes(s.id)
-  );
+  React.useEffect(() => {
+    const loadData = async () => {
+      setLoading(true);
+      try {
+        const [cats, schemes] = await Promise.all([
+          fetchCategories(currentLanguage),
+          fetchSchemes(currentLanguage)
+        ]);
+        setCategories(cats);
+        setFeaturedSchemes(schemes.filter(s => 
+          ['pm-vidyalaxmi', 'pmmy', 'pm-jay', 'kisan-credit-card'].includes(s.id)
+        ));
+      } catch (error) {
+        console.error("Error loading home data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, [currentLanguage]);
+  const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const howItWorksSteps = [
     {
@@ -80,37 +100,43 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            {CATEGORIES.map((cat) => (
-              <div
-                key={cat.slug}
-                className="group bg-white border border-charcoal-200 rounded-3xl p-5 shadow-soft hover:shadow-soft-hover hover:border-lemon-500 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="text-3xl mb-3">{cat.emoji}</div>
-                  <h3 className="text-base font-extrabold text-black group-hover:text-lemon-600 transition-colors leading-snug">
-                    {l(cat.name)}
-                  </h3>
-                  <p className="text-xs text-charcoal-600 mt-1.5 line-clamp-2 leading-relaxed">
-                    {l(cat.description)}
-                  </p>
-                </div>
+          {loading ? (
+            <div className="flex justify-center items-center py-20 text-lemon-600">
+              <Loader2 className="w-8 h-8 animate-spin" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+              {categories.map((cat) => (
+                <div
+                  key={cat.id || cat.slug}
+                  className="group bg-white border border-charcoal-200 rounded-3xl p-5 shadow-soft hover:shadow-soft-hover hover:border-lemon-500 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="text-3xl mb-3">{cat.icon || '📌'}</div>
+                    <h3 className="text-base font-extrabold text-black group-hover:text-lemon-600 transition-colors leading-snug">
+                      {cat.name}
+                    </h3>
+                    <p className="text-xs text-charcoal-600 mt-1.5 line-clamp-2 leading-relaxed">
+                      {cat.description}
+                    </p>
+                  </div>
 
-                <div className="pt-4 mt-4 border-t border-charcoal-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-charcoal-600 bg-cream-200 px-2 py-0.5 rounded-md font-mono">
-                    7 schemes
-                  </span>
-                  <Link
-                    to={`/category/${cat.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-lemon-600 group-hover:text-lemon-800 transition-colors"
-                  >
-                    <span>Explore</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                  </Link>
+                  <div className="pt-4 mt-4 border-t border-charcoal-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-charcoal-600 bg-cream-200 px-2 py-0.5 rounded-md font-mono">
+                      Explore
+                    </span>
+                    <Link
+                      to={`/category/${cat.id || cat.slug}`}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-lemon-600 group-hover:text-lemon-800 transition-colors"
+                    >
+                      <span>View</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* 3. Featured High-Impact Schemes */}
@@ -137,11 +163,17 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredSchemes.map((scheme) => (
-              <SchemeCard key={scheme.id} scheme={scheme} />
-            ))}
-          </div>
+          {loading ? (
+            <div className="flex justify-center items-center py-20 text-lemon-600">
+              <Loader2 className="w-8 h-8 animate-spin" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredSchemes.map((scheme) => (
+                <SchemeCard key={scheme.id} scheme={scheme} />
+              ))}
+            </div>
+          )}
         </section>
 
         {/* 4. How It Works (4 Steps) */}

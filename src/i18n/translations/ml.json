@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "ഹോം",
+    "schemes": "പദ്ധതികൾ",
+    "categories": "വിഭാഗങ്ങൾ",
+    "findSchemes": "പദ്ധതികൾ കണ്ടെത്തുക",
+    "aiAssistant": "AI സഹായി",
+    "about": "About (Malayalam)",
+    "language": "ഭാష",
+    "login": "Login (Malayalam)",
+    "signup": "Sign Up (Malayalam)",
+    "profile": "Profile (Malayalam)",
+    "logout": "Logout (Malayalam)"
+  },
+  "hero": {
+    "title": "നിങ്ങൾക്ക് അനുയോജ്യമായ സർക്കാർ പദ്ധതി കണ്ടെത്തുക",
+    "subtitle": "ഞങ്ങളുടെ ബഹുഭാഷാ AI സഹായി ഉപയോഗിച്ച് നിങ്ങൾക്ക് പ്രത്യേകം തയ്യാറാക്കിയ സബ്സിഡികളും സ്കോളർഷിപ്പുകളും ആനുകൂല്യങ്ങളും കണ്ടെത്തുക.",
+    "searchSchemes": "പദ്ധതികൾ തിരയുക",
+    "tryAiAssistant": "AI സഹായി പരീക്ഷിക്കുക",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Malayalam)",
+    "stats": {
+      "schemes": "Active Schemes (Malayalam)",
+      "categories": "Categories (Malayalam)",
+      "languages": "Languages (Malayalam)"
+    }
+  },
+  "common": {
+    "viewDetails": "വിശദാംശങ്ങൾ കാണുക",
+    "applyNow": "ഇപ്പോൾ അപേക്ഷിക്കുക",
+    "learnMore": "കൂടുതൽ അറിയുക",
+    "search": "തിരയുക",
+    "filters": "ഫിൽട്ടറുകൾ",
+    "reset": "പുനഃസജ്ജമാക്കുക",
+    "clearAll": "എല്ലാം മായ്‌ക്കുക",
+    "clear": "Clear (Malayalam)",
+    "apply": "Apply (Malayalam)",
+    "loading": "ലോഡുചെയ്യുന്നു...",
+    "error": "ഒരു പിശക് സംഭവിച്ചു",
+    "noResults": "പദ്ധതികളൊന്നും കണ്ടെത്തിയില്ല",
+    "officialWebsite": "ഔദ്യോഗിക വെബ്സൈറ്റ്",
+    "lastUpdated": "അവസാനം പരിശോധിച്ചത്",
+    "governmentScheme": "Government Scheme (Malayalam)",
+    "back": "Back (Malayalam)"
+  },
+  "categories": {
+    "title": "Popular Categories (Malayalam)",
+    "description": "Browse schemes by category (Malayalam)",
+    "browseAll": "Browse All Categories (Malayalam)",
+    "emptyState": "No categories found. (Malayalam)"
+  },
+  "scheme": {
+    "overview": "Overview (Malayalam)",
+    "description": "വിവരണം",
+    "benefits": "പ്രധാന ആനുകൂല്യങ്ങൾ",
+    "eligibility": "യോഗ്യതാ മാനദണ്ഡങ്ങൾ",
+    "requiredDocs": "ആവശ്യമായ രേഖകൾ",
+    "applicationProcess": "അപേക്ഷാ പ്രക്രിയ",
+    "ageLimit": "പ്രായപരിധി",
+    "incomeLimit": "വരുമാന പരിധി",
+    "source": "Source (Malayalam)",
+    "ministry": "Ministry (Malayalam)",
+    "department": "Department (Malayalam)",
+    "state": "State (Malayalam)",
+    "targetBeneficiaries": "Target Beneficiaries (Malayalam)",
+    "faqs": "FAQs (Malayalam)",
+    "relatedSchemes": "Related Schemes (Malayalam)"
+  },
+  "filters": {
+    "searchPlaceholder": "പദ്ധതികൾ തിരയുക (ഉദാ. പെൻഷൻ, കർഷകൻ...)",
+    "selectCategory": "എല്ലാ വിഭാഗങ്ങളും",
+    "selectState": "എല്ലാ സംസ്ഥാനങ്ങളും",
+    "category": "Category (Malayalam)",
+    "state": "State (Malayalam)",
+    "age": "Age (Malayalam)",
+    "income": "Income (Malayalam)",
+    "occupation": "Occupation (Malayalam)",
+    "education": "Education (Malayalam)",
+    "gender": "Gender (Malayalam)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Malayalam)",
+    "findMatching": "Find Matching Schemes (Malayalam)",
+    "eligible": "Eligible (Malayalam)",
+    "notEligible": "Not Eligible (Malayalam)",
+    "potentiallyEligible": "Potentially Eligible (Malayalam)",
+    "moreInfoNeeded": "More Information Needed (Malayalam)",
+    "missingInfo": "Missing Information (Malayalam)",
+    "fields": {
+      "age": "Age (Malayalam)",
+      "gender": "Gender (Malayalam)",
+      "state": "State (Malayalam)",
+      "district": "District (Malayalam)",
+      "income": "Income (Malayalam)",
+      "occupation": "Occupation (Malayalam)",
+      "education": "Education (Malayalam)",
+      "employment": "Employment (Malayalam)",
+      "student": "Student (Malayalam)",
+      "farmer": "Farmer (Malayalam)",
+      "businessOwner": "Business Owner (Malayalam)",
+      "businessType": "Business Type (Malayalam)",
+      "socialCategory": "Social Category (Malayalam)",
+      "disability": "Disability (Malayalam)",
+      "familySize": "Family Size (Malayalam)",
+      "maritalStatus": "Marital Status (Malayalam)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Malayalam)",
+    "matchScore": "Match Score (Malayalam)",
+    "whyMatches": "Why this matches you (Malayalam)",
+    "whyMayQualify": "Why you may qualify (Malayalam)",
+    "eligibility": "Eligibility (Malayalam)",
+    "matchedCriteria": "Matched Criteria (Malayalam)",
+    "failedCriteria": "Failed Criteria (Malayalam)",
+    "missingInfo": "Missing Information (Malayalam)",
+    "viewScheme": "View Scheme (Malayalam)",
+    "applyOfficially": "Apply Officially (Malayalam)"
+  },
+  "assistant": {
+    "title": "സ്കീംസാതി AI സഹായി",
+    "subtitle": "നിങ്ങളുടെ ഭാഷയിൽ എന്നോട് എന്തും ചോദിക്കുക!",
+    "welcome": "നമസ്കാരം! ഞാൻ സ്കീംസാതി. സർക്കാർ പദ്ധതികൾ കണ്ടെത്താൻ ഇന്ന് നിങ്ങളെ ഞാൻ എങ്ങനെ സഹായിക്കണം?",
+    "placeholder": "നിങ്ങളുടെ ചോദ്യം ഇവിടെ ടൈപ്പ് ചെയ്യുക...",
+    "thinking": "ചിന്തിക്കുന്നു...",
+    "error": "Sorry, I encountered an error. (Malayalam)",
+    "clearChat": "Clear Chat (Malayalam)",
+    "newConversation": "New Conversation (Malayalam)",
+    "suggestions": [
+      "കർഷകർക്കുള്ള പദ്ധതികൾ എന്തൊക്കെയാണ്?",
+      "വിദ്യാഭ്യാസ വായ്പകൾ ഉണ്ടോ?",
+      "എന്താണ് പിഎം-കിസാൻ?",
+      "വനിതാ സംരംഭകർക്കുള്ള പദ്ധതികൾ"
+    ],
+    "send": "Send (Malayalam)",
+    "voice": "Voice Input (Malayalam)"
+  },
+  "forms": {
+    "submit": "Submit (Malayalam)",
+    "cancel": "Cancel (Malayalam)",
+    "required": "This field is required (Malayalam)",
+    "success": "Success (Malayalam)",
+    "failure": "Failure (Malayalam)"
+  },
+  "footer": {
+    "navigation": "Navigation (Malayalam)",
+    "about": "About SchemeSathi (Malayalam)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Malayalam)",
+    "officialSources": "Official Sources (Malayalam)",
+    "contact": "Contact (Malayalam)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Malayalam)",
+    "links": "Important Links (Malayalam)",
+    "support": "Support (Malayalam)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Malayalam)",
+    "somethingWentWrong": "Something went wrong (Malayalam)",
+    "tryAgain": "Try again (Malayalam)",
+    "noSchemesFound": "No schemes found (Malayalam)",
+    "noCategoriesFound": "No categories found (Malayalam)",
+    "unableToLoadData": "Unable to load data (Malayalam)",
+    "networkError": "Network error (Malayalam)",
+    "pleaseTryAgain": "Please try again (Malayalam)"
+  }
+}

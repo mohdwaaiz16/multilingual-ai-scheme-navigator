@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "હોમ",
+    "schemes": "યોજનાઓ",
+    "categories": "શ્રેણીઓ",
+    "findSchemes": "યોજનાઓ શોધો",
+    "aiAssistant": "AI સહાયક",
+    "about": "About (Gujarati)",
+    "language": "ભાષા",
+    "login": "Login (Gujarati)",
+    "signup": "Sign Up (Gujarati)",
+    "profile": "Profile (Gujarati)",
+    "logout": "Logout (Gujarati)"
+  },
+  "hero": {
+    "title": "તમારી સંપૂર્ણ સરકારી યોજના શોધો",
+    "subtitle": "અમારા બહુભાષી AI સહાયકનો ઉપયોગ કરીને ખાસ તમારા માટે તૈયાર કરેલ સબસિડી, શિષ્યવૃત્તિ અને લાભો શોધો.",
+    "searchSchemes": "યોજનાઓ શોધો",
+    "tryAiAssistant": "AI સહાયક અજમાવો",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Gujarati)",
+    "stats": {
+      "schemes": "Active Schemes (Gujarati)",
+      "categories": "Categories (Gujarati)",
+      "languages": "Languages (Gujarati)"
+    }
+  },
+  "common": {
+    "viewDetails": "વિગતો જુઓ",
+    "applyNow": "હવે અરજી કરો",
+    "learnMore": "વધુ જાણો",
+    "search": "શોધો",
+    "filters": "ફિલ્ટર્સ",
+    "reset": "રીસેટ કરો",
+    "clearAll": "બધું સાફ કરો",
+    "clear": "Clear (Gujarati)",
+    "apply": "Apply (Gujarati)",
+    "loading": "લોડ થઈ રહ્યું છે...",
+    "error": "ભૂલ આવી છે",
+    "noResults": "કોઈ યોજના મળી નથી",
+    "officialWebsite": "સત્તાવાર વેબસાઇટ",
+    "lastUpdated": "છેલ્લે ચકાસાયેલ",
+    "governmentScheme": "Government Scheme (Gujarati)",
+    "back": "Back (Gujarati)"
+  },
+  "categories": {
+    "title": "Popular Categories (Gujarati)",
+    "description": "Browse schemes by category (Gujarati)",
+    "browseAll": "Browse All Categories (Gujarati)",
+    "emptyState": "No categories found. (Gujarati)"
+  },
+  "scheme": {
+    "overview": "Overview (Gujarati)",
+    "description": "વર્ણન",
+    "benefits": "મુખ્ય લાભો",
+    "eligibility": "પાત્રતા માપદંડ",
+    "requiredDocs": "જરૂરી દસ્તાવેજો",
+    "applicationProcess": "અરજી પ્રક્રિયા",
+    "ageLimit": "વય મર્યાદા",
+    "incomeLimit": "આવક મર્યાદા",
+    "source": "Source (Gujarati)",
+    "ministry": "Ministry (Gujarati)",
+    "department": "Department (Gujarati)",
+    "state": "State (Gujarati)",
+    "targetBeneficiaries": "Target Beneficiaries (Gujarati)",
+    "faqs": "FAQs (Gujarati)",
+    "relatedSchemes": "Related Schemes (Gujarati)"
+  },
+  "filters": {
+    "searchPlaceholder": "યોજનાઓ શોધો (દા.ત. પેન્શન, ખેડૂત...)",
+    "selectCategory": "તમામ શ્રેણીઓ",
+    "selectState": "તમામ રાજ્યો",
+    "category": "Category (Gujarati)",
+    "state": "State (Gujarati)",
+    "age": "Age (Gujarati)",
+    "income": "Income (Gujarati)",
+    "occupation": "Occupation (Gujarati)",
+    "education": "Education (Gujarati)",
+    "gender": "Gender (Gujarati)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Gujarati)",
+    "findMatching": "Find Matching Schemes (Gujarati)",
+    "eligible": "Eligible (Gujarati)",
+    "notEligible": "Not Eligible (Gujarati)",
+    "potentiallyEligible": "Potentially Eligible (Gujarati)",
+    "moreInfoNeeded": "More Information Needed (Gujarati)",
+    "missingInfo": "Missing Information (Gujarati)",
+    "fields": {
+      "age": "Age (Gujarati)",
+      "gender": "Gender (Gujarati)",
+      "state": "State (Gujarati)",
+      "district": "District (Gujarati)",
+      "income": "Income (Gujarati)",
+      "occupation": "Occupation (Gujarati)",
+      "education": "Education (Gujarati)",
+      "employment": "Employment (Gujarati)",
+      "student": "Student (Gujarati)",
+      "farmer": "Farmer (Gujarati)",
+      "businessOwner": "Business Owner (Gujarati)",
+      "businessType": "Business Type (Gujarati)",
+      "socialCategory": "Social Category (Gujarati)",
+      "disability": "Disability (Gujarati)",
+      "familySize": "Family Size (Gujarati)",
+      "maritalStatus": "Marital Status (Gujarati)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Gujarati)",
+    "matchScore": "Match Score (Gujarati)",
+    "whyMatches": "Why this matches you (Gujarati)",
+    "whyMayQualify": "Why you may qualify (Gujarati)",
+    "eligibility": "Eligibility (Gujarati)",
+    "matchedCriteria": "Matched Criteria (Gujarati)",
+    "failedCriteria": "Failed Criteria (Gujarati)",
+    "missingInfo": "Missing Information (Gujarati)",
+    "viewScheme": "View Scheme (Gujarati)",
+    "applyOfficially": "Apply Officially (Gujarati)"
+  },
+  "assistant": {
+    "title": "સ્કીમસાથી AI સહાયક",
+    "subtitle": "મને તમારી ભાષામાં કંઈપણ પૂછો!",
+    "welcome": "નમસ્તે! હું સ્કીમસાથી છું. આજે સરકારી યોજનાઓ શોધવામાં હું તમને કેવી રીતે મદદ કરી શકું?",
+    "placeholder": "તમારો પ્રશ્ન અહીં ટાઇપ કરો...",
+    "thinking": "વિચારી રહ્યું છે...",
+    "error": "Sorry, I encountered an error. (Gujarati)",
+    "clearChat": "Clear Chat (Gujarati)",
+    "newConversation": "New Conversation (Gujarati)",
+    "suggestions": [
+      "ખેડૂતો માટે કઈ યોજનાઓ છે?",
+      "શું કોઈ શિક્ષણ લોન છે?",
+      "PM-કિસાન શું છે?",
+      "મહિલા સાહસિકો માટે યોજનાઓ"
+    ],
+    "send": "Send (Gujarati)",
+    "voice": "Voice Input (Gujarati)"
+  },
+  "forms": {
+    "submit": "Submit (Gujarati)",
+    "cancel": "Cancel (Gujarati)",
+    "required": "This field is required (Gujarati)",
+    "success": "Success (Gujarati)",
+    "failure": "Failure (Gujarati)"
+  },
+  "footer": {
+    "navigation": "Navigation (Gujarati)",
+    "about": "About SchemeSathi (Gujarati)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Gujarati)",
+    "officialSources": "Official Sources (Gujarati)",
+    "contact": "Contact (Gujarati)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Gujarati)",
+    "links": "Important Links (Gujarati)",
+    "support": "Support (Gujarati)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Gujarati)",
+    "somethingWentWrong": "Something went wrong (Gujarati)",
+    "tryAgain": "Try again (Gujarati)",
+    "noSchemesFound": "No schemes found (Gujarati)",
+    "noCategoriesFound": "No categories found (Gujarati)",
+    "unableToLoadData": "Unable to load data (Gujarati)",
+    "networkError": "Network error (Gujarati)",
+    "pleaseTryAgain": "Please try again (Gujarati)"
+  }
+}

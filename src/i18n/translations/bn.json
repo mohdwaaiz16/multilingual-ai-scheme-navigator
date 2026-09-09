@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "হোম",
+    "schemes": "প্রকল্প",
+    "categories": "বিভাগ",
+    "findSchemes": "প্রকল্প খুঁজুন",
+    "aiAssistant": "AI সহকারী",
+    "about": "About (Bengali)",
+    "language": "ভাষা",
+    "login": "Login (Bengali)",
+    "signup": "Sign Up (Bengali)",
+    "profile": "Profile (Bengali)",
+    "logout": "Logout (Bengali)"
+  },
+  "hero": {
+    "title": "আপনার নিখুঁত সরকারি প্রকল্প খুঁজুন",
+    "subtitle": "আমাদের বহুভাষিক এআই সহকারী ব্যবহার করে বিশেষভাবে আপনার জন্য তৈরি ভর্তুকি, বৃত্তি এবং সুবিধাগুলি আবিষ্কার করুন।",
+    "searchSchemes": "প্রকল্প খুঁজুন",
+    "tryAiAssistant": "এআই সহকারী চেষ্টা করুন",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Bengali)",
+    "stats": {
+      "schemes": "Active Schemes (Bengali)",
+      "categories": "Categories (Bengali)",
+      "languages": "Languages (Bengali)"
+    }
+  },
+  "common": {
+    "viewDetails": "বিবরণ দেখুন",
+    "applyNow": "এখনই আবেদন করুন",
+    "learnMore": "আরও জানুন",
+    "search": "অনুসন্ধান",
+    "filters": "ফিল্টার",
+    "reset": "রিসেট",
+    "clearAll": "সব মুছে ফেলুন",
+    "clear": "Clear (Bengali)",
+    "apply": "Apply (Bengali)",
+    "loading": "লোড হচ্ছে...",
+    "error": "একটি ত্রুটি ঘটেছে",
+    "noResults": "কোন প্রকল্প পাওয়া যায়নি",
+    "officialWebsite": "অফিসিয়াল ওয়েবসাইট",
+    "lastUpdated": "শেষ যাচাই করা হয়েছে",
+    "governmentScheme": "Government Scheme (Bengali)",
+    "back": "Back (Bengali)"
+  },
+  "categories": {
+    "title": "Popular Categories (Bengali)",
+    "description": "Browse schemes by category (Bengali)",
+    "browseAll": "Browse All Categories (Bengali)",
+    "emptyState": "No categories found. (Bengali)"
+  },
+  "scheme": {
+    "overview": "Overview (Bengali)",
+    "description": "বিবরণ",
+    "benefits": "প্রধান সুবিধা",
+    "eligibility": "যোগ্যতার মানদণ্ড",
+    "requiredDocs": "প্রয়োজনীয় কাগজপত্র",
+    "applicationProcess": "আবেদন প্রক্রিয়া",
+    "ageLimit": "বয়স সীমা",
+    "incomeLimit": "আয় সীমা",
+    "source": "Source (Bengali)",
+    "ministry": "Ministry (Bengali)",
+    "department": "Department (Bengali)",
+    "state": "State (Bengali)",
+    "targetBeneficiaries": "Target Beneficiaries (Bengali)",
+    "faqs": "FAQs (Bengali)",
+    "relatedSchemes": "Related Schemes (Bengali)"
+  },
+  "filters": {
+    "searchPlaceholder": "প্রকল্প অনুসন্ধান করুন (যেমন পেনশন, কৃষক...)",
+    "selectCategory": "সব বিভাগ",
+    "selectState": "সব রাজ্য",
+    "category": "Category (Bengali)",
+    "state": "State (Bengali)",
+    "age": "Age (Bengali)",
+    "income": "Income (Bengali)",
+    "occupation": "Occupation (Bengali)",
+    "education": "Education (Bengali)",
+    "gender": "Gender (Bengali)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Bengali)",
+    "findMatching": "Find Matching Schemes (Bengali)",
+    "eligible": "Eligible (Bengali)",
+    "notEligible": "Not Eligible (Bengali)",
+    "potentiallyEligible": "Potentially Eligible (Bengali)",
+    "moreInfoNeeded": "More Information Needed (Bengali)",
+    "missingInfo": "Missing Information (Bengali)",
+    "fields": {
+      "age": "Age (Bengali)",
+      "gender": "Gender (Bengali)",
+      "state": "State (Bengali)",
+      "district": "District (Bengali)",
+      "income": "Income (Bengali)",
+      "occupation": "Occupation (Bengali)",
+      "education": "Education (Bengali)",
+      "employment": "Employment (Bengali)",
+      "student": "Student (Bengali)",
+      "farmer": "Farmer (Bengali)",
+      "businessOwner": "Business Owner (Bengali)",
+      "businessType": "Business Type (Bengali)",
+      "socialCategory": "Social Category (Bengali)",
+      "disability": "Disability (Bengali)",
+      "familySize": "Family Size (Bengali)",
+      "maritalStatus": "Marital Status (Bengali)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Bengali)",
+    "matchScore": "Match Score (Bengali)",
+    "whyMatches": "Why this matches you (Bengali)",
+    "whyMayQualify": "Why you may qualify (Bengali)",
+    "eligibility": "Eligibility (Bengali)",
+    "matchedCriteria": "Matched Criteria (Bengali)",
+    "failedCriteria": "Failed Criteria (Bengali)",
+    "missingInfo": "Missing Information (Bengali)",
+    "viewScheme": "View Scheme (Bengali)",
+    "applyOfficially": "Apply Officially (Bengali)"
+  },
+  "assistant": {
+    "title": "স্কিমসাথী AI সহকারী",
+    "subtitle": "আপনার ভাষায় আমাকে কিছু জিজ্ঞাসা করুন!",
+    "welcome": "নমস্কার! আমি স্কিমসাথী। আজ সরকারি প্রকল্প খুঁজে পেতে আমি আপনাকে কীভাবে সাহায্য করতে পারি?",
+    "placeholder": "আপনার প্রশ্ন এখানে টাইপ করুন...",
+    "thinking": "ভাবছি...",
+    "error": "Sorry, I encountered an error. (Bengali)",
+    "clearChat": "Clear Chat (Bengali)",
+    "newConversation": "New Conversation (Bengali)",
+    "suggestions": [
+      "কৃষকদের জন্য কী কী প্রকল্প আছে?",
+      "কোন শিক্ষা ঋণ আছে কি?",
+      "পিএম-কিসান কী?",
+      "নারী উদ্যোক্তাদের জন্য প্রকল্প"
+    ],
+    "send": "Send (Bengali)",
+    "voice": "Voice Input (Bengali)"
+  },
+  "forms": {
+    "submit": "Submit (Bengali)",
+    "cancel": "Cancel (Bengali)",
+    "required": "This field is required (Bengali)",
+    "success": "Success (Bengali)",
+    "failure": "Failure (Bengali)"
+  },
+  "footer": {
+    "navigation": "Navigation (Bengali)",
+    "about": "About SchemeSathi (Bengali)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Bengali)",
+    "officialSources": "Official Sources (Bengali)",
+    "contact": "Contact (Bengali)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Bengali)",
+    "links": "Important Links (Bengali)",
+    "support": "Support (Bengali)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Bengali)",
+    "somethingWentWrong": "Something went wrong (Bengali)",
+    "tryAgain": "Try again (Bengali)",
+    "noSchemesFound": "No schemes found (Bengali)",
+    "noCategoriesFound": "No categories found (Bengali)",
+    "unableToLoadData": "Unable to load data (Bengali)",
+    "networkError": "Network error (Bengali)",
+    "pleaseTryAgain": "Please try again (Bengali)"
+  }
+}

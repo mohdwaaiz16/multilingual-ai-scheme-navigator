@@ -18,12 +18,12 @@ export default function HeroSection() {
   };
 
   const quickPills = [
-    { label: "Scholarships", query: "Scholarship" },
-    { label: "MUDRA Loans", query: "MUDRA" },
-    { label: "PM-JAY Health", query: "Jan Arogya" },
-    { label: "Farmer KCC", query: "Kisan" },
-    { label: "Unified Pension", query: "Pension" },
-    { label: "PM Internships", query: "Internship" }
+    { label: t('hero.pills.scholarships', 'Scholarships'), query: "Scholarship" },
+    { label: t('hero.pills.mudra', 'MUDRA Loans'), query: "MUDRA" },
+    { label: t('hero.pills.pmjay', 'PM-JAY Health'), query: "Jan Arogya" },
+    { label: t('hero.pills.kisan', 'Farmer KCC'), query: "Kisan" },
+    { label: t('hero.pills.pension', 'Unified Pension'), query: "Pension" },
+    { label: t('hero.pills.internships', 'PM Internships'), query: "Internship" }
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function HeroSection() {
         {/* Trust badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-peach-100 border border-peach-200 text-xs font-medium text-charcoal-800 shadow-sm">
           <ShieldCheck className="w-4 h-4 text-emerald-600" />
-          <span>SchemeSathi &bull; 10 Categories &bull; 70 Verified Schemes</span>
+          <span>SchemeSathi &bull; 10 {t('navbar.categories', 'Categories')} &bull; 70 {t('navbar.verifiedSchemes', 'Verified Schemes')}</span>
         </div>
 
         {/* Heading */}
@@ -76,7 +76,7 @@ export default function HeroSection() {
 
           {/* Quick Query Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-3 text-xs text-charcoal-500">
-            <span>Trending Searches:</span>
+            <span>{t('hero.trendingSearches', 'Trending Searches:')}</span>
             {quickPills.map((pill) => (
               <button
                 key={pill.label}
@@ -113,7 +113,7 @@ export default function HeroSection() {
 
         {/* Reassurance text */}
         <p className="text-xs text-charcoal-500 pt-3 max-w-xl mx-auto relative z-10">
-          SchemeSathi is an information & navigation platform. Final eligibility is verified on the official government website.
+          {t('footer.disclaimer', 'SchemeSathi is an information & navigation platform. Final eligibility is verified on the official government website.')}
         </p>
 
       </div>

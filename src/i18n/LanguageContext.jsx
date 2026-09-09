@@ -1,5 +1,19 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { translations } from './translations';
+import en from './translations/en.json';
+import hi from './translations/hi.json';
+import kn from './translations/kn.json';
+import ta from './translations/ta.json';
+import te from './translations/te.json';
+import ml from './translations/ml.json';
+import mr from './translations/mr.json';
+import bn from './translations/bn.json';
+import gu from './translations/gu.json';
+import pa from './translations/pa.json';
+import ur from './translations/ur.json';
+
+const translations = {
+  en, hi, kn, ta, te, ml, mr, bn, gu, pa, ur
+};
 
 const LanguageContext = createContext();
 
@@ -18,15 +32,15 @@ export const LANGUAGES = [
 ];
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => {
+  const [currentLanguage, setCurrentLanguage] = useState(() => {
     return localStorage.getItem('schemeSathiLang') || 'en';
   });
 
   useEffect(() => {
-    localStorage.setItem('schemeSathiLang', language);
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === 'ur' ? 'rtl' : 'ltr';
-  }, [language]);
+    localStorage.setItem('schemeSathiLang', currentLanguage);
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dir = currentLanguage === 'ur' ? 'rtl' : 'ltr';
+  }, [currentLanguage]);
 
   const t = (key) => {
     const keys = key.split('.');
@@ -41,7 +55,7 @@ export function LanguageProvider({ children }) {
     };
 
     // Try current language
-    let value = getValue(translations[language], keys);
+    let value = getValue(translations[currentLanguage], keys);
     
     // Fallback to English
     if (value === undefined) {
@@ -55,11 +69,11 @@ export function LanguageProvider({ children }) {
   const l = (field) => {
     if (!field) return '';
     if (typeof field === 'string') return field;
-    return field[language] || field.en || Object.values(field)[0] || '';
+    return field[currentLanguage] || field.en || Object.values(field)[0] || '';
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, l, LANGUAGES }}>
+    <LanguageContext.Provider value={{ language: currentLanguage, setLanguage: setCurrentLanguage, currentLanguage, t, l, LANGUAGES }}>
       {children}
     </LanguageContext.Provider>
   );

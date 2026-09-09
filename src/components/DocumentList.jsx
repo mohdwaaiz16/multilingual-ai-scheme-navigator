@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FileText, CheckCircle2, Circle, Printer } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
-export default function DocumentList({ documents = [] }) {
+export default function DocumentList({ documents }) {
   const [checkedDocs, setCheckedDocs] = useState({});
+  const { t, l } = useLanguage();
 
   const toggleDoc = (index) => {
     setCheckedDocs(prev => ({
@@ -11,8 +13,14 @@ export default function DocumentList({ documents = [] }) {
     }));
   };
 
+  // Convert localized string to array of bullet points
+  const localizedDocs = l(documents) || '';
+  const docsList = typeof documents === 'object' && Array.isArray(documents)
+    ? documents
+    : localizedDocs.split('\n').filter(d => d.trim().length > 0).map(d => d.replace(/^[-\*•\d\.]+\s*/, ''));
+
   const completedCount = Object.values(checkedDocs).filter(Boolean).length;
-  const totalCount = documents.length;
+  const totalCount = docsList.length;
   const progressPercent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   return (
@@ -21,10 +29,10 @@ export default function DocumentList({ documents = [] }) {
         <div>
           <h3 className="text-base font-semibold text-black flex items-center gap-2">
             <FileText className="w-5 h-5 text-charcoal-800" />
-            <span>Required Documents Checklist</span>
+            <span>{t('scheme.checklistTitle', 'Required Documents Checklist')}</span>
           </h3>
           <p className="text-xs text-charcoal-600 mt-0.5">
-            Check off the documents you have prepared to check your application readiness.
+            {t('scheme.checklistSubtitle', 'Check off the documents you have prepared to check your application readiness.')}
           </p>
         </div>
 
@@ -32,17 +40,17 @@ export default function DocumentList({ documents = [] }) {
           <div className="flex items-center gap-3">
             <div className="text-right">
               <span className="text-xs font-semibold text-charcoal-700">
-                {completedCount} of {totalCount} ready
+                {completedCount} / {totalCount} {t('common.ready', 'ready')}
               </span>
             </div>
             <button
               type="button"
               onClick={() => window.print()}
               className="no-print p-2 text-charcoal-600 hover:text-charcoal-800 hover:bg-cream-200 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
-              title="Print document checklist"
+              title={t('common.print', 'Print')}
             >
               <Printer className="w-4 h-4" />
-              <span className="hidden sm:inline">Print</span>
+              <span className="hidden sm:inline">{t('common.print', 'Print')}</span>
             </button>
           </div>
         )}
@@ -60,7 +68,7 @@ export default function DocumentList({ documents = [] }) {
 
       {/* Checklist items */}
       <ul className="space-y-3" role="list">
-        {documents.map((doc, idx) => {
+        {docsList.map((doc, idx) => {
           const isChecked = !!checkedDocs[idx];
           return (
             <li key={idx}>

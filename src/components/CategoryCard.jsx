@@ -73,10 +73,10 @@ export default function CategoryCard({ category }) {
 
       <div className="flex items-center justify-between pt-3 border-t border-charcoal-100 text-xs font-medium text-charcoal-600">
         <span className="bg-cream-200 text-charcoal-800 px-2 py-0.5 rounded-full">
-          {category.schemesCount} {category.schemesCount === 1 ? 'Scheme' : 'Schemes'}
+          {category.schemesCount} {category.schemesCount === 1 ? t('common.scheme', 'Scheme') : t('common.schemes', 'Schemes')}
         </span>
         <span className="inline-flex items-center gap-1 text-charcoal-800 group-hover:text-black font-bold group-hover:translate-x-0.5 transition-all">
-          <span>Explore</span>
+          <span>{t('common.explore', 'Explore')}</span>
           <ArrowRight className="w-3.5 h-3.5 text-lemon-600 group-hover:text-black" />
         </span>
       </div>

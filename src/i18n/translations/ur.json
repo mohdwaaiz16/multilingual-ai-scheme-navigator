@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "ہوم",
+    "schemes": "اسکیمیں",
+    "categories": "زمرہ جات",
+    "findSchemes": "اسکیمیں تلاش کریں",
+    "aiAssistant": "AI اسسٹنٹ",
+    "about": "About (Urdu)",
+    "language": "زبان",
+    "login": "Login (Urdu)",
+    "signup": "Sign Up (Urdu)",
+    "profile": "Profile (Urdu)",
+    "logout": "Logout (Urdu)"
+  },
+  "hero": {
+    "title": "اپنی بہترین سرکاری اسکیم تلاش کریں",
+    "subtitle": "ہمارے کثیر لسانی AI اسسٹنٹ کا استعمال کرتے ہوئے خاص طور پر آپ کے لیے تیار کردہ سبسڈیز، وظائف اور فوائد دریافت کریں۔",
+    "searchSchemes": "اسکیمیں تلاش کریں",
+    "tryAiAssistant": "AI اسسٹنٹ آزمائیں",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Urdu)",
+    "stats": {
+      "schemes": "Active Schemes (Urdu)",
+      "categories": "Categories (Urdu)",
+      "languages": "Languages (Urdu)"
+    }
+  },
+  "common": {
+    "viewDetails": "تفصیلات دیکھیں",
+    "applyNow": "ابھی درخواست دیں",
+    "learnMore": "مزید جانیں",
+    "search": "تلاش کریں",
+    "filters": "فلٹرز",
+    "reset": "ری سیٹ کریں",
+    "clearAll": "سب صاف کریں",
+    "clear": "Clear (Urdu)",
+    "apply": "Apply (Urdu)",
+    "loading": "لوڈ ہو رہا ہے...",
+    "error": "ایک خرابی پیش آ گئی",
+    "noResults": "کوئی اسکیم نہیں ملی",
+    "officialWebsite": "سرکاری ویب سائٹ",
+    "lastUpdated": "آخری تصدیق شدہ",
+    "governmentScheme": "Government Scheme (Urdu)",
+    "back": "Back (Urdu)"
+  },
+  "categories": {
+    "title": "Popular Categories (Urdu)",
+    "description": "Browse schemes by category (Urdu)",
+    "browseAll": "Browse All Categories (Urdu)",
+    "emptyState": "No categories found. (Urdu)"
+  },
+  "scheme": {
+    "overview": "Overview (Urdu)",
+    "description": "تفصیل",
+    "benefits": "اہم فوائد",
+    "eligibility": "اہلیت کا معیار",
+    "requiredDocs": "مطلوبہ دستاویزات",
+    "applicationProcess": "درخواست کا عمل",
+    "ageLimit": "عمر کی حد",
+    "incomeLimit": "آمدنی کی حد",
+    "source": "Source (Urdu)",
+    "ministry": "Ministry (Urdu)",
+    "department": "Department (Urdu)",
+    "state": "State (Urdu)",
+    "targetBeneficiaries": "Target Beneficiaries (Urdu)",
+    "faqs": "FAQs (Urdu)",
+    "relatedSchemes": "Related Schemes (Urdu)"
+  },
+  "filters": {
+    "searchPlaceholder": "اسکیمیں تلاش کریں (جیسے پنشن، کسان...)",
+    "selectCategory": "تمام زمرے",
+    "selectState": "تمام ریاستیں",
+    "category": "Category (Urdu)",
+    "state": "State (Urdu)",
+    "age": "Age (Urdu)",
+    "income": "Income (Urdu)",
+    "occupation": "Occupation (Urdu)",
+    "education": "Education (Urdu)",
+    "gender": "Gender (Urdu)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Urdu)",
+    "findMatching": "Find Matching Schemes (Urdu)",
+    "eligible": "Eligible (Urdu)",
+    "notEligible": "Not Eligible (Urdu)",
+    "potentiallyEligible": "Potentially Eligible (Urdu)",
+    "moreInfoNeeded": "More Information Needed (Urdu)",
+    "missingInfo": "Missing Information (Urdu)",
+    "fields": {
+      "age": "Age (Urdu)",
+      "gender": "Gender (Urdu)",
+      "state": "State (Urdu)",
+      "district": "District (Urdu)",
+      "income": "Income (Urdu)",
+      "occupation": "Occupation (Urdu)",
+      "education": "Education (Urdu)",
+      "employment": "Employment (Urdu)",
+      "student": "Student (Urdu)",
+      "farmer": "Farmer (Urdu)",
+      "businessOwner": "Business Owner (Urdu)",
+      "businessType": "Business Type (Urdu)",
+      "socialCategory": "Social Category (Urdu)",
+      "disability": "Disability (Urdu)",
+      "familySize": "Family Size (Urdu)",
+      "maritalStatus": "Marital Status (Urdu)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Urdu)",
+    "matchScore": "Match Score (Urdu)",
+    "whyMatches": "Why this matches you (Urdu)",
+    "whyMayQualify": "Why you may qualify (Urdu)",
+    "eligibility": "Eligibility (Urdu)",
+    "matchedCriteria": "Matched Criteria (Urdu)",
+    "failedCriteria": "Failed Criteria (Urdu)",
+    "missingInfo": "Missing Information (Urdu)",
+    "viewScheme": "View Scheme (Urdu)",
+    "applyOfficially": "Apply Officially (Urdu)"
+  },
+  "assistant": {
+    "title": "اسکیم ساتھی AI اسسٹنٹ",
+    "subtitle": "مجھ سے اپنی زبان میں کچھ بھی پوچھیں!",
+    "welcome": "السلام علیکم! میں اسکیم ساتھی ہوں۔ آج سرکاری اسکیمیں تلاش کرنے میں میں آپ کی کیسے مدد کر سکتا ہوں؟",
+    "placeholder": "اپنا سوال یہاں ٹائپ کریں...",
+    "thinking": "سوچ رہا ہے...",
+    "error": "Sorry, I encountered an error. (Urdu)",
+    "clearChat": "Clear Chat (Urdu)",
+    "newConversation": "New Conversation (Urdu)",
+    "suggestions": [
+      "کسانوں کے لیے کون سی اسکیمیں ہیں؟",
+      "کیا کوئی تعلیمی قرض ہے؟",
+      "پی ایم کسان کیا ہے؟",
+      "خواتین کاروباریوں کے لیے اسکیمیں"
+    ],
+    "send": "Send (Urdu)",
+    "voice": "Voice Input (Urdu)"
+  },
+  "forms": {
+    "submit": "Submit (Urdu)",
+    "cancel": "Cancel (Urdu)",
+    "required": "This field is required (Urdu)",
+    "success": "Success (Urdu)",
+    "failure": "Failure (Urdu)"
+  },
+  "footer": {
+    "navigation": "Navigation (Urdu)",
+    "about": "About SchemeSathi (Urdu)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Urdu)",
+    "officialSources": "Official Sources (Urdu)",
+    "contact": "Contact (Urdu)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Urdu)",
+    "links": "Important Links (Urdu)",
+    "support": "Support (Urdu)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Urdu)",
+    "somethingWentWrong": "Something went wrong (Urdu)",
+    "tryAgain": "Try again (Urdu)",
+    "noSchemesFound": "No schemes found (Urdu)",
+    "noCategoriesFound": "No categories found (Urdu)",
+    "unableToLoadData": "Unable to load data (Urdu)",
+    "networkError": "Network error (Urdu)",
+    "pleaseTryAgain": "Please try again (Urdu)"
+  }
+}

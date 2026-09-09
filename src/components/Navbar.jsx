@@ -22,12 +22,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-lemon-400"></span>
-            <span className="font-medium text-cream-50">SchemeSathi — Citizen Welfare Companion</span>
+            <span className="font-medium text-cream-50">SchemeSathi — {t('navbar.companion', 'Citizen Welfare Companion')}</span>
             <span className="hidden md:inline text-charcoal-500">|</span>
-            <span className="hidden md:inline text-charcoal-300">10 Categories &bull; 70 Verified Schemes</span>
+            <span className="hidden md:inline text-charcoal-300">10 {t('navbar.categories', 'Categories')} &bull; 70 {t('navbar.verifiedSchemes', 'Verified Schemes')}</span>
           </div>
           <div className="text-[11px] text-charcoal-300 hidden sm:block">
-            Verified National Registry &bull; August 2026
+            {t('navbar.nationalRegistry', 'Verified National Registry')}
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@ export default function Navbar() {
                 Scheme<span className="text-charcoal-800">Sathi</span>
               </div>
               <p className="text-[11px] text-charcoal-500 font-medium">
-                Government Scheme Navigator
+                {t('navbar.navigator', 'Government Scheme Navigator')}
               </p>
             </div>
           </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
                   <span>{link.label}</span>
                   {link.isNew && (
                     <span className="px-1.5 py-0.5 text-[10px] font-bold bg-lemon-300 text-black rounded-full">
-                      AI
+                      {t('navbar.aiBadge', 'AI')}
                     </span>
                   )}
                 </NavLink>
@@ -138,7 +138,7 @@ export default function Navbar() {
                   </div>
                   {link.isNew && (
                     <span className="px-2 py-0.5 text-xs font-semibold bg-lemon-300 text-black rounded-full">
-                      AI Companion
+                      {t('navbar.aiCompanion', 'AI Companion')}
                     </span>
                   )}
                 </NavLink>

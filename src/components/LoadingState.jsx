@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function LoadingState({ count = 6 }) {
+  const { t } = useLanguage();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Loading schemes">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label={t('states.loadingSchemes', 'Loading schemes...')}>
       {Array.from({ length: count }).map((_, idx) => (
         <div 
           key={idx} 

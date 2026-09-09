@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "హోమ్",
+    "schemes": "పథకాలు",
+    "categories": "వర్గాలు",
+    "findSchemes": "పథకాలను శోధించండి",
+    "aiAssistant": "AI సహాయకుడు",
+    "about": "About (Telugu)",
+    "language": "భాష",
+    "login": "Login (Telugu)",
+    "signup": "Sign Up (Telugu)",
+    "profile": "Profile (Telugu)",
+    "logout": "Logout (Telugu)"
+  },
+  "hero": {
+    "title": "మీ సరైన ప్రభుత్వ పథకాన్ని కనుగొనండి",
+    "subtitle": "మా బహుభాషా AI సహాయకుడిని ఉపయోగించి మీ కోసం ప్రత్యేకంగా రూపొందించిన రాయితీలు, స్కాలర్‌షిప్‌లు మరియు ప్రయోజనాలను కనుగొనండి.",
+    "searchSchemes": "పథకాలను శోధించండి",
+    "tryAiAssistant": "AI సహాయకుడిని ప్రయత్నించండి",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Telugu)",
+    "stats": {
+      "schemes": "Active Schemes (Telugu)",
+      "categories": "Categories (Telugu)",
+      "languages": "Languages (Telugu)"
+    }
+  },
+  "common": {
+    "viewDetails": "వివరాలను చూడండి",
+    "applyNow": "ఇప్పుడే దరఖాస్తు చేయండి",
+    "learnMore": "మరింత తెలుసుకోండి",
+    "search": "శోధన",
+    "filters": "ఫిల్టర్లు",
+    "reset": "రీసెట్",
+    "clearAll": "అన్నింటినీ క్లియర్ చేయండి",
+    "clear": "Clear (Telugu)",
+    "apply": "Apply (Telugu)",
+    "loading": "లోడ్ అవుతోంది...",
+    "error": "ఒక లోపం ఏర్పడింది",
+    "noResults": "ఎటువంటి పథకాలు కనుగొనబడలేదు",
+    "officialWebsite": "అధికారిక వెబ్‌సైట్",
+    "lastUpdated": "చివరిగా ధృవీకరించబడింది",
+    "governmentScheme": "Government Scheme (Telugu)",
+    "back": "Back (Telugu)"
+  },
+  "categories": {
+    "title": "Popular Categories (Telugu)",
+    "description": "Browse schemes by category (Telugu)",
+    "browseAll": "Browse All Categories (Telugu)",
+    "emptyState": "No categories found. (Telugu)"
+  },
+  "scheme": {
+    "overview": "Overview (Telugu)",
+    "description": "వివరణ",
+    "benefits": "ముఖ్య ప్రయోజనాలు",
+    "eligibility": "అర్హత ప్రమాణాలు",
+    "requiredDocs": "అవసరమైన పత్రాలు",
+    "applicationProcess": "దరఖాస్తు ప్రక్రియ",
+    "ageLimit": "వయో పరిమితి",
+    "incomeLimit": "ఆదాయ పరిమితి",
+    "source": "Source (Telugu)",
+    "ministry": "Ministry (Telugu)",
+    "department": "Department (Telugu)",
+    "state": "State (Telugu)",
+    "targetBeneficiaries": "Target Beneficiaries (Telugu)",
+    "faqs": "FAQs (Telugu)",
+    "relatedSchemes": "Related Schemes (Telugu)"
+  },
+  "filters": {
+    "searchPlaceholder": "పథకాల కోసం శోధించండి (ఉదా. పెన్షన్, రైతు...)",
+    "selectCategory": "అన్ని వర్గాలు",
+    "selectState": "అన్ని రాష్ట్రాలు",
+    "category": "Category (Telugu)",
+    "state": "State (Telugu)",
+    "age": "Age (Telugu)",
+    "income": "Income (Telugu)",
+    "occupation": "Occupation (Telugu)",
+    "education": "Education (Telugu)",
+    "gender": "Gender (Telugu)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Telugu)",
+    "findMatching": "Find Matching Schemes (Telugu)",
+    "eligible": "Eligible (Telugu)",
+    "notEligible": "Not Eligible (Telugu)",
+    "potentiallyEligible": "Potentially Eligible (Telugu)",
+    "moreInfoNeeded": "More Information Needed (Telugu)",
+    "missingInfo": "Missing Information (Telugu)",
+    "fields": {
+      "age": "Age (Telugu)",
+      "gender": "Gender (Telugu)",
+      "state": "State (Telugu)",
+      "district": "District (Telugu)",
+      "income": "Income (Telugu)",
+      "occupation": "Occupation (Telugu)",
+      "education": "Education (Telugu)",
+      "employment": "Employment (Telugu)",
+      "student": "Student (Telugu)",
+      "farmer": "Farmer (Telugu)",
+      "businessOwner": "Business Owner (Telugu)",
+      "businessType": "Business Type (Telugu)",
+      "socialCategory": "Social Category (Telugu)",
+      "disability": "Disability (Telugu)",
+      "familySize": "Family Size (Telugu)",
+      "maritalStatus": "Marital Status (Telugu)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Telugu)",
+    "matchScore": "Match Score (Telugu)",
+    "whyMatches": "Why this matches you (Telugu)",
+    "whyMayQualify": "Why you may qualify (Telugu)",
+    "eligibility": "Eligibility (Telugu)",
+    "matchedCriteria": "Matched Criteria (Telugu)",
+    "failedCriteria": "Failed Criteria (Telugu)",
+    "missingInfo": "Missing Information (Telugu)",
+    "viewScheme": "View Scheme (Telugu)",
+    "applyOfficially": "Apply Officially (Telugu)"
+  },
+  "assistant": {
+    "title": "స్కిమ్‌సాథి AI సహాయకుడు",
+    "subtitle": "మీ భాషలో నన్ను ఏదైనా అడగండి!",
+    "welcome": "నమస్కారం! నేను స్కిమ్‌సాథిని. ఈ రోజు ప్రభుత్వ పథకాలను కనుగొనడంలో నేను మీకు ఎలా సహాయపడగలను?",
+    "placeholder": "మీ ప్రశ్నను ఇక్కడ టైప్ చేయండి...",
+    "thinking": "ఆలోచిస్తోంది...",
+    "error": "Sorry, I encountered an error. (Telugu)",
+    "clearChat": "Clear Chat (Telugu)",
+    "newConversation": "New Conversation (Telugu)",
+    "suggestions": [
+      "రైతుల కోసం ఉన్న పథకాలు ఏమిటి?",
+      "ఏదైనా విద్యా రుణాలు ఉన్నాయా?",
+      "PM-కిసాన్ అంటే ఏమిటి?",
+      "మహిళా పారిశ్రామికవేత్తల కోసం పథకాలు"
+    ],
+    "send": "Send (Telugu)",
+    "voice": "Voice Input (Telugu)"
+  },
+  "forms": {
+    "submit": "Submit (Telugu)",
+    "cancel": "Cancel (Telugu)",
+    "required": "This field is required (Telugu)",
+    "success": "Success (Telugu)",
+    "failure": "Failure (Telugu)"
+  },
+  "footer": {
+    "navigation": "Navigation (Telugu)",
+    "about": "About SchemeSathi (Telugu)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Telugu)",
+    "officialSources": "Official Sources (Telugu)",
+    "contact": "Contact (Telugu)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Telugu)",
+    "links": "Important Links (Telugu)",
+    "support": "Support (Telugu)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Telugu)",
+    "somethingWentWrong": "Something went wrong (Telugu)",
+    "tryAgain": "Try again (Telugu)",
+    "noSchemesFound": "No schemes found (Telugu)",
+    "noCategoriesFound": "No categories found (Telugu)",
+    "unableToLoadData": "Unable to load data (Telugu)",
+    "networkError": "Network error (Telugu)",
+    "pleaseTryAgain": "Please try again (Telugu)"
+  }
+}

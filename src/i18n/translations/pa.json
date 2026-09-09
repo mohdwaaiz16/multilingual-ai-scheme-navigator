@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "ਹੋਮ",
+    "schemes": "ਸਕੀਮਾਂ",
+    "categories": "ਸ਼੍ਰੇਣੀਆਂ",
+    "findSchemes": "ਸਕੀਮਾਂ ਲੱਭੋ",
+    "aiAssistant": "AI ਸਹਾਇਕ",
+    "about": "About (Punjabi)",
+    "language": "ਭਾਸ਼ਾ",
+    "login": "Login (Punjabi)",
+    "signup": "Sign Up (Punjabi)",
+    "profile": "Profile (Punjabi)",
+    "logout": "Logout (Punjabi)"
+  },
+  "hero": {
+    "title": "ਆਪਣੀ ਸੰਪੂਰਣ ਸਰਕਾਰੀ ਸਕੀਮ ਲੱਭੋ",
+    "subtitle": "ਸਾਡੇ ਬਹੁ-ਭਾਸ਼ਾਈ AI ਸਹਾਇਕ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਵਿਸ਼ੇਸ਼ ਤੌਰ 'ਤੇ ਤੁਹਾਡੇ ਲਈ ਬਣਾਈਆਂ ਗਈਆਂ ਸਬਸਿਡੀਆਂ, ਵਜ਼ੀਫੇ ਅਤੇ ਲਾਭ ਖੋਜੋ।",
+    "searchSchemes": "ਸਕੀਮਾਂ ਲੱਭੋ",
+    "tryAiAssistant": "AI ਸਹਾਇਕ ਅਜ਼ਮਾਓ",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Punjabi)",
+    "stats": {
+      "schemes": "Active Schemes (Punjabi)",
+      "categories": "Categories (Punjabi)",
+      "languages": "Languages (Punjabi)"
+    }
+  },
+  "common": {
+    "viewDetails": "ਵੇਰਵੇ ਦੇਖੋ",
+    "applyNow": "ਹੁਣੇ ਅਰਜ਼ੀ ਦਿਓ",
+    "learnMore": "ਹੋਰ ਜਾਣੋ",
+    "search": "ਖੋਜੋ",
+    "filters": "ਫਿਲਟਰ",
+    "reset": "ਰੀਸੈਟ",
+    "clearAll": "ਸਭ ਸਾਫ਼ ਕਰੋ",
+    "clear": "Clear (Punjabi)",
+    "apply": "Apply (Punjabi)",
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    "error": "ਇੱਕ ਗਲਤੀ ਆਈ",
+    "noResults": "ਕੋਈ ਸਕੀਮ ਨਹੀਂ ਮਿਲੀ",
+    "officialWebsite": "ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ",
+    "lastUpdated": "ਆਖਰੀ ਵਾਰ ਪ੍ਰਮਾਣਿਤ",
+    "governmentScheme": "Government Scheme (Punjabi)",
+    "back": "Back (Punjabi)"
+  },
+  "categories": {
+    "title": "Popular Categories (Punjabi)",
+    "description": "Browse schemes by category (Punjabi)",
+    "browseAll": "Browse All Categories (Punjabi)",
+    "emptyState": "No categories found. (Punjabi)"
+  },
+  "scheme": {
+    "overview": "Overview (Punjabi)",
+    "description": "ਵਰਣਨ",
+    "benefits": "ਮੁੱਖ ਲਾਭ",
+    "eligibility": "ਯੋਗਤਾ ਮਾਪਦੰਡ",
+    "requiredDocs": "ਲੋੜੀਂਦੇ ਦਸਤਾਵੇਜ਼",
+    "applicationProcess": "ਅਰਜ਼ੀ ਪ੍ਰਕਿਰਿਆ",
+    "ageLimit": "ਉਮਰ ਸੀਮਾ",
+    "incomeLimit": "ਆਮਦਨ ਸੀਮਾ",
+    "source": "Source (Punjabi)",
+    "ministry": "Ministry (Punjabi)",
+    "department": "Department (Punjabi)",
+    "state": "State (Punjabi)",
+    "targetBeneficiaries": "Target Beneficiaries (Punjabi)",
+    "faqs": "FAQs (Punjabi)",
+    "relatedSchemes": "Related Schemes (Punjabi)"
+  },
+  "filters": {
+    "searchPlaceholder": "ਸਕੀਮਾਂ ਦੀ ਖੋਜ ਕਰੋ (ਜਿਵੇਂ ਕਿ ਪੈਨਸ਼ਨ, ਕਿਸਾਨ...)",
+    "selectCategory": "ਸਾਰੀਆਂ ਸ਼੍ਰੇਣੀਆਂ",
+    "selectState": "ਸਾਰੇ ਰਾਜ",
+    "category": "Category (Punjabi)",
+    "state": "State (Punjabi)",
+    "age": "Age (Punjabi)",
+    "income": "Income (Punjabi)",
+    "occupation": "Occupation (Punjabi)",
+    "education": "Education (Punjabi)",
+    "gender": "Gender (Punjabi)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Punjabi)",
+    "findMatching": "Find Matching Schemes (Punjabi)",
+    "eligible": "Eligible (Punjabi)",
+    "notEligible": "Not Eligible (Punjabi)",
+    "potentiallyEligible": "Potentially Eligible (Punjabi)",
+    "moreInfoNeeded": "More Information Needed (Punjabi)",
+    "missingInfo": "Missing Information (Punjabi)",
+    "fields": {
+      "age": "Age (Punjabi)",
+      "gender": "Gender (Punjabi)",
+      "state": "State (Punjabi)",
+      "district": "District (Punjabi)",
+      "income": "Income (Punjabi)",
+      "occupation": "Occupation (Punjabi)",
+      "education": "Education (Punjabi)",
+      "employment": "Employment (Punjabi)",
+      "student": "Student (Punjabi)",
+      "farmer": "Farmer (Punjabi)",
+      "businessOwner": "Business Owner (Punjabi)",
+      "businessType": "Business Type (Punjabi)",
+      "socialCategory": "Social Category (Punjabi)",
+      "disability": "Disability (Punjabi)",
+      "familySize": "Family Size (Punjabi)",
+      "maritalStatus": "Marital Status (Punjabi)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Punjabi)",
+    "matchScore": "Match Score (Punjabi)",
+    "whyMatches": "Why this matches you (Punjabi)",
+    "whyMayQualify": "Why you may qualify (Punjabi)",
+    "eligibility": "Eligibility (Punjabi)",
+    "matchedCriteria": "Matched Criteria (Punjabi)",
+    "failedCriteria": "Failed Criteria (Punjabi)",
+    "missingInfo": "Missing Information (Punjabi)",
+    "viewScheme": "View Scheme (Punjabi)",
+    "applyOfficially": "Apply Officially (Punjabi)"
+  },
+  "assistant": {
+    "title": "ਸਕੀਮਸਾਥੀ AI ਸਹਾਇਕ",
+    "subtitle": "ਮੈਨੂੰ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਕੁਝ ਵੀ ਪੁੱਛੋ!",
+    "welcome": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ ਸਕੀਮਸਾਥੀ ਹਾਂ। ਅੱਜ ਸਰਕਾਰੀ ਸਕੀਮਾਂ ਲੱਭਣ ਵਿੱਚ ਮੈਂ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹਾਂ?",
+    "placeholder": "ਆਪਣਾ ਸਵਾਲ ਇੱਥੇ ਟਾਈਪ ਕਰੋ...",
+    "thinking": "ਸੋਚ ਰਿਹਾ ਹੈ...",
+    "error": "Sorry, I encountered an error. (Punjabi)",
+    "clearChat": "Clear Chat (Punjabi)",
+    "newConversation": "New Conversation (Punjabi)",
+    "suggestions": [
+      "ਕਿਸਾਨਾਂ ਲਈ ਕਿਹੜੀਆਂ ਸਕੀਮਾਂ ਹਨ?",
+      "ਕੀ ਕੋਈ ਸਿੱਖਿਆ ਕਰਜ਼ਾ ਹੈ?",
+      "PM-ਕਿਸਾਨ ਕੀ ਹੈ?",
+      "ਮਹਿਲਾ ਉੱਦਮੀਆਂ ਲਈ ਸਕੀਮਾਂ"
+    ],
+    "send": "Send (Punjabi)",
+    "voice": "Voice Input (Punjabi)"
+  },
+  "forms": {
+    "submit": "Submit (Punjabi)",
+    "cancel": "Cancel (Punjabi)",
+    "required": "This field is required (Punjabi)",
+    "success": "Success (Punjabi)",
+    "failure": "Failure (Punjabi)"
+  },
+  "footer": {
+    "navigation": "Navigation (Punjabi)",
+    "about": "About SchemeSathi (Punjabi)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Punjabi)",
+    "officialSources": "Official Sources (Punjabi)",
+    "contact": "Contact (Punjabi)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Punjabi)",
+    "links": "Important Links (Punjabi)",
+    "support": "Support (Punjabi)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Punjabi)",
+    "somethingWentWrong": "Something went wrong (Punjabi)",
+    "tryAgain": "Try again (Punjabi)",
+    "noSchemesFound": "No schemes found (Punjabi)",
+    "noCategoriesFound": "No categories found (Punjabi)",
+    "unableToLoadData": "Unable to load data (Punjabi)",
+    "networkError": "Network error (Punjabi)",
+    "pleaseTryAgain": "Please try again (Punjabi)"
+  }
+}

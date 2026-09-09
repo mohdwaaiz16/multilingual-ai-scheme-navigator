@@ -8,18 +8,19 @@ const getString = (field) => {
 };
 
 /**
- * Filter and search schemes across all 70 schemes with multi-criteria support
+ * Filter and search schemes across all schemes with multi-criteria support
  */
-export function filterSchemes({
+export function filterSchemes(allSchemes, {
   query = '',
   category = 'all',
   subcategory = 'all',
   governmentLevel = 'all',
   status = 'all',
   targetAudience = 'all',
-  sortBy = 'relevance'
+  sortBy = 'relevance',
+  language = 'en'
 }) {
-  let results = [...SCHEMES];
+  let results = [...allSchemes];
 
   // 1. Text Query Filter across all rich fields
   if (query && query.trim()) {

@@ -18,10 +18,10 @@ export default function Footer() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-cream-50 mb-1">
-                Important Citizen Information & Disclaimer
+                {t('footer.disclaimerTitle', 'Important Citizen Information & Disclaimer')}
               </h3>
               <p className="text-xs text-charcoal-300 leading-relaxed">
-                SchemeSathi is an information and navigation platform. It is not a government authority. Eligibility, benefits, documents and application procedures may change. Always verify the latest information through the official government source.
+                {t('footer.disclaimer', 'SchemeSathi is an information and navigation platform. It is not a government authority. Eligibility, benefits, documents and application procedures may change. Always verify the latest information through the official government source.')}
               </p>
             </div>
           </div>
@@ -39,18 +39,18 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-charcoal-400 max-w-md leading-relaxed">
-              Helping citizens discover and understand government schemes. Simple, personal, intelligent, and trustworthy.
+              {t('footer.about', 'Helping citizens discover and understand government schemes. Simple, personal, intelligent, and trustworthy.')}
             </p>
             <div className="flex items-center gap-2 text-xs text-charcoal-400 pt-1">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span className="font-semibold text-charcoal-200">10 Categories &bull; 70 Verified Schemes</span>
+              <span className="font-semibold text-charcoal-200">10 {t('navbar.categories', 'Categories')} &bull; 70 {t('navbar.verifiedSchemes', 'Verified Schemes')}</span>
             </div>
           </div>
 
           {/* Col 2: Navigation Links */}
           <div>
             <h4 className="text-xs font-bold text-cream-50 uppercase tracking-wider mb-3">
-              Explore SchemeSathi
+              {t('footer.explore', 'Explore SchemeSathi')}
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Col 3: Categories Links */}
           <div>
             <h4 className="text-xs font-bold text-cream-50 uppercase tracking-wider mb-3">
-              Official Categories
+              {t('footer.officialCategories', 'Official Categories')}
             </h4>
             <ul className="space-y-2 text-xs text-charcoal-400">
               {CATEGORIES.slice(0, 5).map((cat) => (
@@ -91,7 +91,7 @@ export default function Footer() {
               ))}
               <li>
                 <Link to="/schemes" className="text-lemon-400 hover:underline">
-                  + View all 10 categories
+                  + {t('categories.browseAll', 'View all 10 categories')}
                 </Link>
               </li>
             </ul>
@@ -101,10 +101,10 @@ export default function Footer() {
         {/* Bottom copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-charcoal-500 gap-3">
           <div>
-            &copy; {new Date().getFullYear()} SchemeSathi. Navigation & Information Companion.
+            &copy; {new Date().getFullYear()} SchemeSathi. {t('footer.companion', 'Navigation & Information Companion.')}
           </div>
           <div>
-            10 Categories &bull; 70 Schemes &bull; Verified National Registry
+            10 {t('navbar.categories', 'Categories')} &bull; 70 {t('navbar.verifiedSchemes', 'Schemes')} &bull; {t('navbar.nationalRegistry', 'Verified National Registry')}
           </div>
         </div>
 

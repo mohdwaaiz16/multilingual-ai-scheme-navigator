@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { Send, Sparkles } from 'lucide-react';
-
-const SUGGESTIONS = [
-  "Find student schemes",
-  "Find farmer schemes",
-  "Find business schemes",
-  "Find pension schemes",
-  "Find scholarships",
-  "What documents do I need?",
-  "How do I apply?",
-  "Show schemes for low-income families"
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function ChatInput({ onSendMessage, isTyping = false }) {
   const [text, setText] = useState('');
+  const { t } = useLanguage();
+
+  const SUGGESTIONS = [
+    t('assistant.suggest.student', 'Find student schemes'),
+    t('assistant.suggest.farmer', 'Find farmer schemes'),
+    t('assistant.suggest.business', 'Find business schemes'),
+    t('assistant.suggest.pension', 'Find pension schemes'),
+    t('assistant.suggest.scholarships', 'Find scholarships'),
+    t('assistant.suggest.documents', 'What documents do I need?'),
+    t('assistant.suggest.apply', 'How do I apply?'),
+    t('assistant.suggest.lowIncome', 'Show schemes for low-income families')
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +37,7 @@ export default function ChatInput({ onSendMessage, isTyping = false }) {
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-bold text-charcoal-600 flex items-center gap-1">
           <Sparkles className="w-3.5 h-3.5 text-lemon-500" />
-          <span>Suggestions:</span>
+          <span>{t('assistant.suggestions', 'Suggestions:')}</span>
         </span>
         {SUGGESTIONS.map((suggestion, idx) => (
           <button
@@ -56,7 +58,7 @@ export default function ChatInput({ onSendMessage, isTyping = false }) {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Ask SchemeSathi AI anything across 70 government schemes..."
+          placeholder={t('assistant.placeholder', 'Ask SchemeSathi AI anything across 70 government schemes...')}
           disabled={isTyping}
           className="w-full bg-white border border-charcoal-200 rounded-2xl pl-4 pr-12 py-3.5 text-sm text-black focus:outline-none focus:ring-2 focus:ring-lemon-500 focus:border-lemon-500 shadow-soft disabled:bg-cream-100 placeholder:text-charcoal-400 font-medium"
         />
@@ -65,7 +67,7 @@ export default function ChatInput({ onSendMessage, isTyping = false }) {
           type="submit"
           disabled={!text.trim() || isTyping}
           className="absolute right-2 p-2.5 rounded-xl bg-lemon-400 text-black hover:bg-lemon-500 disabled:bg-charcoal-200 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-lemon-600"
-          aria-label="Send message to SchemeSathi AI"
+          aria-label={t('assistant.sendLabel', 'Send message to SchemeSathi AI')}
         >
           <Send className="w-4 h-4" />
         </button>

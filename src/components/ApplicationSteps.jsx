@@ -1,23 +1,26 @@
 import React from 'react';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function ApplicationSteps({ applicationProcess, officialSource, officialUrl }) {
+  const { t, l } = useLanguage();
+
   // Parse steps if structured, or break text into meaningful milestones
   const steps = [
     {
       stepNumber: 1,
-      title: "Check Initial Eligibility & Documents",
-      description: "Verify that you meet the age, income, and category criteria, and gather your required identity & income documents."
+      title: t('scheme.step1Title', 'Check Initial Eligibility & Documents'),
+      description: t('scheme.step1Desc', 'Verify that you meet the age, income, and category criteria, and gather your required identity & income documents.')
     },
     {
       stepNumber: 2,
-      title: "Submission Channel",
-      description: applicationProcess || "Submit your application through the designated official portal, Common Service Centre (CSC), or authorized nodal agency."
+      title: t('scheme.step2Title', 'Submission Channel'),
+      description: l(applicationProcess) || t('scheme.step2Desc', 'Submit your application through the designated official portal, Common Service Centre (CSC), or authorized nodal agency.')
     },
     {
       stepNumber: 3,
-      title: "Verification & Direct Benefit",
-      description: "Local authorities or designated department officials will verify details and disburse benefits directly to your verified bank account or project."
+      title: t('scheme.step3Title', 'Verification & Direct Benefit'),
+      description: t('scheme.step3Desc', 'Local authorities or designated department officials will verify details and disburse benefits directly to your verified bank account or project.')
     }
   ];
 
@@ -25,10 +28,10 @@ export default function ApplicationSteps({ applicationProcess, officialSource, o
     <div className="bg-white border border-charcoal-100 rounded-2xl p-6 shadow-soft space-y-6">
       <div>
         <h3 className="text-base font-semibold text-black">
-          How to Apply
+          {t('scheme.howToApply', 'How to Apply')}
         </h3>
         <p className="text-xs text-charcoal-600 mt-0.5">
-          Follow these structured milestones to successfully apply for this scheme.
+          {t('scheme.howToApplySub', 'Follow these structured milestones to successfully apply for this scheme.')}
         </p>
       </div>
 

@@ -31,7 +31,7 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
             </span>
           ) : (
             <span className="px-2 py-0.5 text-[10px] font-bold rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
-              {scheme.status || 'Active'}
+              {scheme.status ? l(scheme.status) : t('common.active', 'Active')}
             </span>
           )}
         </div>
@@ -39,18 +39,18 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
         {/* Scheme Name */}
         <h3 className="text-lg font-extrabold text-black tracking-tight leading-snug transition-colors">
           <Link
-            to={`/schemes/${scheme.id}`}
+            to={`/schemes/${scheme.slug || scheme.id}`}
             state={{ fromResults: !!matchLabel, matchLabel }}
             className="hover:underline focus:outline-none focus-visible:underline"
           >
-            {l(scheme.schemeName)}
+            {l(scheme.name || scheme.schemeName)}
           </Link>
         </h3>
 
         {/* Ministry */}
         <div className="text-xs text-charcoal-600 flex items-center gap-1.5">
           <Building2 className="w-3.5 h-3.5 flex-shrink-0 text-charcoal-400" />
-          <span className="truncate">{scheme.implementingMinistry}</span>
+          <span className="truncate">{l(scheme.department || scheme.implementingMinistry)}</span>
         </div>
 
         {/* Description */}
@@ -62,10 +62,10 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
         <div className="p-3 bg-cream-200 rounded-2xl border border-charcoal-100 space-y-1">
           <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal-900 flex items-center gap-1">
             <CheckCircle2 className="w-3 h-3 text-charcoal-900" />
-            <span>Key Benefit</span>
+            <span>{t('scheme.keyBenefit', 'Key Benefit')}</span>
           </span>
           <p className="text-xs text-black font-medium line-clamp-2">
-            {l(scheme.keyBenefits)}
+            {l(scheme.benefitsText || scheme.keyBenefits)}
           </p>
         </div>
       </div>
@@ -73,11 +73,11 @@ export default function SchemeCard({ scheme, matchLabel, matchLevel }) {
       {/* Card Footer */}
       <div className="pt-3 border-t border-charcoal-100 flex items-center justify-between">
         <span className="text-xs font-semibold text-charcoal-600">
-          {scheme.subcategory || scheme.governmentLevel}
+          {l(scheme.category || scheme.subcategory || scheme.governmentLevel)}
         </span>
 
         <Link
-          to={`/schemes/${scheme.id}`}
+          to={`/schemes/${scheme.slug || scheme.id}`}
           state={{ fromResults: !!matchLabel, matchLabel }}
           className="inline-flex items-center gap-1 px-3.5 py-1.5 text-xs font-bold text-black bg-lemon-400 hover:bg-lemon-500 active:bg-lemon-600 rounded-xl transition-all shadow-sm"
         >

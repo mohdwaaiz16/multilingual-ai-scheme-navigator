@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "home": "होम",
+    "schemes": "योजनाएं",
+    "categories": "श्रेणियां",
+    "findSchemes": "योजनाएं खोजें",
+    "aiAssistant": "AI सहायक",
+    "about": "About (Hindi)",
+    "language": "भाषा",
+    "login": "Login (Hindi)",
+    "signup": "Sign Up (Hindi)",
+    "profile": "Profile (Hindi)",
+    "logout": "Logout (Hindi)"
+  },
+  "hero": {
+    "title": "अपनी आदर्श सरकारी योजना खोजें",
+    "subtitle": "हमारे बहुभाषी AI सहायक का उपयोग करके विशेष रूप से आपके लिए तैयार की गई सब्सिडी, छात्रवृत्ति और लाभ खोजें।",
+    "searchSchemes": "योजनाएं खोजें",
+    "tryAiAssistant": "AI सहायक आज़माएं",
+    "searchPlaceholder": "Search for schemes (e.g., Pension, Farmer...) (Hindi)",
+    "stats": {
+      "schemes": "Active Schemes (Hindi)",
+      "categories": "Categories (Hindi)",
+      "languages": "Languages (Hindi)"
+    }
+  },
+  "common": {
+    "viewDetails": "विवरण देखें",
+    "applyNow": "अभी आवेदन करें",
+    "learnMore": "और जानें",
+    "search": "खोजें",
+    "filters": "फ़िल्टर",
+    "reset": "रीसेट करें",
+    "clearAll": "सभी साफ़ करें",
+    "clear": "Clear (Hindi)",
+    "apply": "Apply (Hindi)",
+    "loading": "लोड हो रहा है...",
+    "error": "एक त्रुटि हुई",
+    "noResults": "कोई योजना नहीं मिली",
+    "officialWebsite": "आधिकारिक वेबसाइट",
+    "lastUpdated": "अंतिम सत्यापित",
+    "governmentScheme": "Government Scheme (Hindi)",
+    "back": "Back (Hindi)"
+  },
+  "categories": {
+    "title": "Popular Categories (Hindi)",
+    "description": "Browse schemes by category (Hindi)",
+    "browseAll": "Browse All Categories (Hindi)",
+    "emptyState": "No categories found. (Hindi)"
+  },
+  "scheme": {
+    "overview": "Overview (Hindi)",
+    "description": "विवरण",
+    "benefits": "मुख्य लाभ",
+    "eligibility": "पात्रता मापदंड",
+    "requiredDocs": "आवश्यक दस्तावेज़",
+    "applicationProcess": "आवेदन प्रक्रिया",
+    "ageLimit": "आयु सीमा",
+    "incomeLimit": "आय सीमा",
+    "source": "Source (Hindi)",
+    "ministry": "Ministry (Hindi)",
+    "department": "Department (Hindi)",
+    "state": "State (Hindi)",
+    "targetBeneficiaries": "Target Beneficiaries (Hindi)",
+    "faqs": "FAQs (Hindi)",
+    "relatedSchemes": "Related Schemes (Hindi)"
+  },
+  "filters": {
+    "searchPlaceholder": "योजनाएं खोजें (जैसे पेंशन, किसान...)",
+    "selectCategory": "सभी श्रेणियां",
+    "selectState": "सभी राज्य",
+    "category": "Category (Hindi)",
+    "state": "State (Hindi)",
+    "age": "Age (Hindi)",
+    "income": "Income (Hindi)",
+    "occupation": "Occupation (Hindi)",
+    "education": "Education (Hindi)",
+    "gender": "Gender (Hindi)"
+  },
+  "eligibility": {
+    "title": "Check Eligibility (Hindi)",
+    "findMatching": "Find Matching Schemes (Hindi)",
+    "eligible": "Eligible (Hindi)",
+    "notEligible": "Not Eligible (Hindi)",
+    "potentiallyEligible": "Potentially Eligible (Hindi)",
+    "moreInfoNeeded": "More Information Needed (Hindi)",
+    "missingInfo": "Missing Information (Hindi)",
+    "fields": {
+      "age": "Age (Hindi)",
+      "gender": "Gender (Hindi)",
+      "state": "State (Hindi)",
+      "district": "District (Hindi)",
+      "income": "Income (Hindi)",
+      "occupation": "Occupation (Hindi)",
+      "education": "Education (Hindi)",
+      "employment": "Employment (Hindi)",
+      "student": "Student (Hindi)",
+      "farmer": "Farmer (Hindi)",
+      "businessOwner": "Business Owner (Hindi)",
+      "businessType": "Business Type (Hindi)",
+      "socialCategory": "Social Category (Hindi)",
+      "disability": "Disability (Hindi)",
+      "familySize": "Family Size (Hindi)",
+      "maritalStatus": "Marital Status (Hindi)"
+    }
+  },
+  "matching": {
+    "yourMatches": "Your Matches (Hindi)",
+    "matchScore": "Match Score (Hindi)",
+    "whyMatches": "Why this matches you (Hindi)",
+    "whyMayQualify": "Why you may qualify (Hindi)",
+    "eligibility": "Eligibility (Hindi)",
+    "matchedCriteria": "Matched Criteria (Hindi)",
+    "failedCriteria": "Failed Criteria (Hindi)",
+    "missingInfo": "Missing Information (Hindi)",
+    "viewScheme": "View Scheme (Hindi)",
+    "applyOfficially": "Apply Officially (Hindi)"
+  },
+  "assistant": {
+    "title": "स्कीमसाथी AI सहायक",
+    "subtitle": "मुझसे अपनी भाषा में कुछ भी पूछें!",
+    "welcome": "नमस्ते! मैं स्कीमसाथी हूँ। मैं आज आपको सरकारी योजनाएं खोजने में कैसे मदद कर सकता हूँ?",
+    "placeholder": "अपना प्रश्न यहाँ टाइप करें...",
+    "thinking": "सोच रहा हूँ...",
+    "error": "Sorry, I encountered an error. (Hindi)",
+    "clearChat": "Clear Chat (Hindi)",
+    "newConversation": "New Conversation (Hindi)",
+    "suggestions": [
+      "किसानों के लिए कौन सी योजनाएं हैं?",
+      "क्या कोई शिक्षा ऋण है?",
+      "पीएम-किसान क्या है?",
+      "महिला उद्यमियों के लिए योजनाएं"
+    ],
+    "send": "Send (Hindi)",
+    "voice": "Voice Input (Hindi)"
+  },
+  "forms": {
+    "submit": "Submit (Hindi)",
+    "cancel": "Cancel (Hindi)",
+    "required": "This field is required (Hindi)",
+    "success": "Success (Hindi)",
+    "failure": "Failure (Hindi)"
+  },
+  "footer": {
+    "navigation": "Navigation (Hindi)",
+    "about": "About SchemeSathi (Hindi)",
+    "disclaimer": "Disclaimer: This platform is for informational purposes only. (Hindi)",
+    "officialSources": "Official Sources (Hindi)",
+    "contact": "Contact (Hindi)",
+    "copyright": "© 2024 SchemeSathi. All rights reserved. (Hindi)",
+    "links": "Important Links (Hindi)",
+    "support": "Support (Hindi)"
+  },
+  "states": {
+    "loadingSchemes": "Loading schemes... (Hindi)",
+    "somethingWentWrong": "Something went wrong (Hindi)",
+    "tryAgain": "Try again (Hindi)",
+    "noSchemesFound": "No schemes found (Hindi)",
+    "noCategoriesFound": "No categories found (Hindi)",
+    "unableToLoadData": "Unable to load data (Hindi)",
+    "networkError": "Network error (Hindi)",
+    "pleaseTryAgain": "Please try again (Hindi)"
+  }
+}
