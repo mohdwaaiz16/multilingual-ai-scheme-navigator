@@ -19,7 +19,7 @@ import SchemeCard from '../components/SchemeCard';
 import EmptyState from '../components/EmptyState';
 
 export default function SchemeFinder() {
-  const { l, currentLanguage } = useLanguage();
+  const { t, l, currentLanguage } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialQuery = searchParams.get('q') || '';

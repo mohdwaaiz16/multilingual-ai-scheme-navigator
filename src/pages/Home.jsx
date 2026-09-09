@@ -18,7 +18,7 @@ import SchemeCard from '../components/SchemeCard';
 import { fetchCategories, fetchSchemes } from '../utils/api';
 
 export default function Home() {
-  const { l, currentLanguage } = useLanguage();
+  const { t, l, currentLanguage } = useLanguage();
   const [categories, setCategories] = React.useState([]);
   const [featuredSchemes, setFeaturedSchemes] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -43,7 +43,6 @@ export default function Home() {
     };
     loadData();
   }, [currentLanguage]);
-  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const howItWorksSteps = [

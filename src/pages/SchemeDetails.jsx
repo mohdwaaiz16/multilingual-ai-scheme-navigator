@@ -30,7 +30,7 @@ import SchemeCard from '../components/SchemeCard';
 import { fetchSchemeBySlug, fetchSchemes } from '../utils/api';
 
 export default function SchemeDetails() {
-  const { l, currentLanguage } = useLanguage();
+  const { t, l, currentLanguage } = useLanguage();
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
