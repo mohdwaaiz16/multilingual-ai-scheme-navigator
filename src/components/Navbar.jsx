@@ -16,7 +16,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-cream-50/95 backdrop-blur border-b border-charcoal-100">
+    <header className="sticky top-0 z-40 bg-cream-50/60 backdrop-blur-lg backdrop-saturate-150 border-b border-white/50 shadow-sm supports-[backdrop-filter]:bg-cream-50/50">
       {/* Top Civic Notice Bar */}
       <div className="bg-charcoal-900 text-cream-200 text-xs py-1.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
