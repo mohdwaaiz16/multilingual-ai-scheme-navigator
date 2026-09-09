@@ -167,7 +167,6 @@ export default function SchemeDetails() {
               <span>{l(scheme.department || scheme.implementingMinistry)}</span>
             </div>
           </div>
-        </header>
 
           {/* Quick Details Matrix */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-charcoal-100 text-xs">
